@@ -140,9 +140,6 @@ namespace ChatAnalyzer
             ChatInfo.Person1 = names[0];
             ChatInfo.Person2 = names[1];
             ChatInfo.Text = text;
-
-            //
-            new PersonalText();
         }
     }
 }

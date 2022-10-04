@@ -27,6 +27,8 @@ namespace ChatAnalyzer
         private void OnApplicationExit(object sender, EventArgs e)
         {
             File.Delete("temp\\text.txt");
+            File.Delete("temp\\text1.txt");
+            File.Delete("temp\\text2.txt");
         }
 
         private void textBoxIndexAnalyze_TextChanged(object sender, EventArgs e)
