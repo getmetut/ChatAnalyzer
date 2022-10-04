@@ -56,6 +56,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.textBoxIndexAnalyze = new System.Windows.Forms.RichTextBox();
+            this.textBoxPerson2 = new System.Windows.Forms.RichTextBox();
+            this.textBoxPerson1 = new System.Windows.Forms.RichTextBox();
             this.menuStripIndexMain.SuspendLayout();
             this.groupBoxAnalyzeButtons.SuspendLayout();
             this.SuspendLayout();
@@ -228,10 +230,24 @@
             this.textBoxIndexAnalyze.Name = "textBoxIndexAnalyze";
             this.textBoxIndexAnalyze.TextChanged += new System.EventHandler(this.textBoxIndexAnalyze_TextChanged_1);
             // 
+            // textBoxPerson2
+            // 
+            resources.ApplyResources(this.textBoxPerson2, "textBoxPerson2");
+            this.textBoxPerson2.Name = "textBoxPerson2";
+            this.textBoxPerson2.ReadOnly = true;
+            // 
+            // textBoxPerson1
+            // 
+            resources.ApplyResources(this.textBoxPerson1, "textBoxPerson1");
+            this.textBoxPerson1.Name = "textBoxPerson1";
+            this.textBoxPerson1.ReadOnly = true;
+            // 
             // Index
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxPerson1);
+            this.Controls.Add(this.textBoxPerson2);
             this.Controls.Add(this.textBoxIndexAnalyze);
             this.Controls.Add(this.buttonChatsAdd);
             this.Controls.Add(this.buttonChatsRemove);
@@ -280,5 +296,7 @@
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
         private RichTextBox textBoxIndexAnalyze;
+        private RichTextBox textBoxPerson2;
+        public RichTextBox textBoxPerson1;
     }
 }

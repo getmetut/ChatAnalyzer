@@ -31,11 +31,6 @@ namespace ChatAnalyzer
             File.Delete("temp\\text2.txt");
         }
 
-        private void textBoxIndexAnalyze_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void listBoxChats_SelectedIndexChanged(object sender, EventArgs e)
         {
 

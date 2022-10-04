@@ -11,7 +11,7 @@ namespace ChatAnalyzer
         internal PersonalText()
         {
             StringBuilder text1 = new(), text2 = new();
-            string text = ChatInfo.Text;
+            string text = ChatInfoTemp.Text;
             string person1 = ChatInfo.Person1, person2 = ChatInfo.Person2;
             int index1 = text.IndexOf(person1), index2 = text.IndexOf(person2);
             bool indexFlag1 = Char.IsDigit(text[index1 + person1.Length + 1]), indexFlag2 = Char.IsDigit(text[index2 + person2.Length + 1]);
