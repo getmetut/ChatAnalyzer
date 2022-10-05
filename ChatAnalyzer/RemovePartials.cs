@@ -12,14 +12,19 @@ namespace ChatAnalyzer
         {
             if (isPersonalAnalyze)
             {
-                var dict1 = AnalyzeGeneral.CreateDictionary(ChatInfo.TextPerson1);
-                var dict2 = AnalyzeGeneral.CreateDictionary(ChatInfo.TextPerson2);
+                var dict1 = TextFunctions.CreateDictionary(ChatInfo.TextPerson1);
+                var dict2 = TextFunctions.CreateDictionary(ChatInfo.TextPerson2);
                 ChatInfoTemp.TextPerson1 = Remove(dict1);
                 ChatInfoTemp.TextPerson2 = Remove(dict2);
             }
         }
 
-        private string Remove(Dictionary<string, int> dict)
+        /// <summary>
+        /// Удаляет частицы из текста
+        /// </summary>
+        /// <param name="dict"></param>
+        /// <returns></returns>
+        private static string Remove(Dictionary<string, int> dict)
         {
             StringBuilder result = new();
             string[] partials = { "ли", "разве", "неужели", "что", "а", "вон", "вот", "именно", "точно", "ровно", "подлинно", "как", "просто",

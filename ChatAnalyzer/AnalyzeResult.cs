@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatAnalyzer
 {
+    // класс привящазаный к текстовым боксам результата анали
     internal static class AnalyzeResult
     {
         internal static string? Text { get; set; }

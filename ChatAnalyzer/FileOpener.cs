@@ -53,13 +53,21 @@ namespace ChatAnalyzer
                 }
             } */
         #endregion
-
+        /// <summary>
+        /// функция опеределния имени файла с расширением
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         internal static string JustFileName(string fileName)
         {
             int lastSeparator = fileName.LastIndexOf('\\');
-            return fileName.Substring(lastSeparator + 1);
+            return fileName[(lastSeparator + 1)..];
         }
-
+        /// <summary>
+        /// функция отчистки текста от дивов и пробелов
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         internal static string CleanText(string text)
         {
             int first, amount;
@@ -73,10 +81,15 @@ namespace ChatAnalyzer
 
             return text;
         }
-
+        /// <summary>
+        /// функция определения инициалов и полных имен
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         internal static string[] ChatNames(string text)
         {
-            string[] names = new string[2];
+            // вычисляем инициалы
+            string[] names = new string[4];
             int i = text.IndexOf("initials");
             if (i != -1)
             {
@@ -84,23 +97,32 @@ namespace ChatAnalyzer
                     i++;
                 i++;
 
-                names[0] = text.Substring(i, 5);
+                names[0] = text.Substring(i, 5).Trim();
 
                 int j = text.IndexOf("initials", i);
                 while (!Equals(text[j], '>'))
                     j++;
                 j++;
 
-                names[1] = text.Substring(j, 5);
-
-                names[0] = names[0].Trim();
-                names[1] = names[1].Trim();
-
+                names[1] = text.Substring(j, 5).Trim();
             }
             else
             {
                 MessageBox.Show("Вы открыли неподходяший файл. Персональный вид анализа будет недоступен или анализ будет работать некорректно", "Предупреждение");
             }
+
+            // вычисляем полные имена
+            names[2] = TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 7);
+            for (int j = 1; j < names[0].Length ; j++)
+            {
+                names[2] +=$" {TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 8 + names[2].Length)}";
+            }
+            names[3] = TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 7);
+            for (int j = 1; j < names[1].Length ; j++)
+            {
+                names[3] = $" {TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 8 + names[3].Length)}";
+            }
+
             return names;
         }
     }
@@ -117,7 +139,7 @@ namespace ChatAnalyzer
             // получаем инициалы
             string[] names = FileOpener.ChatNames(File.ReadAllText(filenames[0]));
             // создаем строку для объеденения файлов
-            string text = "";
+            StringBuilder text = new();
             // читаем файлы в строку и записываем в список их имена
             foreach (string filename in filenames)
             {
@@ -125,21 +147,23 @@ namespace ChatAnalyzer
                 listBoxChats.Items.Add(FileOpener.JustFileName(filename));
                 // чистим текст от дивов и пробелов
                 fileText = FileOpener.CleanText(fileText);
-                text += fileText;
-            }
-            // записываем их во временный файл
-            if (listBoxChats.Items == null)
-            {
-                File.WriteAllText("temp\\text.txt", text.ToString(), Encoding.Unicode);
-            }
-            else
-            {
-                File.AppendAllText("temp\\text.txt", text.ToString(), Encoding.Unicode);
+                text.Append(fileText);
             }
             // записываем все в класс
-            ChatInfo.Person1 = names[0];
-            ChatInfo.Person2 = names[1];
-            ChatInfo.Text = text;
+            if (names != null)
+            {
+                ChatInfo.InitialsPerson1 = names[0];
+                ChatInfo.InitialsPerson2 = names[1];
+                ChatInfo.FullNamePerson1 = names[2];
+                ChatInfo.FullNamePerson2 = names[3];
+            }
+            ChatInfo.Text = text.ToString();
+
+            // исключаем из текста полные имена
+            for (; ;)
+            {
+                ChatInfo.Text.IndexOf(ChatInfo.FullNamePerson1) != -1 && ChatInfo.Text.IndexOf(ChatInfo.FullNamePerson2) == -1
+            }
         }
     }
 }
