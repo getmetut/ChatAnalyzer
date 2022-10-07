@@ -19,9 +19,29 @@ namespace ChatAnalyzer
         /// </summary>
         internal static void RefreshTemp()
         {
-            ChatInfoTemp.Text = ChatInfo.Text;
-            ChatInfoTemp.TextPerson1 = ChatInfo.TextPerson1;
-            ChatInfoTemp.TextPerson2 = ChatInfo.TextPerson2;
+            ChatInfoTemp.Text = Text;
+            ChatInfoTemp.TextPerson1 = TextPerson1;
+            ChatInfoTemp.TextPerson2 = TextPerson2;
+        }
+
+        internal static void ShowResult(bool isPersonal)
+        {
+            Index ind = new();
+            if (isPersonal)
+            {
+                ind.textBoxPerson1.Text = TextPerson1;
+                ind.textBoxPerson2.Text = TextPerson2;
+                ind.textBoxIndexAnalyze.Visible = false;
+                ind.textBoxPerson1.Visible = true;
+                ind.textBoxPerson2.Visible = true;
+            }
+            else
+            {
+                ind.textBoxIndexAnalyze.Text = Text;
+                ind.textBoxPerson1.Visible = false;
+                ind.textBoxPerson2.Visible = false;
+                ind.textBoxIndexAnalyze.Visible = true;
+            }
         }
     }
 }

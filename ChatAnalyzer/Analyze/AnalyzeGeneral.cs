@@ -12,26 +12,12 @@ namespace ChatAnalyzer
         public string Analyze(string text)
         {
             // Создаем словарь всех слов
-            var top = TextFunctions.CreateDictionary(text);
-            // Соритруем словарь
-            var sortedTop = top.Where(t => t.Value > 100 && t.Key.Length > 2).OrderByDescending(t => t.Value);
-            // Исключаем из него лишнее и записываем в результат (рабоатет для телеги)
+            var top = TextFunctions.CreateDictionary(text, 100);
+            // запишем результат
             StringBuilder result = new();
-            string[] exept = {"игорь", "дудосов", "насвай", "data", "not", "change" +
-                "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply",
-                "photo", "file", "https", "sticker", "www", "outgoing", "change", "included",    
-                "com", "seconds", "messages", "tiktok", "amp"};
-            int exeptFlag = 0;
-            foreach (var item in sortedTop)
-            {
-                if (exeptFlag < exept.Length && !exept.Contains(item.Key))
-                    result.Append($"{item.Key,10} {item.Value}\n");
-                else
-                {
-                    exeptFlag++;
-                    continue;
-                }
-            }
+            foreach (var item in top)
+                    result.Append($"{item.Key,10} {item.Value,-3}\n"); 
+
             return result.ToString();
         }
     }

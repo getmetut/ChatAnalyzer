@@ -15,17 +15,42 @@ namespace ChatAnalyzer.Analyze
         public AnalyzeGeneralDialog()
         {
             InitializeComponent();
+
+            buttonOK.Click += buttonOK_Click;
         }
 
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            if (buttonOK.DialogResult == DialogResult.OK && radioButtonKindPersonal.Checked == true 
-                && radioButtonParticalYNo.Checked == true)
+            if (buttonOK.DialogResult == DialogResult.OK)
             {
-                new ChatAnalyzer.PersonalText();
-                new ChatAnalyzer.RemovePartials(true);
-
+                AnalyzeGeneral aG = new();
+                if (radioButtonKindPersonal.Checked == true)
+                {
+                    new ChatAnalyzer.PersonalText();
+                    if (radioButtonParticalYNo.Checked == true)
+                    {
+                        new ChatAnalyzer.RemovePartials(true);
+                    }
+                    else
+                    {
+                        ChatInfoTemp.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                        ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                    }
+                    ChatInfoTemp.ShowResult(true);
+                }
+                else
+                {
+                    if (radioButtonParticalYNo.Checked == true)
+                    {
+                        new ChatAnalyzer.RemovePartials(false);
+                    }
+                    else
+                    {
+                        ChatInfoTemp.Text = aG.Analyze(ChatInfoTemp.Text);
+                    }
+                    ChatInfoTemp.ShowResult(false);
+                }
                 
             }
         }

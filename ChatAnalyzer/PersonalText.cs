@@ -12,7 +12,7 @@ namespace ChatAnalyzer
         {
             // задаем необходимые переменные
             StringBuilder text1 = new(), text2 = new();
-            string text = ChatInfoTemp.Text;
+            string text = ChatInfo.Text;
             string person1 = ChatInfo.InitialsPerson1, person2 = ChatInfo.InitialsPerson2;
             // выше все понятно, а ниже переменные по которым мы будем определять встречание инициалов
             // и то подходит ли данное встречание или нет
@@ -54,6 +54,8 @@ namespace ChatAnalyzer
 
                     ChatInfo.TextPerson1 = text1.ToString();
                     ChatInfo.TextPerson2 = text2.ToString();
+                    ChatInfoTemp.TextPerson1 = text1.ToString();
+                    ChatInfoTemp.TextPerson2 = text2.ToString();
                 }
             }
         }

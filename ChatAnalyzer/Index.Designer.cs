@@ -295,8 +295,8 @@
         private Button buttonChatsAdd;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
-        private RichTextBox textBoxIndexAnalyze;
-        private RichTextBox textBoxPerson2;
-        public RichTextBox textBoxPerson1;
+        internal RichTextBox textBoxIndexAnalyze;
+        internal RichTextBox textBoxPerson2;
+        internal RichTextBox textBoxPerson1;
     }
 }

@@ -12,10 +12,12 @@ namespace ChatAnalyzer
         {
             if (isPersonalAnalyze)
             {
-                var dict1 = TextFunctions.CreateDictionary(ChatInfo.TextPerson1);
-                var dict2 = TextFunctions.CreateDictionary(ChatInfo.TextPerson2);
-                ChatInfoTemp.TextPerson1 = Remove(dict1);
-                ChatInfoTemp.TextPerson2 = Remove(dict2);
+                ChatInfoTemp.TextPerson1 = Remove(TextFunctions.CreateDictionary(ChatInfo.TextPerson1, 100));
+                ChatInfoTemp.TextPerson2 = Remove(TextFunctions.CreateDictionary(ChatInfo.TextPerson2, 100));
+            }
+            else
+            {
+                ChatInfoTemp.Text = Remove(TextFunctions.CreateDictionary(ChatInfo.Text, 100));
             }
         }
 
@@ -29,17 +31,18 @@ namespace ChatAnalyzer
             StringBuilder result = new();
             string[] partials = { "ли", "разве", "неужели", "что", "а", "вон", "вот", "именно", "точно", "ровно", "подлинно", "как", "просто",
                 "прямо", "еще", "и", "же", "лишь", "уж", "ведь", "даже", "просто", "прямо", "все",
-                "только","лишь","исключительно","только","всего","хоть","","бы","единственно","разве","неужели","вряд","едва","навряд",
+                "только","лишь","исключительно","только","всего","хоть","бы","единственно","разве","неужели","вряд","едва","навряд",
                 "авось","да","ну","так","точно"};
             int exeptFlag = 0;
             foreach (var item in dict)
             {
                 if (exeptFlag < partials.Length && !partials.Contains(item.Key))
-                    result.Append($"{item.Key,10} {item.Value}\n");
+                    result.Append($"{item.Key,10} {item.Value, -3}\n");
                 else
                 {
                     exeptFlag++;
-                    continue;
+                    if (exeptFlag == partials.Length)
+                        break;
                 }
             }
             return result.ToString();

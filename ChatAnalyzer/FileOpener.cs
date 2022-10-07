@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ChatAnalyzer
@@ -113,12 +114,12 @@ namespace ChatAnalyzer
 
             // вычисляем полные имена
             names[2] = TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 7);
-            for (int j = 1; j < names[0].Length ; j++)
+            for (int j = 1; j < names[0].Length; j++)
             {
-                names[2] +=$" {TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 8 + names[2].Length)}";
+                names[2] += $" {TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 8 + names[2].Length)}";
             }
             names[3] = TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 7);
-            for (int j = 1; j < names[1].Length ; j++)
+            for (int j = 1; j < names[1].Length; j++)
             {
                 names[3] = $" {TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 8 + names[3].Length)}";
             }
@@ -149,25 +150,43 @@ namespace ChatAnalyzer
                 fileText = FileOpener.CleanText(fileText);
                 text.Append(fileText);
             }
+
             // записываем все в класс
+            ChatInfo.Text = text.ToString();
             if (names != null)
             {
                 ChatInfo.InitialsPerson1 = names[0];
                 ChatInfo.InitialsPerson2 = names[1];
                 ChatInfo.FullNamePerson1 = names[2];
                 ChatInfo.FullNamePerson2 = names[3];
-            }
-            ChatInfo.Text = text.ToString();
 
-            // исключаем из текста полные имена
-            for (; ;)
-            {
-                ChatInfo.Text.IndexOf(ChatInfo.FullNamePerson1) != -1 && ChatInfo.Text.IndexOf(ChatInfo.FullNamePerson2) == -1
+                // исключаем из текста полные имена
+                int index1 = ChatInfo.Text.IndexOf(names[2]), index2 = ChatInfo.Text.IndexOf(names[3]);
+                while (index1 != -1 && index2 != -1)
+                {
+                    if (TextFunctions.IsNecessaryElement(ChatInfo.Text, index1, -1))
+                    {
+                        ChatInfo.Text.Remove(index1, names[2].Length);
+                        index1 = ChatInfo.Text.IndexOf(names[2], index1 + 1);
+                    }
+                    else
+                    {
+                        index1 = ChatInfo.Text.IndexOf(names[2], index1 + 1);
+                    }
+
+                    if (TextFunctions.IsNecessaryElement(ChatInfo.Text, index1, -1))
+                    {
+                        ChatInfo.Text.Remove(index1, names[3].Length);
+                        index2 = ChatInfo.Text.IndexOf(names[3], index2 + 1);
+                    }
+                    else
+                    {
+                        index2 = ChatInfo.Text.IndexOf(names[3], index2 + 1);
+                    }
+                }
             }
+
+            ChatInfoTemp.Text = ChatInfo.Text;
         }
     }
 }
-
-
-
-
