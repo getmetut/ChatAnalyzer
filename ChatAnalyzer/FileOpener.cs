@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -82,15 +83,16 @@ namespace ChatAnalyzer
 
             return text;
         }
+
         /// <summary>
         /// функция определения инициалов и полных имен
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        internal static string[] ChatNames(string text)
+        internal static string[] ChatInits(string text)
         {
             // вычисляем инициалы
-            string[] names = new string[4];
+            string[] inits = new string[2];
             int i = text.IndexOf("initials");
             if (i != -1)
             {
@@ -98,32 +100,58 @@ namespace ChatAnalyzer
                     i++;
                 i++;
 
-                names[0] = text.Substring(i, 5).Trim();
+                inits[0] = text.Substring(i, 5).Trim();
 
                 int j = text.IndexOf("initials", i);
                 while (!Equals(text[j], '>'))
                     j++;
                 j++;
 
-                names[1] = text.Substring(j, 5).Trim();
+                inits[1] = text.Substring(j, 5).Trim();
             }
             else
             {
                 MessageBox.Show("Вы открыли неподходяший файл. Персональный вид анализа будет недоступен или анализ будет работать некорректно", "Предупреждение");
             }
 
-            // вычисляем полные имена
-            names[2] = TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 7);
-            for (int j = 1; j < names[0].Length; j++)
+            return inits;
+        }
+
+        /// <summary>
+        /// вычислем полные имена
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="inits"></param>
+        /// <returns></returns>
+        internal static string[] ChatFullNames(List<string> wordsList, string[] inits)
+        {
+            string[] names = new string[2] {"", ""};
+            for(int i = 2; i < wordsList.Count; i++)
             {
-                names[2] += $" {TextFunctions.GetWord(text, text.IndexOf(names[0]) + names[0].Length + 8 + names[2].Length)}";
-            }
-            names[3] = TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 7);
-            for (int j = 1; j < names[1].Length; j++)
-            {
-                names[3] = $" {TextFunctions.GetWord(text, text.IndexOf(names[1]) + names[1].Length + 8 + names[3].Length)}";
+                if (TextFunctions.IsNecessaryElementString(wordsList.ToArray(), i, -2, inits[0]))
+                {
+                    for(int j = 0; j < inits[0].Length; j++)
+                    {
+                        names[0] += " " + wordsList[i + j];
+                    }
+                    break;
+                }
             }
 
+            for (int i = 2; i < wordsList.Count; i++)
+            {
+                if (TextFunctions.IsNecessaryElementString(wordsList.ToArray(), i, -2, inits[1]))
+                {
+                    for (int j = 0; j < inits[1].Length; j++)
+                    {
+                        names[1] += " " + wordsList[i + j];
+                    }
+                    break;
+                }
+            }
+
+            names[0].Trim();
+            names[1].Trim();
             return names;
         }
     }
@@ -138,7 +166,7 @@ namespace ChatAnalyzer
             // получаем выбранные файлы
             string[] filenames = openFileDialog1.FileNames;
             // получаем инициалы
-            string[] names = FileOpener.ChatNames(File.ReadAllText(filenames[0]));
+            string[] inits = FileOpener.ChatInits(File.ReadAllText(filenames[0]));
             // создаем строку для объеденения файлов
             StringBuilder text = new();
             // читаем файлы в строку и записываем в список их имена
@@ -153,40 +181,32 @@ namespace ChatAnalyzer
 
             // записываем все в класс
             ChatInfo.Text = text.ToString();
+            text.Clear();
+            ChatInfo.WordsList = ChatInfo.Text.Split(" ").ToList();
+            string[] names = FileOpener.ChatFullNames(ChatInfo.WordsList, inits);
+
             if (names != null)
             {
-                ChatInfo.InitialsPerson1 = names[0];
-                ChatInfo.InitialsPerson2 = names[1];
-                ChatInfo.FullNamePerson1 = names[2];
-                ChatInfo.FullNamePerson2 = names[3];
+                ChatInfo.InitialsPerson1 = inits[0];
+                ChatInfo.InitialsPerson2 = inits[1];
+                ChatInfo.FullNamePerson1 = names[0];
+                ChatInfo.FullNamePerson2 = names[1];
 
                 // исключаем из текста полные имена
-                int index1 = ChatInfo.Text.IndexOf(names[2]), index2 = ChatInfo.Text.IndexOf(names[3]);
-                while (index1 != -1 && index2 != -1)
+                text.Append(ChatInfo.WordsList[0]).Append(ChatInfo.WordsList[1]);
+                for (int i = 2; i < ChatInfo.WordsList.Count; i++)
                 {
-                    if (TextFunctions.IsNecessaryElement(ChatInfo.Text, index1, -1))
+                    if (TextFunctions.IsNecessaryElementString(ChatInfo.WordsList.ToArray(), i, -2, inits[1]))
                     {
-                        ChatInfo.Text.Remove(index1, names[2].Length);
-                        index1 = ChatInfo.Text.IndexOf(names[2], index1 + 1);
+                        ChatInfo.WordsList.Remove(ChatInfo.WordsList[i]);
                     }
                     else
                     {
-                        index1 = ChatInfo.Text.IndexOf(names[2], index1 + 1);
-                    }
-
-                    if (TextFunctions.IsNecessaryElement(ChatInfo.Text, index1, -1))
-                    {
-                        ChatInfo.Text.Remove(index1, names[3].Length);
-                        index2 = ChatInfo.Text.IndexOf(names[3], index2 + 1);
-                    }
-                    else
-                    {
-                        index2 = ChatInfo.Text.IndexOf(names[3], index2 + 1);
+                        text.Append(ChatInfo.WordsList[i] + " ");
                     }
                 }
+                ChatInfo.Text = text.ToString().Trim();
             }
-
-            ChatInfoTemp.Text = ChatInfo.Text;
         }
     }
 }

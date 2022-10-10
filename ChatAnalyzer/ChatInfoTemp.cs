@@ -19,9 +19,9 @@ namespace ChatAnalyzer
         /// </summary>
         internal static void RefreshTemp()
         {
-            ChatInfoTemp.Text = Text;
-            ChatInfoTemp.TextPerson1 = TextPerson1;
-            ChatInfoTemp.TextPerson2 = TextPerson2;
+            ChatInfoTemp.Text = ChatInfo.Text;
+            ChatInfoTemp.TextPerson1 = ChatInfo.TextPerson1;
+            ChatInfoTemp.TextPerson2 = ChatInfo.TextPerson2;
         }
 
         internal static void ShowResult(bool isPersonal)

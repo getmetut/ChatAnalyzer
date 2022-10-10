@@ -17,28 +17,16 @@ namespace ChatAnalyzer
         internal static Dictionary<string, int> CreateDictionary(string text, int amount)
         {
             var top = new Dictionary<string, int>();
-            int last, first; string word;
-            for (int i = 0; i < text.Length; i++)
+            string[] words = text.Split(' ');
+            for (int i = 0; i < words.Count(); i++)
             {
-                if (char.IsLetter(text[i]))
+                if (top.ContainsKey(words[i]))
                 {
-                    first = i++; last = i;
-                    while (char.IsLetter(text[last]))
-                    {
-                        last++;
-                    }
-                    i = last--;
-
-                    word = text.Substring(first, last - first + 1).Trim().ToLower();
-
-                    if (top.ContainsKey(word))
-                    {
-                        top[word]++;
-                    }
-                    else
-                    {
-                        top[word] = 1;
-                    }
+                    top[words[i]]++;
+                }
+                else
+                {
+                    top[words[i]] = 1;
                 }
             }
             
@@ -84,9 +72,14 @@ namespace ChatAnalyzer
         /// <param name="text"></param>
         /// <param name="i"></param>
         /// <param name="flag"></param>
-        internal static bool IsNecessaryElement(string text, int i, int flag)
+        internal static bool IsNecessaryElementDigit(string text, int i, int flag)
         {
             return Char.IsDigit(text[i + flag]);
+        }
+
+        internal static bool IsNecessaryElementString(string[] strings, int i, int j, string flag)
+        {
+            return Equals(strings[i + j], flag);
         }
     }
 }

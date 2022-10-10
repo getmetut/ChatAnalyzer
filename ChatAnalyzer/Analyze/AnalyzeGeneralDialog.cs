@@ -22,8 +22,7 @@ namespace ChatAnalyzer.Analyze
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            if (buttonOK.DialogResult == DialogResult.OK)
-            {
+            
                 AnalyzeGeneral aG = new();
                 if (radioButtonKindPersonal.Checked == true)
                 {
@@ -35,7 +34,7 @@ namespace ChatAnalyzer.Analyze
                     else
                     {
                         ChatInfoTemp.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
-                        ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                        ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
                     }
                     ChatInfoTemp.ShowResult(true);
                 }
@@ -51,8 +50,8 @@ namespace ChatAnalyzer.Analyze
                     }
                     ChatInfoTemp.ShowResult(false);
                 }
-                
-            }
+                this.Close();
+            
         }
     }
 }
