@@ -12,7 +12,7 @@ namespace ChatAnalyzer.Analyze
 {
     public partial class AnalyzeGeneralDialog : Form
     {
-        public AnalyzeGeneralDialog()
+        public AnalyzeGeneralDialog(Form form)
         {
             InitializeComponent();
 

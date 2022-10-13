@@ -45,7 +45,7 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// функция получает строку и номер элемента и начная с этого элемента записывает слово и возвращает его
+        /// Функция получает строку и номер элемента и начная с этого элемента записывает слово и возвращает его
         /// </summary>
         /// <param name="text"></param>
         /// <param name="i"></param>
@@ -61,25 +61,10 @@ namespace ChatAnalyzer
             return word.ToString();
         }
 
-        internal static void ExeptWords()
+        internal static bool IsTime(List<string> wordsList, int i)
         {
-            
-        }
-
-        /// <summary>
-        /// функция дает знать нужный ли мы нашли элемент в тексте по некоему символу с номером flag
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="i"></param>
-        /// <param name="flag"></param>
-        internal static bool IsNecessaryElementDigit(string text, int i, int flag)
-        {
-            return Char.IsDigit(text[i + flag]);
-        }
-
-        internal static bool IsNecessaryElementString(string[] strings, int i, int j, string flag)
-        {
-            return Equals(strings[i + j], flag);
+            return wordsList[i].Length > 4 && Char.IsDigit(wordsList[i][0]) && Char.IsDigit(wordsList[i][1]) &&
+                Char.IsDigit(wordsList[i][3]) && Char.IsDigit(wordsList[i][4]);
         }
     }
 }

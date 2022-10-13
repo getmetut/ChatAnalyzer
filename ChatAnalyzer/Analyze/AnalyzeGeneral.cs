@@ -29,7 +29,7 @@ namespace ChatAnalyzer
             if (ChatInfo.Text != null)
             {
                 ChatInfoTemp.RefreshTemp();
-                Analyze.AnalyzeGeneralDialog aGD = new();
+                Analyze.AnalyzeGeneralDialog aGD = new(this);
                 aGD.ShowDialog();
             }
         }

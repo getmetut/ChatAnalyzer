@@ -89,70 +89,53 @@ namespace ChatAnalyzer
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        internal static string[] ChatInits(string text)
+        internal static string[] ChatInitsNames(List<string> wordsList)
         {
-            // вычисляем инициалы
-            string[] inits = new string[2];
-            int i = text.IndexOf("initials");
-            if (i != -1)
-            {
-                while (!Equals(text[i], '>'))
-                    i++;
-                i++;
-
-                inits[0] = text.Substring(i, 5).Trim();
-
-                int j = text.IndexOf("initials", i);
-                while (!Equals(text[j], '>'))
-                    j++;
-                j++;
-
-                inits[1] = text.Substring(j, 5).Trim();
-            }
-            else
-            {
-                MessageBox.Show("Вы открыли неподходяший файл. Персональный вид анализа будет недоступен или анализ будет работать некорректно", "Предупреждение");
-            }
-
-            return inits;
-        }
-
-        /// <summary>
-        /// вычислем полные имена
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="inits"></param>
-        /// <returns></returns>
-        internal static string[] ChatFullNames(List<string> wordsList, string[] inits)
-        {
-            string[] names = new string[2] {"", ""};
-            for(int i = 2; i < wordsList.Count; i++)
-            {
-                if (TextFunctions.IsNecessaryElementString(wordsList.ToArray(), i, -2, inits[0]))
+            // создаем массив первые два элемента инициалы вторые имена
+            string[] initsNames = new string[4];
+            // начием идти по всем словам листа
+            for (int i = 1; i < wordsList.Count; i++)
+                // находим жлемент массива который обозначает время отправки сообщения
+                if (TextFunctions.IsTime(wordsList, i))
                 {
-                    for(int j = 0; j < inits[0].Length; j++)
+                    bool flag = true;
+                    // и проверяем является ли найденный эелемент инициалами 
+                    for (int j = 0; j < wordsList[i - 1].Length; j++)
+                        if (!Equals(wordsList[i - 1][j], wordsList[i + j + 1][0]))
+                            flag = false;
+                    // если все верно записываем инициалы и имена в массив
+                    if (flag)
                     {
-                        names[0] += " " + wordsList[i + j];
+                        initsNames[0] = wordsList[i - 1];
+                        for (int j = 0; j < initsNames[0].Length; j++)
+                        {
+                            initsNames[2] += " " + wordsList[i + j + 1];
+                        }
+                        initsNames[2] = initsNames[2].Trim();
+                        break;
                     }
-                    break;
                 }
-            }
 
-            for (int i = 2; i < wordsList.Count; i++)
-            {
-                if (TextFunctions.IsNecessaryElementString(wordsList.ToArray(), i, -2, inits[1]))
+            // повторяем все но с проверкой на несовпадение с уже найдеными инициалами
+            for (int i = 1; i < wordsList.Count; i++)
+                if (TextFunctions.IsTime(wordsList, i) && !Equals(wordsList[i - 1], initsNames[0]))
                 {
-                    for (int j = 0; j < inits[1].Length; j++)
+                    bool flag = true;
+                    for (int j = 0; j < wordsList[i - 1].Length; j++)
+                        if (!Equals(wordsList[i - 1][j], wordsList[i + j + 1][0]))
+                            flag = false;
+                    if (flag)
                     {
-                        names[1] += " " + wordsList[i + j];
+                        initsNames[1] = wordsList[i - 1];
+                        for (int k = 0; k < initsNames[1].Length; k++)
+                        {
+                            initsNames[3] += " " + wordsList[i + k + 1];
+                        }
+                        initsNames[3] = initsNames[3].Trim();
+                        break;
                     }
-                    break;
                 }
-            }
-
-            names[0].Trim();
-            names[1].Trim();
-            return names;
+            return initsNames;
         }
     }
 
@@ -165,8 +148,7 @@ namespace ChatAnalyzer
             // объект обработчика открытых файлов
             // получаем выбранные файлы
             string[] filenames = openFileDialog1.FileNames;
-            // получаем инициалы
-            string[] inits = FileOpener.ChatInits(File.ReadAllText(filenames[0]));
+            
             // создаем строку для объеденения файлов
             StringBuilder text = new();
             // читаем файлы в строку и записываем в список их имена
@@ -179,34 +161,33 @@ namespace ChatAnalyzer
                 text.Append(fileText);
             }
 
-            // записываем все в класс
-            ChatInfo.Text = text.ToString();
+            // записываем записываем в статику и читим стринг билдер шобы пересобрать его уже без имен
+            ChatInfo.WordsList = text.ToString().Split(" ").ToList();
             text.Clear();
-            ChatInfo.WordsList = ChatInfo.Text.Split(" ").ToList();
-            string[] names = FileOpener.ChatFullNames(ChatInfo.WordsList, inits);
+            // получаем инициалы и полные имена
+            string[] initsNames = FileOpener.ChatInitsNames(ChatInfo.WordsList);
 
-            if (names != null)
+            if (initsNames != null)
             {
-                ChatInfo.InitialsPerson1 = inits[0];
-                ChatInfo.InitialsPerson2 = inits[1];
-                ChatInfo.FullNamePerson1 = names[0];
-                ChatInfo.FullNamePerson2 = names[1];
+                ChatInfo.InitialsPerson1 = initsNames[0];
+                ChatInfo.InitialsPerson2 = initsNames[1];
+                ChatInfo.FullNamePerson1 = initsNames[2];
+                ChatInfo.FullNamePerson2 = initsNames[3];
 
                 // исключаем из текста полные имена
-                text.Append(ChatInfo.WordsList[0]).Append(ChatInfo.WordsList[1]);
                 for (int i = 2; i < ChatInfo.WordsList.Count; i++)
                 {
-                    if (TextFunctions.IsNecessaryElementString(ChatInfo.WordsList.ToArray(), i, -2, inits[1]))
+                    if ( Equals(ChatInfo.WordsList[i - 2], initsNames[0]) ||
+                         Equals(ChatInfo.WordsList[i - 2], initsNames[1]) )
                     {
-                        ChatInfo.WordsList.Remove(ChatInfo.WordsList[i]);
+                        for (int j = 0; j < ChatInfo.WordsList[i - 2].Length; j++)
+                            ChatInfo.WordsList.RemoveAt(i);
                     }
                     else
-                    {
-                        text.Append(ChatInfo.WordsList[i] + " ");
-                    }
+                        text.Append(" " + ChatInfo.WordsList[i]);
                 }
-                ChatInfo.Text = text.ToString().Trim();
             }
+            ChatInfo.Text = Text.ToString().Trim();
         }
     }
 }

@@ -42,6 +42,7 @@ namespace ChatAnalyzer
                 ind.textBoxPerson2.Visible = false;
                 ind.textBoxIndexAnalyze.Visible = true;
             }
+            ind.Show();
         }
     }
 }
