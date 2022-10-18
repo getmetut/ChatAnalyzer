@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ChatAnalyzer.Program;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ChatAnalyzer
@@ -29,7 +30,7 @@ namespace ChatAnalyzer
             if (ChatInfo.Text != null)
             {
                 ChatInfoTemp.RefreshTemp();
-                Analyze.AnalyzeGeneralDialog aGD = new(this);
+                Analyze.AnalyzeGeneralDialog aGD = new(new IndexChanger(ShowResult));
                 aGD.ShowDialog();
             }
         }

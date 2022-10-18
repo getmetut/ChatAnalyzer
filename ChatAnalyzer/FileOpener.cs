@@ -187,7 +187,7 @@ namespace ChatAnalyzer
                         text.Append(" " + ChatInfo.WordsList[i]);
                 }
             }
-            ChatInfo.Text = Text.ToString().Trim();
+            ChatInfo.Text = text.ToString().Trim();
         }
     }
 }

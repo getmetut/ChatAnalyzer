@@ -23,16 +23,14 @@ namespace ChatAnalyzer
                     {
                         text1.Append(" " + wordsList[j]);
                     }
-                    i = wordsList.FindIndex(i, w => Equals(w, person2)) - 1;
                 }
 
                 if (Equals(wordsList[i], person2) && TextFunctions.IsTime(wordsList, i + 1))
                 {
                     for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person1)); j++)
                     {
-                        text1.Append(" " + wordsList[j]);
+                        text2.Append(" " + wordsList[j]);
                     }
-                    i = wordsList.FindIndex(i, w => Equals(w, person1)) - 1;
                 }
             }
             ChatInfo.TextPerson1 = text1.ToString();

@@ -58,8 +58,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="toolStripMenuItemFileSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
   <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
   </data>
   <data name="toolStripMenuItemAnalyze.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
@@ -79,42 +103,6 @@
   </data>
   <data name="menuStripIndexMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>841, 24</value>
-  </data>
-  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemFileSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>673, 32</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 197</value>
   </data>
   <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 162</value>
@@ -160,6 +148,18 @@
   </data>
   <data name="buttonAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 28</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>673, 32</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 197</value>
   </data>
   <data name="labelResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>235, 32</value>

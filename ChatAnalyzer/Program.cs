@@ -1,6 +1,6 @@
 namespace ChatAnalyzer
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -13,5 +13,7 @@ namespace ChatAnalyzer
             ApplicationConfiguration.Initialize();
             Application.Run(new Index());
         }
+        //делегат который будет применяться для вывода результатов на главную форму
+        public delegate void IndexChanger(bool isPersonal);
     }
 }

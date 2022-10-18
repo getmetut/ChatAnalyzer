@@ -17,7 +17,7 @@ namespace ChatAnalyzer
         internal static Dictionary<string, int> CreateDictionary(string text, int amount)
         {
             var top = new Dictionary<string, int>();
-            string[] words = text.Split(' ');
+            string[] words = text.ToLower().Split(' ');
             for (int i = 0; i < words.Count(); i++)
             {
                 if (top.ContainsKey(words[i]))
@@ -41,7 +41,7 @@ namespace ChatAnalyzer
                     top.Remove(item.Key);
             }
             // Соритруем словарь и возвращаем
-            return top.Where(t => t.Value > amount && t.Key.Length > 2).OrderByDescending(t => t.Value).ToDictionary(t => t.Key, t => t.Value);
+            return top.Where( t => t.Value > amount && t.Key.Length > 2 ).OrderByDescending( t => t.Value ).ToDictionary( t => t.Key, t => t.Value );
         }
 
         /// <summary>

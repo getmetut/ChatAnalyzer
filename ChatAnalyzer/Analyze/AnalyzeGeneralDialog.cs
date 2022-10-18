@@ -12,46 +12,45 @@ namespace ChatAnalyzer.Analyze
 {
     public partial class AnalyzeGeneralDialog : Form
     {
-        public AnalyzeGeneralDialog(Form form)
+        private ChatAnalyzer.Program.IndexChanger d;
+        public AnalyzeGeneralDialog(ChatAnalyzer.Program.IndexChanger sender)
         {
             InitializeComponent();
-
+            d = sender;
             buttonOK.Click += buttonOK_Click;
         }
 
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            
-                AnalyzeGeneral aG = new();
-                if (radioButtonKindPersonal.Checked == true)
+            AnalyzeGeneral aG = new();
+            if (radioButtonKindPersonal.Checked == true)
+            {
+                new ChatAnalyzer.PersonalText();
+                if (radioButtonParticalYNo.Checked == true)
                 {
-                    new ChatAnalyzer.PersonalText();
-                    if (radioButtonParticalYNo.Checked == true)
-                    {
-                        new ChatAnalyzer.RemovePartials(true);
-                    }
-                    else
-                    {
-                        ChatInfoTemp.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
-                        ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
-                    }
-                    ChatInfoTemp.ShowResult(true);
+                    new ChatAnalyzer.RemovePartials(true);
                 }
                 else
                 {
-                    if (radioButtonParticalYNo.Checked == true)
-                    {
-                        new ChatAnalyzer.RemovePartials(false);
-                    }
-                    else
-                    {
-                        ChatInfoTemp.Text = aG.Analyze(ChatInfoTemp.Text);
-                    }
-                    ChatInfoTemp.ShowResult(false);
+                    ChatInfoTemp.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                    ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
                 }
-                this.Close();
-            
+                d(true);
+            }
+            else
+            {
+                if (radioButtonParticalYNo.Checked == true)
+                {
+                    new ChatAnalyzer.RemovePartials(false);
+                }
+                else
+                {
+                    ChatInfoTemp.Text = aG.Analyze(ChatInfoTemp.Text);
+                }
+                d(false);
+            }
+            this.Close();
         }
     }
 }

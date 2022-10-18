@@ -20,6 +20,25 @@
             base.Dispose(disposing);
         }
 
+        internal void ShowResult(bool isPersonal)
+        {
+            if (isPersonal)
+            {
+                textBoxPerson1.Text = ChatInfoTemp.TextPerson1;
+                textBoxPerson2.Text = ChatInfoTemp.TextPerson2;
+                textBoxIndexAnalyze.Visible = false;
+                textBoxPerson1.Visible = true;
+                textBoxPerson2.Visible = true;
+            }
+            else
+            {
+                textBoxIndexAnalyze.Text = ChatInfoTemp.Text;
+                textBoxPerson1.Visible = false;
+                textBoxPerson2.Visible = false;
+                textBoxIndexAnalyze.Visible = true;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -233,12 +252,14 @@
             // textBoxPerson2
             // 
             resources.ApplyResources(this.textBoxPerson2, "textBoxPerson2");
+            this.textBoxPerson2.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxPerson2.Name = "textBoxPerson2";
             this.textBoxPerson2.ReadOnly = true;
             // 
             // textBoxPerson1
             // 
             resources.ApplyResources(this.textBoxPerson1, "textBoxPerson1");
+            this.textBoxPerson1.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxPerson1.Name = "textBoxPerson1";
             this.textBoxPerson1.ReadOnly = true;
             // 
