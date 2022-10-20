@@ -24,15 +24,15 @@
         {
             if (isPersonal)
             {
-                textBoxPerson1.Text = ChatInfoTemp.TextPerson1;
-                textBoxPerson2.Text = ChatInfoTemp.TextPerson2;
+                textBoxPerson1.Text = ChatInfo.FullNamePerson1 + "\n" + AnalyzeResult.TextPerson1;
+                textBoxPerson2.Text = ChatInfo.FullNamePerson2 + "\n" + AnalyzeResult.TextPerson2;
                 textBoxIndexAnalyze.Visible = false;
                 textBoxPerson1.Visible = true;
                 textBoxPerson2.Visible = true;
             }
             else
             {
-                textBoxIndexAnalyze.Text = ChatInfoTemp.Text;
+                textBoxIndexAnalyze.Text = AnalyzeResult.Text;
                 textBoxPerson1.Visible = false;
                 textBoxPerson2.Visible = false;
                 textBoxIndexAnalyze.Visible = true;

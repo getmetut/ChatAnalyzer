@@ -85,7 +85,7 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// функция определения инициалов и полных имен
+        /// Функция определения инициалов и полных имен
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -96,7 +96,7 @@ namespace ChatAnalyzer
             // начием идти по всем словам листа
             for (int i = 1; i < wordsList.Count; i++)
                 // находим жлемент массива который обозначает время отправки сообщения
-                if (TextFunctions.IsTime(wordsList, i))
+                if (TextFunctions.IsTime(wordsList[i]))
                 {
                     bool flag = true;
                     // и проверяем является ли найденный эелемент инициалами 
@@ -118,7 +118,7 @@ namespace ChatAnalyzer
 
             // повторяем все но с проверкой на несовпадение с уже найдеными инициалами
             for (int i = 1; i < wordsList.Count; i++)
-                if (TextFunctions.IsTime(wordsList, i) && !Equals(wordsList[i - 1], initsNames[0]))
+                if (TextFunctions.IsTime(wordsList[i]) && !Equals(wordsList[i - 1], initsNames[0]))
                 {
                     bool flag = true;
                     for (int j = 0; j < wordsList[i - 1].Length; j++)
@@ -148,8 +148,9 @@ namespace ChatAnalyzer
             // объект обработчика открытых файлов
             // получаем выбранные файлы
             string[] filenames = openFileDialog1.FileNames;
-            
-            // создаем строку для объеденения файлов
+
+            // создаем стринг билдер для объеденения файлов
+
             StringBuilder text = new();
             // читаем файлы в строку и записываем в список их имена
             foreach (string filename in filenames)
@@ -161,33 +162,39 @@ namespace ChatAnalyzer
                 text.Append(fileText);
             }
 
-            // записываем записываем в статику и читим стринг билдер шобы пересобрать его уже без имен
-            ChatInfo.WordsList = text.ToString().Split(" ").ToList();
+            // записываем записываем в статику и чиcтим стринг билдер шобы пересобрать его уже без имен
+            List<string> newList = text.ToString().Split(" ").ToList();
+            if (ChatInfo.WordsList == null)
+                ChatInfo.WordsList = newList;
+            else
+                foreach (var word in newList)
+                    ChatInfo.WordsList.Add(word);
             text.Clear();
             // получаем инициалы и полные имена
-            string[] initsNames = FileOpener.ChatInitsNames(ChatInfo.WordsList);
-
-            if (initsNames != null)
+            string[] initsNames = new string[4];
+            if (ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null)
             {
+                initsNames = FileOpener.ChatInitsNames(ChatInfo.WordsList);
                 ChatInfo.InitialsPerson1 = initsNames[0];
                 ChatInfo.InitialsPerson2 = initsNames[1];
                 ChatInfo.FullNamePerson1 = initsNames[2];
                 ChatInfo.FullNamePerson2 = initsNames[3];
+            }
 
-                // исключаем из текста полные имена
-                for (int i = 2; i < ChatInfo.WordsList.Count; i++)
+            // исключаем из текста полные имена
+            for (int i = 2; i < newList.Count; i++)
+            {
+                if ((Equals(newList[i - 2], ChatInfo.InitialsPerson1) ||
+                     Equals(newList[i - 2], ChatInfo.InitialsPerson2)) && TextFunctions.IsTime(newList[i - 1]))
                 {
-                    if ( Equals(ChatInfo.WordsList[i - 2], initsNames[0]) ||
-                         Equals(ChatInfo.WordsList[i - 2], initsNames[1]) )
-                    {
-                        for (int j = 0; j < ChatInfo.WordsList[i - 2].Length; j++)
-                            ChatInfo.WordsList.RemoveAt(i);
-                    }
-                    else
-                        text.Append(" " + ChatInfo.WordsList[i]);
+                    for (int j = 0; j < newList[i - 2].Length; j++)
+                        newList.RemoveAt(i);
                 }
             }
-            ChatInfo.Text = text.ToString().Trim();
+
+            foreach (string word in newList)
+                ChatInfo.Text += " " + word;
+            ChatInfo.Text = ChatInfo.Text;
         }
     }
 }

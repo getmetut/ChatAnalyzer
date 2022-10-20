@@ -13,7 +13,7 @@ namespace ChatAnalyzer
         public string Analyze(string text)
         {
             // Создаем словарь всех слов
-            var top = TextFunctions.CreateDictionary(text, 100);
+            var top = TextFunctions.CreateDictionary(text, Constants.tExept);
             // запишем результат
             StringBuilder result = new();
             foreach (var item in top)

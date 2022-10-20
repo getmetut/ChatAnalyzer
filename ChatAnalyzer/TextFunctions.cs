@@ -14,7 +14,7 @@ namespace ChatAnalyzer
         /// <param name="text"></param>
         /// <param name="amount"></param>
         /// <returns></returns>
-        internal static Dictionary<string, int> CreateDictionary(string text, int amount)
+        internal static Dictionary<string, int> CreateDictionary(string text, string[] exept)
         {
             var top = new Dictionary<string, int>();
             string[] words = text.ToLower().Split(' ');
@@ -30,18 +30,13 @@ namespace ChatAnalyzer
                 }
             }
             
-            // Исклюсчаем ненужные слова (для телеги)
-            string[] exept = {"data", "not", "change",
-                "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply",
-                "photo", "file", "https", "sticker", "www", "outgoing", "change", "included",
-                "com", "seconds", "messages", "tiktok", "amp"};
+            // Исклюсчаем ненужные слова
             foreach (var item in top)
             {
                 if (exept.Contains(item.Key))
                     top.Remove(item.Key);
             }
-            // Соритруем словарь и возвращаем
-            return top.Where( t => t.Value > amount && t.Key.Length > 2 ).OrderByDescending( t => t.Value ).ToDictionary( t => t.Key, t => t.Value );
+            return top;
         }
 
         /// <summary>
@@ -61,10 +56,16 @@ namespace ChatAnalyzer
             return word.ToString();
         }
 
-        internal static bool IsTime(List<string> wordsList, int i)
+        /// <summary>
+        /// проверяет является ли элемент временем формата XX:XX
+        /// </summary>
+        /// <param name="wordsList"></param>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        internal static bool IsTime(string word)
         {
-            return wordsList[i].Length > 4 && Char.IsDigit(wordsList[i][0]) && Char.IsDigit(wordsList[i][1]) &&
-                Char.IsDigit(wordsList[i][3]) && Char.IsDigit(wordsList[i][4]);
+            return word.Length > 4 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) &&
+                Char.IsDigit(word[3]) && Char.IsDigit(word[4]);
         }
     }
 }

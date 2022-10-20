@@ -17,7 +17,7 @@ namespace ChatAnalyzer
             
             for(int i = 0; i < wordsList.Count; i++)
             {
-                if (Equals(wordsList[i], person1) && TextFunctions.IsTime(wordsList, i + 1))
+                if (Equals(wordsList[i], person1) && TextFunctions.IsTime(wordsList[i + 1]))
                 {
                     for(int j = i; j < wordsList.FindIndex(i, w => Equals(w, person2)); j++)
                     {
@@ -25,7 +25,7 @@ namespace ChatAnalyzer
                     }
                 }
 
-                if (Equals(wordsList[i], person2) && TextFunctions.IsTime(wordsList, i + 1))
+                if (Equals(wordsList[i], person2) && TextFunctions.IsTime(wordsList[i + 1]))
                 {
                     for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person1)); j++)
                     {

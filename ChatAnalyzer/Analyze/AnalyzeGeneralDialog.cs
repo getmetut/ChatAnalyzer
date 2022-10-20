@@ -12,12 +12,11 @@ namespace ChatAnalyzer.Analyze
 {
     public partial class AnalyzeGeneralDialog : Form
     {
-        private ChatAnalyzer.Program.IndexChanger d;
-        public AnalyzeGeneralDialog(ChatAnalyzer.Program.IndexChanger sender)
+        private readonly Program.IndexChanger d;
+        public AnalyzeGeneralDialog(Program.IndexChanger sender)
         {
             InitializeComponent();
             d = sender;
-            buttonOK.Click += buttonOK_Click;
         }
 
 
@@ -26,15 +25,17 @@ namespace ChatAnalyzer.Analyze
             AnalyzeGeneral aG = new();
             if (radioButtonKindPersonal.Checked == true)
             {
-                new ChatAnalyzer.PersonalText();
+                new PersonalText();
                 if (radioButtonParticalYNo.Checked == true)
                 {
-                    new ChatAnalyzer.RemovePartials(true);
+                    AnalyzeResult.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                    AnalyzeResult.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
+                    new RemovePartials(true);
                 }
                 else
                 {
-                    ChatInfoTemp.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
-                    ChatInfoTemp.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
+                    AnalyzeResult.TextPerson1 = aG.Analyze(ChatInfoTemp.TextPerson1);
+                    AnalyzeResult.TextPerson2 = aG.Analyze(ChatInfoTemp.TextPerson2);
                 }
                 d(true);
             }
@@ -42,11 +43,12 @@ namespace ChatAnalyzer.Analyze
             {
                 if (radioButtonParticalYNo.Checked == true)
                 {
-                    new ChatAnalyzer.RemovePartials(false);
+                    AnalyzeResult.Text = aG.Analyze(ChatInfoTemp.Text);
+                    new RemovePartials(false);
                 }
                 else
                 {
-                    ChatInfoTemp.Text = aG.Analyze(ChatInfoTemp.Text);
+                    AnalyzeResult.Text = aG.Analyze(ChatInfoTemp.Text);
                 }
                 d(false);
             }
