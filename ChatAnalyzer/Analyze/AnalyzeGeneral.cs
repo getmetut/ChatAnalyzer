@@ -8,16 +8,43 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ChatAnalyzer
 {
-    internal class AnalyzeGeneral : IAnalyzer
+    internal class AnalyzeGeneral
     {
-        public string Analyze(string text)
+        public string Analyze(Dictionary<string, int> top, int amount, bool isRemovePartials, bool isRemovePrepositions, bool isRemovePronouns)
         {
-            // Создаем словарь всех слов
-            var top = TextFunctions.CreateDictionary(text, Constants.tExept);
             // запишем результат
             StringBuilder result = new();
-            foreach (var item in top)
-                    result.Append($"{item.Key,10} {item.Value,-3}\n"); 
+            var sortedTop = top.Where(t => t.Value > amount && !Constants.partials.Contains(t.Key)).OrderByDescending(t => t.Value);
+            IEnumerable<KeyValuePair<string, int>> helpTop = sortedTop;
+            string isRemove = isRemovePartials.ToString() + isRemovePrepositions.ToString() + isRemovePronouns.ToString();
+            switch (isRemove)
+            {
+                case "FalseFalseTrue":
+                    helpTop = sortedTop.Where(t => !Constants.pronouns.Contains(t.Key));
+                    break;
+                case "FalseTrueFalse":
+                    helpTop = sortedTop.Where(t => !Constants.prepositions.Contains(t.Key));
+                    break;
+                case "TrueFalseFalse":
+                    helpTop = sortedTop.Where(t => !Constants.partials.Contains(t.Key));
+                    break;
+                case "FalseTrueTrue":
+                    helpTop = sortedTop.Where(t => !Constants.prepositions.Contains(t.Key) && !Constants.pronouns.Contains(t.Key));
+                    break;
+                case "TrueTrueFalse":
+                    helpTop = sortedTop.Where(t => !Constants.partials.Contains(t.Key) && !Constants.prepositions.Contains(t.Key));
+                    break;
+                case "TrueFalseTrue":
+                    helpTop = sortedTop.Where(t => !Constants.partials.Contains(t.Key) && !Constants.pronouns.Contains(t.Key));
+                    break;
+                case "TrueTrueTrue":
+                    helpTop = sortedTop.Where(t => !Constants.partials.Contains(t.Key) && !Constants.prepositions.Contains(t.Key)
+                     && !Constants.pronouns.Contains(t.Key));
+                    break;
+            }
+
+            foreach (var item in helpTop)
+                result.Append($"{item.Key,10} {item.Value,-3}\n");
 
             return result.ToString();
         }

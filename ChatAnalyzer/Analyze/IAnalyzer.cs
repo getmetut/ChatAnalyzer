@@ -10,5 +10,6 @@ namespace ChatAnalyzer
     internal interface IAnalyzer
     {
         string Analyze(string text);
+        string Analyze(string text, int amount);
     }
 }

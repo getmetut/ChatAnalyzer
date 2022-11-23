@@ -33,17 +33,19 @@
             this.groupBoxKind = new System.Windows.Forms.GroupBox();
             this.radioButtonKindGeneral = new System.Windows.Forms.RadioButton();
             this.radioButtonKindPersonal = new System.Windows.Forms.RadioButton();
-            this.groupBoxParticle = new System.Windows.Forms.GroupBox();
-            this.radioButtonParticalYNo = new System.Windows.Forms.RadioButton();
-            this.radioButtonParticalYes = new System.Windows.Forms.RadioButton();
+            this.textBoxMinAmount = new System.Windows.Forms.TextBox();
+            this.labelMinAmount = new System.Windows.Forms.Label();
+            this.labelConsider = new System.Windows.Forms.Label();
+            this.checkBoxPartials = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrepositions = new System.Windows.Forms.CheckBox();
+            this.checkBoxPronouns = new System.Windows.Forms.CheckBox();
             this.groupBoxKind.SuspendLayout();
-            this.groupBoxParticle.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonOK
             // 
             this.buttonOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonOK.Location = new System.Drawing.Point(13, 140);
+            this.buttonOK.Location = new System.Drawing.Point(13, 191);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(98, 28);
@@ -55,7 +57,7 @@
             // buttonCancel
             // 
             this.buttonCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCancel.Location = new System.Drawing.Point(158, 140);
+            this.buttonCancel.Location = new System.Drawing.Point(125, 191);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(98, 28);
@@ -71,7 +73,7 @@
             this.groupBoxKind.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxKind.Name = "groupBoxKind";
             this.groupBoxKind.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxKind.Size = new System.Drawing.Size(247, 53);
+            this.groupBoxKind.Size = new System.Drawing.Size(210, 53);
             this.groupBoxKind.TabIndex = 9;
             this.groupBoxKind.TabStop = false;
             this.groupBoxKind.Text = "Вид";
@@ -79,63 +81,93 @@
             // radioButtonKindGeneral
             // 
             this.radioButtonKindGeneral.AutoSize = true;
-            this.radioButtonKindGeneral.Location = new System.Drawing.Point(135, 22);
+            this.radioButtonKindGeneral.Location = new System.Drawing.Point(136, 22);
             this.radioButtonKindGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonKindGeneral.Name = "radioButtonKindGeneral";
             this.radioButtonKindGeneral.Size = new System.Drawing.Size(66, 19);
             this.radioButtonKindGeneral.TabIndex = 1;
-            this.radioButtonKindGeneral.TabStop = true;
             this.radioButtonKindGeneral.Text = "Общий";
             this.radioButtonKindGeneral.UseVisualStyleBackColor = true;
             // 
             // radioButtonKindPersonal
             // 
             this.radioButtonKindPersonal.AutoSize = true;
-            this.radioButtonKindPersonal.Location = new System.Drawing.Point(9, 22);
+            this.radioButtonKindPersonal.Location = new System.Drawing.Point(8, 22);
             this.radioButtonKindPersonal.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonKindPersonal.Name = "radioButtonKindPersonal";
             this.radioButtonKindPersonal.Size = new System.Drawing.Size(109, 19);
             this.radioButtonKindPersonal.TabIndex = 0;
-            this.radioButtonKindPersonal.TabStop = true;
             this.radioButtonKindPersonal.Text = "Персональный";
             this.radioButtonKindPersonal.UseVisualStyleBackColor = true;
             // 
-            // groupBoxParticle
+            // textBoxMinAmount
             // 
-            this.groupBoxParticle.Controls.Add(this.radioButtonParticalYNo);
-            this.groupBoxParticle.Controls.Add(this.radioButtonParticalYes);
-            this.groupBoxParticle.Location = new System.Drawing.Point(13, 72);
-            this.groupBoxParticle.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxParticle.Name = "groupBoxParticle";
-            this.groupBoxParticle.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxParticle.Size = new System.Drawing.Size(247, 53);
-            this.groupBoxParticle.TabIndex = 10;
-            this.groupBoxParticle.TabStop = false;
-            this.groupBoxParticle.Text = "Частицы";
+            this.textBoxMinAmount.Location = new System.Drawing.Point(160, 160);
+            this.textBoxMinAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxMinAmount.Name = "textBoxMinAmount";
+            this.textBoxMinAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxMinAmount.Size = new System.Drawing.Size(63, 23);
+            this.textBoxMinAmount.TabIndex = 11;
+            this.textBoxMinAmount.Text = "50";
             // 
-            // radioButtonParticalYNo
+            // labelMinAmount
             // 
-            this.radioButtonParticalYNo.AutoSize = true;
-            this.radioButtonParticalYNo.Location = new System.Drawing.Point(135, 22);
-            this.radioButtonParticalYNo.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButtonParticalYNo.Name = "radioButtonParticalYNo";
-            this.radioButtonParticalYNo.Size = new System.Drawing.Size(100, 19);
-            this.radioButtonParticalYNo.TabIndex = 1;
-            this.radioButtonParticalYNo.TabStop = true;
-            this.radioButtonParticalYNo.Text = "Не учитывать";
-            this.radioButtonParticalYNo.UseVisualStyleBackColor = true;
+            this.labelMinAmount.AutoSize = true;
+            this.labelMinAmount.Location = new System.Drawing.Point(13, 153);
+            this.labelMinAmount.Margin = new System.Windows.Forms.Padding(4);
+            this.labelMinAmount.Name = "labelMinAmount";
+            this.labelMinAmount.Size = new System.Drawing.Size(143, 30);
+            this.labelMinAmount.TabIndex = 12;
+            this.labelMinAmount.Text = "Минимальное\r\nколичество повторений:";
             // 
-            // radioButtonParticalYes
+            // labelConsider
             // 
-            this.radioButtonParticalYes.AutoSize = true;
-            this.radioButtonParticalYes.Location = new System.Drawing.Point(10, 24);
-            this.radioButtonParticalYes.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButtonParticalYes.Name = "radioButtonParticalYes";
-            this.radioButtonParticalYes.Size = new System.Drawing.Size(83, 19);
-            this.radioButtonParticalYes.TabIndex = 0;
-            this.radioButtonParticalYes.TabStop = true;
-            this.radioButtonParticalYes.Text = "Учитывать";
-            this.radioButtonParticalYes.UseVisualStyleBackColor = true;
+            this.labelConsider.AutoSize = true;
+            this.labelConsider.Location = new System.Drawing.Point(13, 72);
+            this.labelConsider.Margin = new System.Windows.Forms.Padding(4);
+            this.labelConsider.Name = "labelConsider";
+            this.labelConsider.Size = new System.Drawing.Size(85, 15);
+            this.labelConsider.TabIndex = 13;
+            this.labelConsider.Text = "Не учитывать:";
+            // 
+            // checkBoxPartials
+            // 
+            this.checkBoxPartials.AutoSize = true;
+            this.checkBoxPartials.Checked = true;
+            this.checkBoxPartials.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPartials.Location = new System.Drawing.Point(123, 72);
+            this.checkBoxPartials.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxPartials.Name = "checkBoxPartials";
+            this.checkBoxPartials.Size = new System.Drawing.Size(74, 19);
+            this.checkBoxPartials.TabIndex = 14;
+            this.checkBoxPartials.Text = "Частицы";
+            this.checkBoxPartials.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPrepositions
+            // 
+            this.checkBoxPrepositions.AutoSize = true;
+            this.checkBoxPrepositions.Checked = true;
+            this.checkBoxPrepositions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPrepositions.Location = new System.Drawing.Point(123, 99);
+            this.checkBoxPrepositions.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxPrepositions.Name = "checkBoxPrepositions";
+            this.checkBoxPrepositions.Size = new System.Drawing.Size(80, 19);
+            this.checkBoxPrepositions.TabIndex = 15;
+            this.checkBoxPrepositions.Text = "Предлоги";
+            this.checkBoxPrepositions.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPronouns
+            // 
+            this.checkBoxPronouns.AutoSize = true;
+            this.checkBoxPronouns.Checked = true;
+            this.checkBoxPronouns.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxPronouns.Location = new System.Drawing.Point(123, 126);
+            this.checkBoxPronouns.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxPronouns.Name = "checkBoxPronouns";
+            this.checkBoxPronouns.Size = new System.Drawing.Size(103, 19);
+            this.checkBoxPronouns.TabIndex = 16;
+            this.checkBoxPronouns.Text = "Местоимения";
+            this.checkBoxPronouns.UseVisualStyleBackColor = true;
             // 
             // AnalyzeGeneralDialog
             // 
@@ -143,21 +175,26 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(273, 179);
+            this.ClientSize = new System.Drawing.Size(239, 231);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBoxParticle);
+            this.Controls.Add(this.checkBoxPronouns);
+            this.Controls.Add(this.checkBoxPrepositions);
+            this.Controls.Add(this.checkBoxPartials);
+            this.Controls.Add(this.labelConsider);
+            this.Controls.Add(this.labelMinAmount);
+            this.Controls.Add(this.textBoxMinAmount);
             this.Controls.Add(this.groupBoxKind);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AnalyzeGeneralDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка анализа";
             this.groupBoxKind.ResumeLayout(false);
             this.groupBoxKind.PerformLayout();
-            this.groupBoxParticle.ResumeLayout(false);
-            this.groupBoxParticle.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -168,8 +205,11 @@
         private GroupBox groupBoxKind;
         private RadioButton radioButtonKindPersonal;
         private RadioButton radioButtonKindGeneral;
-        private GroupBox groupBoxParticle;
-        private RadioButton radioButtonParticalYNo;
-        private RadioButton radioButtonParticalYes;
+        private TextBox textBoxMinAmount;
+        private Label labelMinAmount;
+        private Label labelConsider;
+        private CheckBox checkBoxPartials;
+        private CheckBox checkBoxPrepositions;
+        private CheckBox checkBoxPronouns;
     }
 }

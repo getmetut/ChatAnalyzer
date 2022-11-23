@@ -58,7 +58,7 @@ namespace ChatAnalyzer
         /// <summary>
         /// функция опеределния имени файла с расширением
         /// </summary>
-        /// <param name="fileName"></param>
+        /// <param names="fileName"></param>
         /// <returns></returns>
         internal static string JustFileName(string fileName)
         {
@@ -68,26 +68,35 @@ namespace ChatAnalyzer
         /// <summary>
         /// функция отчистки текста от дивов и пробелов
         /// </summary>
-        /// <param name="text"></param>
+        /// <param text="text"></param>
         /// <returns></returns>
         internal static string CleanText(string text)
         {
-            int first, amount;
-            while (text.IndexOf('<') != -1)
+            // проводим первый спилт
+            var fSplit = text.Split(">");
+            StringBuilder sb = new ();
+            foreach (var t in fSplit)
             {
-                first = text.IndexOf('<');
-                amount = text.IndexOf('>') - first + 1;
-                text = text.Remove(first, amount);
+                // проверяем на отстутсвие текста, если его нет то пропускаем, есть записываем
+                if (Equals(t[0], "<"))
+                    continue;
+                else
+                {
+                    var sSplit = t.Split("<");
+                    sb.Append(sSplit[0]);
+                }
             }
-            text = Regex.Replace(text, @"\s+", " ");
+            string sbStr = sb.ToString();
+            // чистим служебные символы
+            sbStr = Regex.Replace(sbStr, @"\s+", " ");
 
-            return text;
+            return sbStr;
         }
 
         /// <summary>
         /// Функция определения инициалов и полных имен
         /// </summary>
-        /// <param name="text"></param>
+        /// <param wordsList="wordsList"></param>
         /// <returns></returns>
         internal static string[] ChatInitsNames(List<string> wordsList)
         {
@@ -145,12 +154,10 @@ namespace ChatAnalyzer
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
-            // объект обработчика открытых файлов
             // получаем выбранные файлы
             string[] filenames = openFileDialog1.FileNames;
 
             // создаем стринг билдер для объеденения файлов
-
             StringBuilder text = new();
             // читаем файлы в строку и записываем в список их имена
             foreach (string filename in filenames)
@@ -162,24 +169,36 @@ namespace ChatAnalyzer
                 text.Append(fileText);
             }
 
-            // записываем записываем в статику и чиcтим стринг билдер шобы пересобрать его уже без имен
+            // запоминаем list и чиcтим стринг билдер шобы пересобрать его уже без имен
             List<string> newList = text.ToString().Split(" ").ToList();
-            if (ChatInfo.WordsList == null)
-                ChatInfo.WordsList = newList;
-            else
-                foreach (var word in newList)
-                    ChatInfo.WordsList.Add(word);
             text.Clear();
+
             // получаем инициалы и полные имена
             string[] initsNames = new string[4];
             if (ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null)
             {
-                initsNames = FileOpener.ChatInitsNames(ChatInfo.WordsList);
+                initsNames = FileOpener.ChatInitsNames(newList);
                 ChatInfo.InitialsPerson1 = initsNames[0];
                 ChatInfo.InitialsPerson2 = initsNames[1];
                 ChatInfo.FullNamePerson1 = initsNames[2];
                 ChatInfo.FullNamePerson2 = initsNames[3];
             }
+
+            /*         int indexPosition = 0;
+                     int indexName1 = newList.IndexOf(ChatInfo.FullNamePerson1, indexPosition);
+                     int indexName2 = newList.IndexOf(ChatInfo.FullNamePerson2, indexPosition);
+                     while (indexName1 != -1 && indexName2 != -1)
+                     {
+                         if (indexName1 > indexName2)
+                         {
+                             newList.RemoveRange(indexName1, 1);
+                             indexPosition = indexName1 + 1;
+                             indexName1 = newList.IndexOf(ChatInfo.FullNamePerson1, indexPosition);
+                         }
+
+                         else
+
+                     } */
 
             // исключаем из текста полные имена
             for (int i = 2; i < newList.Count; i++)
@@ -190,11 +209,30 @@ namespace ChatAnalyzer
                     for (int j = 0; j < newList[i - 2].Length; j++)
                         newList.RemoveAt(i);
                 }
+                else if (Equals(newList[i - 2], "Exported"))
+                {
+                    if (Equals(newList[i], ChatInfo.FullNamePerson1))
+                        for (int j = 0; j < ChatInfo.InitialsPerson1.Length; j++)
+                            newList.RemoveAt(i);
+                    else
+                        for (int j = 0; j < ChatInfo.InitialsPerson2.Length; j++)
+                            newList.RemoveAt(i);
+                }
             }
 
+            // записываем лист в статику 
+            if (ChatInfo.WordsList == null)
+                ChatInfo.WordsList = newList;
+            else
+                foreach (var word in newList)
+                    ChatInfo.WordsList.Add(word);
+
+            // пересобираем тескт и записываем в саттичку его и словарь
             foreach (string word in newList)
-                ChatInfo.Text += " " + word;
-            ChatInfo.Text = ChatInfo.Text;
+                text.Append(" " + word);
+
+            ChatInfo.Text += text.ToString();
+            ChatInfo.WordsDictionary = TextFunctions.CreateDictionary(ChatInfo.Text, Constants.tExept);
         }
     }
 }

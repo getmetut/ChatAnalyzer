@@ -13,15 +13,23 @@ namespace ChatAnalyzer
         internal static string? Text { get; set; }
         internal static string? TextPerson1 { get; set; }
         internal static string? TextPerson2 { get; set; }
+        internal static List<string>? WordsList { get; set; }
+        internal static List<string>? WordsListPerson1 { get; set; }
+        internal static List<string>? WordsListPerson2 { get; set; }
+        internal static Dictionary<string, int>? WordsDictionary { get; set; }
+        internal static Dictionary<string, int>? WordsDictionaryPerson1 { get; set; }
+        internal static Dictionary<string, int>? WordsDictionaryPerson2 { get; set; }
 
         /// <summary>
         /// функция возврата промежуточного текста к чистому
         /// </summary>
         internal static void RefreshTemp()
         {
-            ChatInfoTemp.Text = ChatInfo.Text;
-            ChatInfoTemp.TextPerson1 = ChatInfo.TextPerson1;
-            ChatInfoTemp.TextPerson2 = ChatInfo.TextPerson2;
+            Text = ChatInfo.Text;
+            TextPerson1 = ChatInfo.TextPerson1;
+            TextPerson2 = ChatInfo.TextPerson2;
+            WordsList = ChatInfo.WordsList;
+            WordsDictionary = ChatInfo.WordsDictionary;
         }
     }
 }

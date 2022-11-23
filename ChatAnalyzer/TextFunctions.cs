@@ -9,7 +9,7 @@ namespace ChatAnalyzer
     internal static class TextFunctions
     {
         /// <summary>
-        /// Создает словарь всех слов не меньше длины 2 в тексте, количество которых больше amount
+        /// Создает словарь всех слов в тексте
         /// </summary>
         /// <param name="text"></param>
         /// <param name="amount"></param>
@@ -20,17 +20,23 @@ namespace ChatAnalyzer
             string[] words = text.ToLower().Split(' ');
             for (int i = 0; i < words.Count(); i++)
             {
-                if (top.ContainsKey(words[i]))
+                var word = words[i].Trim();
+                if (TextFunctions.IsTime(word))
+                    continue;
+                for (int j = 0; j < word.Length; j++)
+                    if (Char.IsPunctuation(word[j]))
+                        word = word.Remove(j, 1);
+                if (top.ContainsKey(word.Trim()))
                 {
-                    top[words[i]]++;
+                    top[word]++;
                 }
                 else
                 {
-                    top[words[i]] = 1;
+                    top[word] = 1;
                 }
             }
             
-            // Исклюсчаем ненужные слова
+            // Исключаем ненужные слова
             foreach (var item in top)
             {
                 if (exept.Contains(item.Key))
