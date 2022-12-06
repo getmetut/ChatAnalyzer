@@ -72,7 +72,7 @@ namespace ChatAnalyzer
         /// <returns></returns>
         internal static string CleanText(string text)
         {
-            // проводим первый спилт
+            // проводим первый спит
             var fSplit = text.Split(">");
             StringBuilder sb = new ();
             foreach (var t in fSplit)
@@ -175,7 +175,8 @@ namespace ChatAnalyzer
 
             // получаем инициалы и полные имена
             string[] initsNames = new string[4];
-            if (ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null)
+            if (ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null
+                || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null)
             {
                 initsNames = FileOpener.ChatInitsNames(newList);
                 ChatInfo.InitialsPerson1 = initsNames[0];
@@ -183,43 +184,7 @@ namespace ChatAnalyzer
                 ChatInfo.FullNamePerson1 = initsNames[2];
                 ChatInfo.FullNamePerson2 = initsNames[3];
             }
-
-            /*         int indexPosition = 0;
-                     int indexName1 = newList.IndexOf(ChatInfo.FullNamePerson1, indexPosition);
-                     int indexName2 = newList.IndexOf(ChatInfo.FullNamePerson2, indexPosition);
-                     while (indexName1 != -1 && indexName2 != -1)
-                     {
-                         if (indexName1 > indexName2)
-                         {
-                             newList.RemoveRange(indexName1, 1);
-                             indexPosition = indexName1 + 1;
-                             indexName1 = newList.IndexOf(ChatInfo.FullNamePerson1, indexPosition);
-                         }
-
-                         else
-
-                     } */
-
-            // исключаем из текста полные имена
-            for (int i = 2; i < newList.Count; i++)
-            {
-                if ((Equals(newList[i - 2], ChatInfo.InitialsPerson1) ||
-                     Equals(newList[i - 2], ChatInfo.InitialsPerson2)) && TextFunctions.IsTime(newList[i - 1]))
-                {
-                    for (int j = 0; j < newList[i - 2].Length; j++)
-                        newList.RemoveAt(i);
-                }
-                else if (Equals(newList[i - 2], "Exported"))
-                {
-                    if (Equals(newList[i], ChatInfo.FullNamePerson1))
-                        for (int j = 0; j < ChatInfo.InitialsPerson1.Length; j++)
-                            newList.RemoveAt(i);
-                    else
-                        for (int j = 0; j < ChatInfo.InitialsPerson2.Length; j++)
-                            newList.RemoveAt(i);
-                }
-            }
-
+           
             // записываем лист в статику 
             if (ChatInfo.WordsList == null)
                 ChatInfo.WordsList = newList;
@@ -227,12 +192,18 @@ namespace ChatAnalyzer
                 foreach (var word in newList)
                     ChatInfo.WordsList.Add(word);
 
-            // пересобираем тескт и записываем в саттичку его и словарь
+            // пересобираем текст и записываем в сnатику его и словарь
             foreach (string word in newList)
                 text.Append(" " + word);
 
             ChatInfo.Text += text.ToString();
             ChatInfo.WordsDictionary = TextFunctions.CreateDictionary(ChatInfo.Text, Constants.tExept);
+
+            // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
+            TextFunctions.AccountFullNames(ChatInfo.WordsList, ChatInfo.WordsDictionary);
+
+            // Флаг обозначающий что, произошло добавление
+            ChatInfo.NewAdded = true;
         }
     }
 }

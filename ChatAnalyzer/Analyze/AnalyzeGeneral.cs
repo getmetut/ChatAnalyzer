@@ -10,7 +10,7 @@ namespace ChatAnalyzer
 {
     internal class AnalyzeGeneral
     {
-        public string Analyze(Dictionary<string, int> top, int amount, bool isRemovePartials, bool isRemovePrepositions, bool isRemovePronouns)
+        public static string Analyze(Dictionary<string, int> top, int amount, bool isRemovePartials, bool isRemovePrepositions, bool isRemovePronouns)
         {
             // запишем результат
             StringBuilder result = new();

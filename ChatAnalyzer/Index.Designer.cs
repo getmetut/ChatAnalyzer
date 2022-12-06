@@ -20,25 +20,6 @@
             base.Dispose(disposing);
         }
 
-        internal void ShowResult(bool isPersonal)
-        {
-            if (isPersonal)
-            {
-                textBoxPerson1.Text = ChatInfo.FullNamePerson1 + "\n" + AnalyzeResult.TextPerson1;
-                textBoxPerson2.Text = ChatInfo.FullNamePerson2 + "\n" + AnalyzeResult.TextPerson2;
-                textBoxIndexAnalyze.Visible = false;
-                textBoxPerson1.Visible = true;
-                textBoxPerson2.Visible = true;
-            }
-            else
-            {
-                textBoxIndexAnalyze.Text = AnalyzeResult.Text;
-                textBoxPerson1.Visible = false;
-                textBoxPerson2.Visible = false;
-                textBoxIndexAnalyze.Visible = true;
-            }
-        }
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -70,7 +51,7 @@
             this.listBoxChats = new System.Windows.Forms.ListBox();
             this.labelChats = new System.Windows.Forms.Label();
             this.buttonResultSave = new System.Windows.Forms.Button();
-            this.buttonChatsRemove = new System.Windows.Forms.Button();
+            this.buttonChatsClean = new System.Windows.Forms.Button();
             this.buttonChatsAdd = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -220,11 +201,12 @@
             this.buttonResultSave.Name = "buttonResultSave";
             this.buttonResultSave.UseVisualStyleBackColor = true;
             // 
-            // buttonChatsRemove
+            // buttonChatsClean
             // 
-            resources.ApplyResources(this.buttonChatsRemove, "buttonChatsRemove");
-            this.buttonChatsRemove.Name = "buttonChatsRemove";
-            this.buttonChatsRemove.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonChatsClean, "buttonChatsClean");
+            this.buttonChatsClean.Name = "buttonChatsClean";
+            this.buttonChatsClean.UseVisualStyleBackColor = true;
+            this.buttonChatsClean.Click += new System.EventHandler(this.buttonChatsClean_Click);
             // 
             // buttonChatsAdd
             // 
@@ -271,13 +253,14 @@
             this.Controls.Add(this.textBoxPerson2);
             this.Controls.Add(this.textBoxIndexAnalyze);
             this.Controls.Add(this.buttonChatsAdd);
-            this.Controls.Add(this.buttonChatsRemove);
+            this.Controls.Add(this.buttonChatsClean);
             this.Controls.Add(this.buttonResultSave);
             this.Controls.Add(this.labelChats);
             this.Controls.Add(this.listBoxChats);
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.groupBoxAnalyzeButtons);
             this.Controls.Add(this.menuStripIndexMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStripIndexMain;
             this.Name = "Index";
             this.menuStripIndexMain.ResumeLayout(false);
@@ -312,7 +295,7 @@
         private ListBox listBoxChats;
         private Label labelChats;
         private Button buttonResultSave;
-        private Button buttonChatsRemove;
+        private Button buttonChatsClean;
         private Button buttonChatsAdd;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
