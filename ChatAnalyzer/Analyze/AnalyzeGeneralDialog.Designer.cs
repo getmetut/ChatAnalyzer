@@ -45,7 +45,7 @@
             // buttonOK
             // 
             this.buttonOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonOK.Location = new System.Drawing.Point(13, 191);
+            this.buttonOK.Location = new System.Drawing.Point(19, 191);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(98, 28);
@@ -81,11 +81,13 @@
             // radioButtonKindGeneral
             // 
             this.radioButtonKindGeneral.AutoSize = true;
+            this.radioButtonKindGeneral.Checked = true;
             this.radioButtonKindGeneral.Location = new System.Drawing.Point(136, 22);
             this.radioButtonKindGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonKindGeneral.Name = "radioButtonKindGeneral";
             this.radioButtonKindGeneral.Size = new System.Drawing.Size(66, 19);
             this.radioButtonKindGeneral.TabIndex = 1;
+            this.radioButtonKindGeneral.TabStop = true;
             this.radioButtonKindGeneral.Text = "Общий";
             this.radioButtonKindGeneral.UseVisualStyleBackColor = true;
             // 
@@ -187,6 +189,8 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(255, 270);
+            this.MinimumSize = new System.Drawing.Size(255, 270);
             this.Name = "AnalyzeGeneralDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

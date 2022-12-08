@@ -11,14 +11,14 @@ namespace ChatAnalyzer
     internal static class ChatInfoTemp
     {
         internal static string? Text { get; set; }
-        internal static string? TextPerson1 { get; set; }
-        internal static string? TextPerson2 { get; set; }
-        internal static List<string>? WordsList { get; set; }
-        internal static List<string>? WordsListPerson1 { get; set; }
-        internal static List<string>? WordsListPerson2 { get; set; }
-        internal static Dictionary<string, int>? WordsDictionary { get; set; }
-        internal static Dictionary<string, int>? WordsDictionaryPerson1 { get; set; }
-        internal static Dictionary<string, int>? WordsDictionaryPerson2 { get; set; }
+        internal static string? TextP1 { get; set; }
+        internal static string? TextP2 { get; set; }
+        internal static List<string>? WordList { get; set; }
+        internal static List<string>? WordListP1 { get; set; }
+        internal static List<string>? WordListP2 { get; set; }
+        internal static Dictionary<string, int>? WordDict { get; set; }
+        internal static Dictionary<string, int>? WordDictP1 { get; set; }
+        internal static Dictionary<string, int>? WordDictP2 { get; set; }
 
         /// <summary>
         /// функция возврата промежуточного текста к чистому
@@ -26,10 +26,12 @@ namespace ChatAnalyzer
         internal static void RefreshTemp()
         {
             Text = ChatInfo.Text;
-            TextPerson1 = ChatInfo.TextPerson1;
-            TextPerson2 = ChatInfo.TextPerson2;
-            WordsList = ChatInfo.WordsList;
-            WordsDictionary = ChatInfo.WordsDictionary;
+            TextP1 = ChatInfo.TextP1;
+            TextP2 = ChatInfo.TextP2;
+            WordList = ChatInfo.WordList;
+            WordDict = ChatInfo.WordDict;
+            WordDictP1 = ChatInfo.WordDictP1;
+            WordDictP2 = ChatInfo.WordDictP2;
         }
     }
 }

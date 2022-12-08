@@ -43,8 +43,9 @@ namespace ChatAnalyzer
                     break;
             }
 
+            int num = 1;
             foreach (var item in helpTop)
-                result.Append($"{item.Key,10} {item.Value,-3}\n");
+                result.Append($"{$"{item.Value}".PadRight(7, '-')}{item.Key}\n");
 
             return result.ToString();
         }

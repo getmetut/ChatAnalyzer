@@ -13,6 +13,7 @@ namespace ChatAnalyzer
 
             buttonChatsAdd.Click += buttonChatsAdd_Click;
             buttonAnalyzeGeneral.Click += buttonAnalyzeGeneral_Click;
+            buttonAnalyzeWord.Click += buttonAnalyzeWord_Click;
             openFileDialog1.Filter = "HTML files(*.html)|*.html|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
@@ -26,18 +27,16 @@ namespace ChatAnalyzer
         {
             if (isPersonal)
             {
-                textBoxPerson1.Text = ChatInfo.FullNamePerson1 + "\n" + AnalyzeResult.TextPerson1;
-                textBoxPerson2.Text = ChatInfo.FullNamePerson2 + "\n" + AnalyzeResult.TextPerson2;
-                textBoxIndexAnalyze.Visible = false;
-                textBoxPerson1.Visible = true;
-                textBoxPerson2.Visible = true;
+                textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n" + AnalyzeResult.TextPerson1;
+                textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n" + AnalyzeResult.TextPerson2;
+                flowLayoutPanelGeneral.Visible = false;
+                flowLayoutPanelPersonal.Visible = true;
             }
             else
             {
-                textBoxIndexAnalyze.Text = AnalyzeResult.Text;
-                textBoxPerson1.Visible = false;
-                textBoxPerson2.Visible = false;
-                textBoxIndexAnalyze.Visible = true;
+                textBoxIndexGeneral.Text = AnalyzeResult.Text;
+                flowLayoutPanelGeneral.Visible = true;
+                flowLayoutPanelPersonal.Visible = false;
             }
         }
 
@@ -67,6 +66,11 @@ namespace ChatAnalyzer
             // Чистим список
             listBoxChats.Items.Clear();
             ChatInfo.ClearChatInfo();
+        }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

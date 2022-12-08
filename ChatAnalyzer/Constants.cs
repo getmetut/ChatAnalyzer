@@ -21,7 +21,7 @@ namespace ChatAnalyzer
         "иной","всяк","всяческий","кто","что","какой","который","чей","сколько","те","никто","ничто","некого","нечего","никакой","ничей","некто",
         "нечто","некоторый","некий","нескольео","либо", "мне", "нас", "", "", "", "", "", "", "", "", ""
         , "меня", "тебя", "тебе", "", "", "", "", ""};
-        public static string[] tExept = {"data", "not", "change", "", "exported", "kb", "to", ChatInfo.InitialsPerson1.ToLower(), ChatInfo.InitialsPerson2.ToLower(),
+        public static string[] tExept = {"data", "not", "change", "", "exported", "kb", "to", ChatInfo.InitialP1.ToLower(), ChatInfo.InitialP2.ToLower(),
                 "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply",
                 "photo", "file", "https", "sticker", "www", "outgoing", "change", "included",
                 "com", "seconds", "messages", "tiktok", "amp", "in", "960×1280", "853×1280", "591×1280", "mb", "720×1280", "576×1280", "2022", "", "", "", ""

@@ -10,12 +10,12 @@ namespace ChatAnalyzer
     {
         internal PersonalText()
         {
-            if (ChatInfo.TextPerson1 is null || ChatInfo.TextPerson2 is null || ChatInfo.NewAdded)
+            if (ChatInfo.TextP1 is null || ChatInfo.TextP2 is null || ChatInfo.NewAdded)
             {
                 // задаем необходимые переменные
                 StringBuilder text1 = new(), text2 = new();
-                var wordsList = ChatInfo.WordsList;
-                string person1 = ChatInfo.InitialsPerson1, person2 = ChatInfo.InitialsPerson2;
+                var wordsList = ChatInfo.WordList;
+                string person1 = ChatInfo.InitialP1, person2 = ChatInfo.InitialP2;
 
                 for (int i = 0; i < wordsList.Count; i++)
                 {
@@ -37,22 +37,20 @@ namespace ChatAnalyzer
                 }
 
                 // Записываем всю информацию
-                ChatInfo.TextPerson1 = text1.ToString();
-                ChatInfo.TextPerson2 = text2.ToString();
-                ChatInfoTemp.TextPerson1 = ChatInfo.TextPerson1;
-                ChatInfoTemp.TextPerson2 = ChatInfo.TextPerson2;
-                ChatInfo.WordsListPerson1 = ChatInfo.TextPerson1.Split(' ').ToList();
-                ChatInfo.WordsListPerson2 = ChatInfo.TextPerson2.Split(' ').ToList();
-                ChatInfoTemp.WordsListPerson1 = ChatInfo.WordsListPerson1;
-                ChatInfoTemp.WordsListPerson2 = ChatInfo.WordsListPerson2;
-                ChatInfo.WordsDictionaryPerson1 = TextFunctions.CreateDictionary(ChatInfo.TextPerson1, Constants.tExept);
-                ChatInfo.WordsDictionaryPerson2 = TextFunctions.CreateDictionary(ChatInfo.TextPerson2, Constants.tExept);
-                ChatInfoTemp.WordsDictionaryPerson1 = ChatInfo.WordsDictionaryPerson1;
-                ChatInfoTemp.WordsDictionaryPerson2 = ChatInfo.WordsDictionaryPerson2;
+                ChatInfoTemp.TextP1 = ChatInfo.TextP1 = text1.ToString();
+                ChatInfoTemp.TextP2 = ChatInfo.TextP2 = text2.ToString();
+                ChatInfoTemp.WordListP1 = ChatInfo.WordListP1 = ChatInfo.TextP1.Split(' ').ToList();
+                ChatInfoTemp.WordListP2 = ChatInfo.WordListP2 = ChatInfo.TextP2.Split(' ').ToList();
+                ChatInfoTemp.WordDictP1 = ChatInfo.WordDictP1 = TextFunctions.CreateDictionary(ChatInfo.TextP1, Constants.tExept);
+                ChatInfoTemp.WordDictP2 = ChatInfo.WordDictP2 = TextFunctions.CreateDictionary(ChatInfo.TextP2, Constants.tExept);
 
                 // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
-                TextFunctions.AccountFullNames(ChatInfo.WordsListPerson1, ChatInfo.WordsDictionaryPerson1);
-                TextFunctions.AccountFullNames(ChatInfo.WordsListPerson2, ChatInfo.WordsDictionaryPerson2);
+                TextFunctions.AccountFullNames(ChatInfo.WordListP1, ChatInfo.WordDictP1);
+                TextFunctions.AccountFullNames(ChatInfo.WordListP2, ChatInfo.WordDictP2);
+
+                // считаем количество сообщений
+                ChatInfo.MessageCountP1 = FileOpener.MessagesCounting(ChatInfo.WordListP1);
+                ChatInfo.MessageCountP2 = FileOpener.MessagesCounting(ChatInfo.WordListP2);
 
                 ChatInfo.NewAdded = false;
             }

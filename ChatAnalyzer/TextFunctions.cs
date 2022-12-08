@@ -90,7 +90,8 @@ namespace ChatAnalyzer
             var nameMas = name.Split(' ');
 
             for (int i = 0; i < nameMas.Length; i++)
-                dict[nameMas[i].ToLower()] -= сount;
+                if (dict.ContainsKey(nameMas[i].ToLower()))
+                    dict[nameMas[i].ToLower()] -= сount;
         }
 
         /// <summary>
@@ -126,8 +127,8 @@ namespace ChatAnalyzer
         /// <param name="newList"></param>
         internal static void AccountFullNames(List<string> newList, Dictionary<string, int> dict)
         {
-            var name1 = ChatInfo.FullNamePerson1;
-            var name2 = ChatInfo.FullNamePerson2;
+            var name1 = ChatInfo.FullNameP1;
+            var name2 = ChatInfo.FullNameP2;
             var unite = UniteFullNames(newList, name1);
             unite = UniteFullNames(unite, name2);
             int count1 = TextFunctions.NecNamesCount(unite, name1);

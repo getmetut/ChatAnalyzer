@@ -146,6 +146,20 @@ namespace ChatAnalyzer
                 }
             return initsNames;
         }
+
+        /// <summary>
+        /// Счиатеn количество сообщений
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        internal static int MessagesCounting(List<string> list)
+        {
+            int count = 0;
+            foreach (string s in list)
+                if (TextFunctions.IsTime(s))
+                    count++;
+            return count;
+        }
     }
 
     public partial class Index : Form
@@ -175,35 +189,38 @@ namespace ChatAnalyzer
 
             // получаем инициалы и полные имена
             string[] initsNames = new string[4];
-            if (ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null
-                || ChatInfo.InitialsPerson1 == null || ChatInfo.InitialsPerson1 == null)
+            if (ChatInfo.InitialP1 == null || ChatInfo.InitialP2 == null
+                || ChatInfo.FullNameP1 == null || ChatInfo.FullNameP2 == null)
             {
                 initsNames = FileOpener.ChatInitsNames(newList);
-                ChatInfo.InitialsPerson1 = initsNames[0];
-                ChatInfo.InitialsPerson2 = initsNames[1];
-                ChatInfo.FullNamePerson1 = initsNames[2];
-                ChatInfo.FullNamePerson2 = initsNames[3];
+                ChatInfo.InitialP1 = initsNames[0];
+                ChatInfo.InitialP2 = initsNames[1];
+                ChatInfo.FullNameP1 = initsNames[2];
+                ChatInfo.FullNameP2 = initsNames[3];
             }
            
             // записываем лист в статику 
-            if (ChatInfo.WordsList == null)
-                ChatInfo.WordsList = newList;
+            if (ChatInfo.WordList == null)
+                ChatInfo.WordList = newList;
             else
                 foreach (var word in newList)
-                    ChatInfo.WordsList.Add(word);
+                    ChatInfo.WordList.Add(word);
 
             // пересобираем текст и записываем в сnатику его и словарь
             foreach (string word in newList)
                 text.Append(" " + word);
 
             ChatInfo.Text += text.ToString();
-            ChatInfo.WordsDictionary = TextFunctions.CreateDictionary(ChatInfo.Text, Constants.tExept);
+            ChatInfo.WordDict = TextFunctions.CreateDictionary(ChatInfo.Text, Constants.tExept);
 
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
-            TextFunctions.AccountFullNames(ChatInfo.WordsList, ChatInfo.WordsDictionary);
+            TextFunctions.AccountFullNames(ChatInfo.WordList, ChatInfo.WordDict);
 
             // Флаг обозначающий что, произошло добавление
             ChatInfo.NewAdded = true;
+
+            // Счиатем количество сообщений
+            ChatInfo.MessageCount += FileOpener.MessagesCounting(newList);
         }
     }
 }

@@ -57,6 +57,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStripIndexMain.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 22</value>
@@ -98,11 +102,18 @@
   <data name="menuStripIndexMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 4, 4, 0</value>
   </data>
+  <data name="menuStripIndexMain.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>841, 24</value>
+  </data>
   <data name="menuStripIndexMain.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 2, 0, 2</value>
   </data>
   <data name="menuStripIndexMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>841, 24</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBoxAnalyzeButtons.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 162</value>
@@ -155,6 +166,12 @@
   <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="groupBoxAnalyzeButtons.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>178, 197</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>178, 197</value>
+  </data>
   <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
@@ -170,15 +187,17 @@
   <data name="labelResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 15</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listBoxChats.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="listBoxChats.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="listBoxChats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 52</value>
+    <value>0, 0</value>
   </data>
   <data name="listBoxChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="listBoxChats.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>214, 454</value>
@@ -195,17 +214,38 @@
   <data name="labelChats.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 15</value>
   </data>
+  <data name="buttonResultSave.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="buttonResultSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>566, 513</value>
+    <value>566, 517</value>
   </data>
   <data name="buttonResultSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="buttonResultSave.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
+  <data name="buttonResultSave.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
   <data name="buttonResultSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 28</value>
   </data>
+  <data name="buttonChatsClean.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="buttonChatsClean.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 517</value>
+  </data>
   <data name="buttonChatsClean.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonChatsClean.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
+  <data name="buttonChatsClean.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
   </data>
   <data name="buttonChatsClean.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 28</value>
@@ -213,36 +253,56 @@
   <data name="buttonChatsClean.Text" xml:space="preserve">
     <value>Отчистить</value>
   </data>
+  <data name="buttonChatsAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="buttonChatsAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 513</value>
+    <value>13, 517</value>
   </data>
   <data name="buttonChatsAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="buttonChatsAdd.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
+  <data name="buttonChatsAdd.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>98, 28</value>
+  </data>
   <data name="buttonChatsAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 28</value>
   </data>
-  <data name="textBoxIndexAnalyze.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 52</value>
+  <data name="textBoxIndexGeneral.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="textBoxIndexAnalyze.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="textBoxIndexGeneral.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="textBoxIndexAnalyze.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
+  <data name="textBoxIndexGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="textBoxIndexGeneral.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>429, 452</value>
+  </data>
+  <data name="textBoxIndexGeneral.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
     <value>Vertical</value>
   </data>
-  <data name="textBoxIndexAnalyze.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 454</value>
+  <data name="textBoxIndexGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 452</value>
   </data>
-  <data name="textBoxIndexAnalyze.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="textBoxPerson2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="textBoxPerson2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 0</value>
   </data>
   <data name="textBoxPerson2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="textBoxPerson2.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
+  </data>
+  <data name="textBoxPerson2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
   <data name="textBoxPerson2.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
     <value>Vertical</value>
@@ -250,11 +310,14 @@
   <data name="textBoxPerson2.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
   </data>
-  <data name="textBoxPerson2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="textBoxPerson1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="textBoxPerson1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
   <data name="textBoxPerson1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 0, 0, 0</value>
   </data>
   <data name="textBoxPerson1.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
@@ -265,11 +328,26 @@
   <data name="textBoxPerson1.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
   </data>
-  <data name="textBoxPerson1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="flowLayoutPanelGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+  <data name="flowLayoutPanelGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 452</value>
+  </data>
+  <data name="flowLayoutPanelList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="flowLayoutPanelList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 452</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 452</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>859, 557</value>
