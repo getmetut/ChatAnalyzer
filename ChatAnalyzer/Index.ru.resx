@@ -187,23 +187,20 @@
   <data name="labelResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 15</value>
   </data>
-  <data name="listBoxChats.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="listBoxChats.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
   <data name="listBoxChats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>9, 55</value>
   </data>
   <data name="listBoxChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="listBoxChats.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>214, 454</value>
+    <value>214, 452</value>
   </data>
   <data name="listBoxChats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 454</value>
+    <value>214, 452</value>
   </data>
   <data name="labelChats.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 32</value>
@@ -233,10 +230,10 @@
     <value>98, 28</value>
   </data>
   <data name="buttonChatsClean.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="buttonChatsClean.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 517</value>
+    <value>125, 517</value>
   </data>
   <data name="buttonChatsClean.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -254,10 +251,10 @@
     <value>Отчистить</value>
   </data>
   <data name="buttonChatsAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
+    <value>Bottom, Left</value>
   </data>
   <data name="buttonChatsAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 517</value>
+    <value>9, 517</value>
   </data>
   <data name="buttonChatsAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -271,14 +268,14 @@
   <data name="buttonChatsAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 28</value>
   </data>
-  <data name="textBoxIndexGeneral.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="textBoxIndexGeneral.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
+  <data name="textBoxIndexGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 55</value>
+  </data>
   <data name="textBoxIndexGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBoxIndexGeneral.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>429, 452</value>
@@ -289,14 +286,11 @@
   <data name="textBoxIndexGeneral.Size" type="System.Drawing.Size, System.Drawing">
     <value>429, 452</value>
   </data>
-  <data name="textBoxPerson2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="textBoxPerson2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 0</value>
+    <value>450, 53</value>
   </data>
   <data name="textBoxPerson2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBoxPerson2.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
@@ -310,14 +304,14 @@
   <data name="textBoxPerson2.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
   </data>
-  <data name="textBoxPerson1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+  <data name="textBoxPerson2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="textBoxPerson1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>236, 53</value>
   </data>
   <data name="textBoxPerson1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBoxPerson1.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
@@ -328,25 +322,7 @@
   <data name="textBoxPerson1.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 452</value>
   </data>
-  <data name="flowLayoutPanelGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="flowLayoutPanelGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 452</value>
-  </data>
-  <data name="flowLayoutPanelList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="flowLayoutPanelList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 452</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 452</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.Visible" type="System.Boolean, mscorlib">
+  <data name="textBoxPerson1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">

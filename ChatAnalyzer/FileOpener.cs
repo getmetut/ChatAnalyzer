@@ -220,7 +220,7 @@ namespace ChatAnalyzer
             ChatInfo.NewAdded = true;
 
             // Счиатем количество сообщений
-            ChatInfo.MessageCount += FileOpener.MessagesCounting(newList);
+            ChatInfo.MessageCount = FileOpener.MessagesCounting(ChatInfo.WordList);
         }
     }
 }

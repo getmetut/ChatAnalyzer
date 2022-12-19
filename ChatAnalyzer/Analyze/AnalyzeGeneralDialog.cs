@@ -12,8 +12,8 @@ namespace ChatAnalyzer.Analyze
 {
     public partial class AnalyzeGeneralDialog : Form
     {
-        private readonly Program.IndexChanger delegat;
-        public AnalyzeGeneralDialog(Program.IndexChanger sender)
+        private readonly Program.IndexKindAnalyze delegat;
+        public AnalyzeGeneralDialog(Program.IndexKindAnalyze sender)
         {
             InitializeComponent();
             delegat = sender;

@@ -22,19 +22,15 @@ namespace ChatAnalyzer
                 if (dict2.ContainsKey(word))
                     count2 = (float)dict2[word];
 
-                float freq1 = count1 / (float)ChatInfo.MessageCountP1;
-                float freq2 = count2 / (float)ChatInfo.MessageCountP2;
                 float per1 = count1 / (count1 + count2);
                 float per2 = count2 / (count1 + count2);
 
-                AnalyzeResult.TextPerson1 = $"Слово:\n{word}\n\n" +
+                AnalyzeResult.TextPerson1 = $"\nСлово:\n{word}\n\n" +
                     $"Общее колчичество повторений: \n{count1}\n\n" +
-                    $"Частота употребления: \n{freq1:F20} на сообщение\n\n" +
                     $"Процент от общего употребления в переписке: \n{per1*100:F2}%\n\n";
 
-                AnalyzeResult.TextPerson2 = $"Слово:\n{word}\n\n" +
+                AnalyzeResult.TextPerson2 = $"\nСлово:\n{word}\n\n" +
                     $"Общее колчичество повторений: \n{count2}\n\n" +
-                    $"Частота употребления: \n{freq2:F20} на сообщение\n\n" +
                     $"Процент от общего употребления в переписке: \n{per2*100:F2}%\n\n";
             }
             else
@@ -43,11 +39,9 @@ namespace ChatAnalyzer
                 float count = 0;
                 if (dict.ContainsKey(word))
                     count = (float)dict[word];
-                float freq = dict[word] / (long)ChatInfo.MessageCount;
 
-                AnalyzeResult.TextPerson1 = $"Слово:\n{word}\n\n" +
-                    $"Общее колчичество повторений: \n{count}\n\n" +
-                    $"Частота употребления: \n{freq:F20} на сообщение\n\n";
+                AnalyzeResult.Text = $"\nСлово:\n{word}\n\n" +
+                    $"Общее колчичество повторений: \n{count}\n\n";
             }
         }
     }
@@ -59,7 +53,7 @@ namespace ChatAnalyzer
             if (ChatInfo.Text != null)
             {
                 ChatInfoTemp.RefreshTemp();
-                Analyze.AnalyzeWordDialog aWD = new(new IndexChanger(ShowResult));
+                Analyze.AnalyzeWordDialog aWD = new(new IndexKindAnalyze(ShowResult));
                 aWD.ShowDialog();
             }
         }

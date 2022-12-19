@@ -14,6 +14,6 @@ namespace ChatAnalyzer
             Application.Run(new Index());
         }
         //делегат который будет применяться для вывода результатов на главную форму
-        public delegate void IndexChanger(bool isPersonal);
+        public delegate void IndexKindAnalyze(bool isPersonal);
     }
 }

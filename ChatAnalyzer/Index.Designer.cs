@@ -58,14 +58,8 @@
             this.textBoxIndexGeneral = new System.Windows.Forms.RichTextBox();
             this.textBoxPerson2 = new System.Windows.Forms.RichTextBox();
             this.textBoxPerson1 = new System.Windows.Forms.RichTextBox();
-            this.flowLayoutPanelGeneral = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelList = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelPersonal = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStripIndexMain.SuspendLayout();
             this.groupBoxAnalyzeButtons.SuspendLayout();
-            this.flowLayoutPanelGeneral.SuspendLayout();
-            this.flowLayoutPanelList.SuspendLayout();
-            this.flowLayoutPanelPersonal.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripIndexMain
@@ -192,9 +186,10 @@
             // listBoxChats
             // 
             resources.ApplyResources(this.listBoxChats, "listBoxChats");
+            this.listBoxChats.BackColor = System.Drawing.SystemColors.Window;
+            this.listBoxChats.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxChats.FormattingEnabled = true;
             this.listBoxChats.Name = "listBoxChats";
-            this.listBoxChats.SelectedIndexChanged += new System.EventHandler(this.listBoxChats_SelectedIndexChanged);
             // 
             // labelChats
             // 
@@ -235,14 +230,15 @@
             // 
             resources.ApplyResources(this.textBoxIndexGeneral, "textBoxIndexGeneral");
             this.textBoxIndexGeneral.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxIndexGeneral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxIndexGeneral.Name = "textBoxIndexGeneral";
             this.textBoxIndexGeneral.ReadOnly = true;
-            this.textBoxIndexGeneral.TextChanged += new System.EventHandler(this.textBoxIndexAnalyze_TextChanged_1);
             // 
             // textBoxPerson2
             // 
             resources.ApplyResources(this.textBoxPerson2, "textBoxPerson2");
             this.textBoxPerson2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxPerson2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPerson2.Name = "textBoxPerson2";
             this.textBoxPerson2.ReadOnly = true;
             // 
@@ -250,36 +246,18 @@
             // 
             resources.ApplyResources(this.textBoxPerson1, "textBoxPerson1");
             this.textBoxPerson1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBoxPerson1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPerson1.Name = "textBoxPerson1";
             this.textBoxPerson1.ReadOnly = true;
-            // 
-            // flowLayoutPanelGeneral
-            // 
-            resources.ApplyResources(this.flowLayoutPanelGeneral, "flowLayoutPanelGeneral");
-            this.flowLayoutPanelGeneral.BackColor = System.Drawing.SystemColors.Control;
-            this.flowLayoutPanelGeneral.Controls.Add(this.textBoxIndexGeneral);
-            this.flowLayoutPanelGeneral.Name = "flowLayoutPanelGeneral";
-            // 
-            // flowLayoutPanelList
-            // 
-            resources.ApplyResources(this.flowLayoutPanelList, "flowLayoutPanelList");
-            this.flowLayoutPanelList.Controls.Add(this.listBoxChats);
-            this.flowLayoutPanelList.Name = "flowLayoutPanelList";
-            // 
-            // flowLayoutPanelPersonal
-            // 
-            resources.ApplyResources(this.flowLayoutPanelPersonal, "flowLayoutPanelPersonal");
-            this.flowLayoutPanelPersonal.Controls.Add(this.textBoxPerson1);
-            this.flowLayoutPanelPersonal.Controls.Add(this.textBoxPerson2);
-            this.flowLayoutPanelPersonal.Name = "flowLayoutPanelPersonal";
             // 
             // Index
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.Controls.Add(this.flowLayoutPanelGeneral);
-            this.Controls.Add(this.flowLayoutPanelPersonal);
-            this.Controls.Add(this.flowLayoutPanelList);
+            this.Controls.Add(this.textBoxPerson2);
+            this.Controls.Add(this.textBoxPerson1);
+            this.Controls.Add(this.textBoxIndexGeneral);
+            this.Controls.Add(this.listBoxChats);
             this.Controls.Add(this.buttonChatsAdd);
             this.Controls.Add(this.buttonChatsClean);
             this.Controls.Add(this.buttonResultSave);
@@ -289,13 +267,9 @@
             this.Controls.Add(this.menuStripIndexMain);
             this.MainMenuStrip = this.menuStripIndexMain;
             this.Name = "Index";
-            this.Load += new System.EventHandler(this.Index_Load);
             this.menuStripIndexMain.ResumeLayout(false);
             this.menuStripIndexMain.PerformLayout();
             this.groupBoxAnalyzeButtons.ResumeLayout(false);
-            this.flowLayoutPanelGeneral.ResumeLayout(false);
-            this.flowLayoutPanelList.ResumeLayout(false);
-            this.flowLayoutPanelPersonal.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,8 +306,5 @@
         internal RichTextBox textBoxIndexGeneral;
         internal RichTextBox textBoxPerson2;
         internal RichTextBox textBoxPerson1;
-        private FlowLayoutPanel flowLayoutPanelGeneral;
-        private FlowLayoutPanel flowLayoutPanelList;
-        private FlowLayoutPanel flowLayoutPanelPersonal;
     }
 }

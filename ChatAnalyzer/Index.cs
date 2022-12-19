@@ -1,4 +1,5 @@
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -7,10 +8,13 @@ namespace ChatAnalyzer
 {
     public partial class Index : Form
     {
+        int height = 0, width = 0;
         public Index()
         {
             InitializeComponent();
 
+            this.ResizeBegin += Index_ResizeBegin;
+            this.ResizeEnd += Index_ResizeEnd;
             buttonChatsAdd.Click += buttonChatsAdd_Click;
             buttonAnalyzeGeneral.Click += buttonAnalyzeGeneral_Click;
             buttonAnalyzeWord.Click += buttonAnalyzeWord_Click;
@@ -29,14 +33,16 @@ namespace ChatAnalyzer
             {
                 textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n" + AnalyzeResult.TextPerson1;
                 textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n" + AnalyzeResult.TextPerson2;
-                flowLayoutPanelGeneral.Visible = false;
-                flowLayoutPanelPersonal.Visible = true;
+                textBoxPerson1.Visible = true;
+                textBoxPerson2.Visible = true;
+                textBoxIndexGeneral.Visible = false;
             }
             else
             {
                 textBoxIndexGeneral.Text = AnalyzeResult.Text;
-                flowLayoutPanelGeneral.Visible = true;
-                flowLayoutPanelPersonal.Visible = false;
+                textBoxPerson1.Visible = false;
+                textBoxPerson2.Visible = false;
+                textBoxIndexGeneral.Visible = true;
             }
         }
 
@@ -51,16 +57,6 @@ namespace ChatAnalyzer
 
         }
 
-        private void listBoxChats_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxIndexAnalyze_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonChatsClean_Click(object sender, EventArgs e)
         {
             // Чистим список
@@ -68,9 +64,26 @@ namespace ChatAnalyzer
             ChatInfo.ClearChatInfo();
         }
 
-        private void Index_Load(object sender, EventArgs e)
+        private void Index_ResizeEnd(object sender, EventArgs e)
         {
+            Form index = (Form)sender;
 
+            textBoxIndexGeneral.Height -= height - index.Height;
+            textBoxIndexGeneral.Width -= width - index.Width;
+            textBoxPerson1.Height -= height - index.Height;
+            textBoxPerson1.Width -= (width - index.Width) / 2;
+            textBoxPerson2.Location = new Point(textBoxPerson2.Location.X - (width - index.Width) / 2, 53);
+            textBoxPerson2.Height -= height - index.Height;
+            textBoxPerson2.Width -= (width - index.Width) / 2;
+            listBoxChats.Height = textBoxIndexGeneral.Height;
+        }
+
+        private void Index_ResizeBegin(object sender, EventArgs e)
+        {
+            Form form = (Form)sender;
+
+            height = form.Height;
+            width = form.Width;
         }
     }
 }
