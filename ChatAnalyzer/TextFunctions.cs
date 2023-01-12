@@ -25,9 +25,7 @@ namespace ChatAnalyzer
                 var word = words[i].Trim();
                 if (TextFunctions.IsTime(word))
                     continue;
-                for (int j = 0; j < word.Length; j++)
-                    if (Char.IsPunctuation(word[j]))
-                        word = word.Remove(j, 1);
+                CleanPunctuation(word);
                 if (top.ContainsKey(word = word.Trim()))
                 {
                     top[word]++;
@@ -45,6 +43,20 @@ namespace ChatAnalyzer
                     top.Remove(item.Key);
             }
             return top;
+        }
+
+
+        /// <summary>
+        /// Функция читстит получаему строку от знаков припинания
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        internal static string CleanPunctuation(string s)
+        {
+            for (int j = 0; j < s.Length; j++)
+                if (!Char.IsLetter(s[j]))
+                    s = s.Remove(j, 1);
+            return s;
         }
 
         /// <summary>

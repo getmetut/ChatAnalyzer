@@ -77,7 +77,7 @@ namespace ChatAnalyzer
             StringBuilder sb = new ();
             foreach (var t in fSplit)
             {
-                // проверяем на отстутсвие текста, если его нет то пропускаем, есть записываем
+                // проверяем на отстутсвие текста, если его нет то пропускаем, есть - записываем
                 if (Equals(t[0], "<"))
                     continue;
                 else
@@ -102,7 +102,7 @@ namespace ChatAnalyzer
         {
             // создаем массив первые два элемента инициалы вторые имена
             string[] initsNames = new string[4];
-            // начием идти по всем словам листа
+            // начинаем идти по всем словам листа
             for (int i = 1; i < wordsList.Count; i++)
                 // находим жлемент массива который обозначает время отправки сообщения
                 if (TextFunctions.IsTime(wordsList[i]))
@@ -148,7 +148,7 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// Счиатеn количество сообщений
+        /// Счиатет количество сообщений
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
