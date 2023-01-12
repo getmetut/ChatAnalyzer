@@ -15,17 +15,17 @@ namespace ChatAnalyzer
         public static void Analyze(string phrase, bool isPersonal)
         {
             // чистим словосочтиание и делим его на слова
-            TextFunctions.CleanPunctuation(phrase);
+            TextFunctions.OnlyText(phrase);
             string[] words = phrase.Split(' ');
             if (isPersonal)
             {
                 // создаем перменные списков и числители
-                var list1 = ChatInfo.WordListP1;
+                var list1 = ChatInfoTemp.WordListP1;
                 for (int i = 0; i < list1.Count; i++)
-                    list1[i] = TextFunctions.CleanPunctuation(list1[i]).ToLower();
-                var list2 = ChatInfo.WordListP2;
+                    list1[i] = TextFunctions.OnlyText(list1[i]).ToLower();
+                var list2 = ChatInfoTemp.WordListP2;
                 for (int i = 0; i < list2.Count; i++)
-                    list2[i] = TextFunctions.CleanPunctuation(list2[i]).ToLower();
+                    list2[i] = TextFunctions.OnlyText(list2[i]).ToLower();
                 float count1 = 0, count2 = 0;
                 // находим совпадение первого слова сс
                 int num = list1.IndexOf(words[0]);
@@ -37,7 +37,7 @@ namespace ChatAnalyzer
                     // начинаем проверку
                     for (int j = 1; j < words.Length; j++)
                     {
-                        if (!Equals(list1[num], TextFunctions.CleanPunctuation(words[j]).ToString().ToLower()))
+                        if (!Equals(list1[num], words[j]))
                             flag = false;
                         num++;
                     }
@@ -77,10 +77,11 @@ namespace ChatAnalyzer
             }
             else
             {
-                var list = ChatInfo.WordList;
-                float count = 0;
-                // находим совпадение первого слова сс
+                var list = ChatInfoTemp.WordList;
                 int num = list.IndexOf(words[0]);
+                for (int i = 0; i < list.Count; i++)
+                    list[i] = TextFunctions.OnlyText(list[i]).ToLower();
+                float count = 0;
                 while (num > 0)
                 {
                     bool flag = true;

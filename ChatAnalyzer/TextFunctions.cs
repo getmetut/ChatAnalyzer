@@ -25,7 +25,7 @@ namespace ChatAnalyzer
                 var word = words[i].Trim();
                 if (TextFunctions.IsTime(word))
                     continue;
-                CleanPunctuation(word);
+                word = OnlyText(word);
                 if (top.ContainsKey(word = word.Trim()))
                 {
                     top[word]++;
@@ -51,12 +51,13 @@ namespace ChatAnalyzer
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        internal static string CleanPunctuation(string s)
+        internal static string OnlyText(string s)
         {
+            string snew = "";
             for (int j = 0; j < s.Length; j++)
-                if (!Char.IsLetter(s[j]))
-                    s = s.Remove(j, 1);
-            return s;
+                if (Char.IsLetter(s[j]))
+                    snew += s[j];
+            return snew;
         }
 
         /// <summary>
