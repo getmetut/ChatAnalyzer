@@ -77,6 +77,8 @@ namespace ChatAnalyzer
             textBoxPerson2.Height -= height - index.Height;
             textBoxPerson2.Width -= (width - index.Width) / 2;
             listBoxChats.Height = textBoxIndexGeneral.Height;
+            buttonResultSave.Location = new Point(buttonResultSave.Location.X - (width - index.Width),
+                buttonResultSave.Location.Y - (height - index.Height));
         }
 
         private void Index_ResizeBegin(object sender, EventArgs e)

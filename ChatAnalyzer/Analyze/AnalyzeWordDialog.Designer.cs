@@ -40,10 +40,12 @@
             // 
             // textBoxWord
             // 
-            this.textBoxWord.Location = new System.Drawing.Point(13, 96);
+            this.textBoxWord.Location = new System.Drawing.Point(13, 126);
             this.textBoxWord.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxWord.Multiline = true;
             this.textBoxWord.Name = "textBoxWord";
-            this.textBoxWord.Size = new System.Drawing.Size(209, 23);
+            this.textBoxWord.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxWord.Size = new System.Drawing.Size(209, 64);
             this.textBoxWord.TabIndex = 0;
             // 
             // labelWord
@@ -52,15 +54,15 @@
             this.labelWord.Location = new System.Drawing.Point(13, 73);
             this.labelWord.Margin = new System.Windows.Forms.Padding(4);
             this.labelWord.Name = "labelWord";
-            this.labelWord.Size = new System.Drawing.Size(114, 15);
+            this.labelWord.Size = new System.Drawing.Size(171, 45);
             this.labelWord.TabIndex = 1;
-            this.labelWord.Text = "Слово для анализа:\r\n";
+            this.labelWord.Text = "Слова и словосочитания\r\nдля анализа\r\n(перечислите через запятую):\r\n";
             // 
             // buttonOK
             // 
-            this.buttonOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonOK.Location = new System.Drawing.Point(13, 127);
+            this.buttonOK.Location = new System.Drawing.Point(13, 201);
             this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(98, 28);
@@ -71,9 +73,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonCancel.Location = new System.Drawing.Point(125, 127);
+            this.buttonCancel.Location = new System.Drawing.Point(125, 201);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(98, 28);
@@ -124,15 +126,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(235, 164);
+            this.ClientSize = new System.Drawing.Size(235, 241);
             this.Controls.Add(this.groupBoxKind);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.textBoxWord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximumSize = new System.Drawing.Size(255, 207);
-            this.MinimumSize = new System.Drawing.Size(255, 207);
             this.Name = "AnalyzeWordDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
