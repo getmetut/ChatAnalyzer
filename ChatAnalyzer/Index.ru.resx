@@ -121,20 +121,14 @@
   <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="groupBoxAnalyzeButtons.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>178, 197</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>178, 197</value>
-  </data>
   <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 197</value>
+    <value>178, 176</value>
   </data>
   <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 162</value>
+    <value>9, 139</value>
   </data>
   <data name="buttonAnalyzeBadWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -142,23 +136,23 @@
   <data name="buttonAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 28</value>
   </data>
-  <data name="buttonAnalyzePhrase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 127</value>
+  <data name="buttonAnalyzeBadWords.Text" xml:space="preserve">
+    <value>На брань и смех</value>
   </data>
-  <data name="buttonAnalyzePhrase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="buttonAnalyzeNextWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 103</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="buttonAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 28</value>
-  </data>
-  <data name="buttonAnalyzeWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 92</value>
-  </data>
-  <data name="buttonAnalyzeWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="buttonAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonAnalyzeNextWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 28</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Text" xml:space="preserve">
+    <value>На последующие слова</value>
   </data>
   <data name="buttonAnalyzeWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 56</value>
@@ -167,7 +161,10 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="buttonAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 28</value>
+    <value>160, 39</value>
+  </data>
+  <data name="buttonAnalyzeWord.Text" xml:space="preserve">
+    <value>По словам/словосочитаниям</value>
   </data>
   <data name="buttonAnalyzeGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 21</value>
@@ -330,9 +327,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>859, 557</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 0, 9, 8</value>

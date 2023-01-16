@@ -43,8 +43,7 @@
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxAnalyzeButtons = new System.Windows.Forms.GroupBox();
             this.buttonAnalyzeBadWords = new System.Windows.Forms.Button();
-            this.buttonAnalyzePhrase = new System.Windows.Forms.Button();
-            this.buttonAnalyzeWords = new System.Windows.Forms.Button();
+            this.buttonAnalyzeNextWord = new System.Windows.Forms.Button();
             this.buttonAnalyzeWord = new System.Windows.Forms.Button();
             this.buttonAnalyzeGeneral = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
@@ -141,8 +140,7 @@
             // 
             resources.ApplyResources(this.groupBoxAnalyzeButtons, "groupBoxAnalyzeButtons");
             this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeBadWords);
-            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzePhrase);
-            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeWords);
+            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeNextWord);
             this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeWord);
             this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeGeneral);
             this.groupBoxAnalyzeButtons.Name = "groupBoxAnalyzeButtons";
@@ -154,17 +152,11 @@
             this.buttonAnalyzeBadWords.Name = "buttonAnalyzeBadWords";
             this.buttonAnalyzeBadWords.UseVisualStyleBackColor = true;
             // 
-            // buttonAnalyzePhrase
+            // buttonAnalyzeNextWord
             // 
-            resources.ApplyResources(this.buttonAnalyzePhrase, "buttonAnalyzePhrase");
-            this.buttonAnalyzePhrase.Name = "buttonAnalyzePhrase";
-            this.buttonAnalyzePhrase.UseVisualStyleBackColor = true;
-            // 
-            // buttonAnalyzeWords
-            // 
-            resources.ApplyResources(this.buttonAnalyzeWords, "buttonAnalyzeWords");
-            this.buttonAnalyzeWords.Name = "buttonAnalyzeWords";
-            this.buttonAnalyzeWords.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonAnalyzeNextWord, "buttonAnalyzeNextWord");
+            this.buttonAnalyzeNextWord.Name = "buttonAnalyzeNextWord";
+            this.buttonAnalyzeNextWord.UseVisualStyleBackColor = true;
             // 
             // buttonAnalyzeWord
             // 
@@ -291,8 +283,7 @@
         private ToolStripMenuItem toolStripMenuItemHelp;
         private GroupBox groupBoxAnalyzeButtons;
         private Button buttonAnalyzeBadWords;
-        private Button buttonAnalyzePhrase;
-        private Button buttonAnalyzeWords;
+        private Button buttonAnalyzeNextWord;
         private Button buttonAnalyzeWord;
         private Button buttonAnalyzeGeneral;
         private Label labelResult;

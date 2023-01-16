@@ -32,12 +32,12 @@ namespace ChatAnalyzer
                 var list2 = ChatInfoTemp.WordListP2;
                 for (int i = 0; i < list2.Count; i++)
                     list2[i] = TextFunctions.OnlyText(list2[i]).ToLower();
-
+                string res1 = "", res2 = "";
                 // начинаем цикл сравнений
                 for (int i = 0; i < strList.Count; i++)
                 {
                     // числители
-                    float count1 = 0, count2 = 0; string res1 = "", res2 = "";
+                    float count1 = 0, count2 = 0; 
                     // находим совпадение первого слова словосочитания
                     int num = list1.IndexOf(strList[i][0]);
                     while (num > 0)
@@ -81,23 +81,19 @@ namespace ChatAnalyzer
                     /*  string text = "{\\rtfСловосочитание/слово:\\par" + TextFunctions.OnlyText(phrases[i]).Trim() +
                           "\\par" + "Повторений: " + count1 + "; Процент употребления: {\\b" + per1 + "}%\\par}";*/
 
-                    res1 += $"\nСловосочитание/слово:\n{phrases[i]}\n\n" +
-                          $"Повторений: {count1}; " +
-                          $"Процент употребления: {per1 * 100:F2}%\n\n";
-                    AnalyzeResult.TextPerson1 = res1;
+                    res1 += $"{phrases[i]}  |  {count1}  |  {per1 * 100:F2}%\n";
+                    res2 += $"{phrases[i]}  |  {count2}  |  {per2 * 100:F2}%\n";
 
-                    res2 += $"\nСловосочитание/слово:\n{phrases[i]}\n\n" +
-                          $"Повторений: {count2}; " +
-                          $"Процент употребления: {per2 * 100:F2}%\n\n";
-                    AnalyzeResult.TextPerson2 = res2;
                 }
+                AnalyzeResult.TextPerson1 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res1}";
+                AnalyzeResult.TextPerson2 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res2}";
             }
             else
             {
                 var list = ChatInfoTemp.WordList;
                 for (int i = 0; i < list.Count; i++)
                     list[i] = TextFunctions.OnlyText(list[i]).ToLower();
-                float count = 0;
+                float count = 0; string res = "";
 
                 for (int i = 0; i < strList.Count; i++)
                 {
@@ -117,9 +113,11 @@ namespace ChatAnalyzer
                         num = list.IndexOf(strList[i][0], num);
                     }
 
-                    AnalyzeResult.Text = $"\nСловосочитание/слово:\n{phrases[i]}\n\n" +
+                    res += $"\nСловосочитание/слово:\n{phrases[i]}\n\n" +
                           $"Повторений: {count}";
                 }
+
+                AnalyzeResult.Text = res;
             }
         }
     }
