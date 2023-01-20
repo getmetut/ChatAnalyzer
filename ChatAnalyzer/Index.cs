@@ -18,6 +18,7 @@ namespace ChatAnalyzer
             buttonChatsAdd.Click += buttonChatsAdd_Click;
             buttonAnalyzeGeneral.Click += buttonAnalyzeGeneral_Click;
             buttonAnalyzeWord.Click += buttonAnalyzeWord_Click;
+            buttonAnalyzeNextWord.Click += buttonAnalyzeNextWords_Click;
             openFileDialog1.Filter = "HTML files(*.html)|*.html|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);

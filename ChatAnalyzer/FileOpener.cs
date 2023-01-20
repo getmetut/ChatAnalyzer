@@ -216,8 +216,8 @@ namespace ChatAnalyzer
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
             TextFunctions.AccountFullNames(ChatInfo.WordList, ChatInfo.WordDict);
 
-            // Флаг обозначающий что, произошло добавление
-            ChatInfo.NewAdded = true;
+            // Разбиваем текст по персоналям
+            new PersonalText();
 
             // Счиатем количество сообщений
             ChatInfo.MessageCount = FileOpener.MessagesCounting(ChatInfo.WordList);

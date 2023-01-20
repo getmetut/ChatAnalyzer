@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ChatAnalyzer.Analyze
 {
-    public partial class AnalyzeWordDialog : Form
+    public partial class AnalyzeWordsDialog : Form
     {
         private readonly Program.IndexKindAnalyze delegat;
-        public AnalyzeWordDialog(Program.IndexKindAnalyze sender)
+        public AnalyzeWordsDialog(Program.IndexKindAnalyze sender)
         {
             InitializeComponent();
             delegat = sender;
@@ -21,17 +21,8 @@ namespace ChatAnalyzer.Analyze
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            if (radioButtonKindPersonal.Checked == true)
-            {
-                new PersonalText();
-                AnalyzeWord.Analyze(textBoxWord.Text.ToLower(), true);
-                delegat(true);
-            }
-            else
-            {
-                AnalyzeWord.Analyze(textBoxWord.Text.ToLower(), false);
-                delegat(false);
-            }
+            AnalyzeWords.Analyze(textBoxWord.Text.ToLower(), radioButtonKindPersonal.Checked);
+            delegat(radioButtonKindPersonal.Checked);
             this.Close();
         }
     }

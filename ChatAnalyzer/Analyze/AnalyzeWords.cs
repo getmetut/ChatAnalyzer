@@ -10,7 +10,7 @@ using static ChatAnalyzer.Program;
 
 namespace ChatAnalyzer
 {
-    internal class AnalyzeWord
+    internal class AnalyzeWords
     {
         public static void Analyze(string str, bool isPersonal)
         {
@@ -112,12 +112,10 @@ namespace ChatAnalyzer
                             count++;
                         num = list.IndexOf(strList[i][0], num);
                     }
-
-                    res += $"\nСловосочитание/слово:\n{phrases[i]}\n\n" +
-                          $"Повторений: {count}";
+                    res += $"{phrases[i]}  |  {count}\n";
                 }
 
-                AnalyzeResult.Text = res;
+                AnalyzeResult.Text = $"Словосочитание/слово | Повторений\n\n{res}";
             }
         }
     }
@@ -129,7 +127,7 @@ namespace ChatAnalyzer
             if (ChatInfo.Text != null)
             {
                 ChatInfoTemp.RefreshTemp();
-                Analyze.AnalyzeWordDialog aWD = new(new IndexKindAnalyze(ShowResult));
+                Analyze.AnalyzeWordsDialog aWD = new(new IndexKindAnalyze(ShowResult));
                 aWD.ShowDialog();
             }
         }

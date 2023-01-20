@@ -24,7 +24,6 @@ namespace ChatAnalyzer.Analyze
         {
             if (radioButtonKindPersonal.Checked == true)
             {
-                new PersonalText();
                 AnalyzeResult.TextPerson1 = AnalyzeGeneral.Analyze(ChatInfoTemp.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
                 AnalyzeResult.TextPerson2 = AnalyzeGeneral.Analyze(ChatInfoTemp.WordDictP2, Int32.Parse(textBoxMinAmount.Text),

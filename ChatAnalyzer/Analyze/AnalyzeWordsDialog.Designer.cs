@@ -1,6 +1,6 @@
 ﻿namespace ChatAnalyzer.Analyze
 {
-    partial class AnalyzeWordDialog
+    partial class AnalyzeWordsDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.textBoxWord.Multiline = true;
             this.textBoxWord.Name = "textBoxWord";
             this.textBoxWord.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxWord.Size = new System.Drawing.Size(209, 64);
+            this.textBoxWord.Size = new System.Drawing.Size(210, 64);
             this.textBoxWord.TabIndex = 0;
             // 
             // labelWord
@@ -120,7 +120,7 @@
             this.radioButtonKindPersonal.Text = "Персональный";
             this.radioButtonKindPersonal.UseVisualStyleBackColor = true;
             // 
-            // AnalyzeWordDialog
+            // AnalyzeWordsDialog
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -133,7 +133,9 @@
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.textBoxWord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "AnalyzeWordDialog";
+            this.MaximumSize = new System.Drawing.Size(255, 284);
+            this.MinimumSize = new System.Drawing.Size(255, 284);
+            this.Name = "AnalyzeWordsDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка анализа";

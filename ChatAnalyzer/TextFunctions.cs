@@ -45,6 +45,24 @@ namespace ChatAnalyzer
             return top;
         }
 
+        internal static Dictionary<string, int> CreateDictionary(List<string> list)
+        {
+            var top = new Dictionary<string, int>();
+          //  string[] words = text.ToLower().Split(' ');
+            for (int i = 0; i < list.Count; i++)
+            {
+                var element = list[i].Trim();
+                if (top.ContainsKey(element))
+                {
+                    top[element]++;
+                }
+                else
+                {
+                    top[element] = 1;
+                }
+            }
+            return top;
+        }
 
         /// <summary>
         /// Функция читстит получаему строку от знаков припинания
