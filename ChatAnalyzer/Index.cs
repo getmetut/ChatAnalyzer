@@ -32,8 +32,8 @@ namespace ChatAnalyzer
         {
             if (isPersonal)
             {
-                textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n" + AnalyzeResult.TextPerson1;
-                textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n" + AnalyzeResult.TextPerson2;
+                textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n\n" + AnalyzeResult.TextPerson1;
+                textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n\n" + AnalyzeResult.TextPerson2;
                 textBoxPerson1.Visible = true;
                 textBoxPerson2.Visible = true;
                 textBoxIndexGeneral.Visible = false;

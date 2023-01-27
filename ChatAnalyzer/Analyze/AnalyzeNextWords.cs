@@ -20,18 +20,50 @@ namespace ChatAnalyzer
             {
                 // создаем перменные списков и числители
                 var list1 = ChatInfoTemp.WordListP1;
-                for (int i = 0; i < list1.Count; i++)
-                    list1[i] = TextFunctions.OnlyText(list1[i]).ToLower();
+                list1[0] = "";
+                for (int i = 2; i < list1.Count; i++)
+                    try
+                    {
+                        if (Equals(list1[i], ChatInfo.InitialP1) && TextFunctions.IsTime(list1[i + 1])
+                            || TextFunctions.IsNecName(list1, i, ChatInfo.FullNameP1))
+                            list1[i] = "";
+                    }
+                    catch (ArgumentOutOfRangeException e)
+                    {
+                        break;
+                    }
                 list1.RemoveAll(String.IsNullOrWhiteSpace);
-                list1.RemoveAll(x => Equals(x, ChatInfo.InitialP1.ToLower())
-                    | Equals(x, TextFunctions.OnlyText(ChatInfo.FullNameP1.ToLower())) | Constants.tExept.Contains(x));
+
+                for (int i = 0; i < list1.Count; i++)
+                {
+                    list1[i] = TextFunctions.OnlyText(list1[i]).ToLower();
+                    if (Constants.tExeptNoInit.Contains(list1[i]))
+                        list1[i] = "";
+                }
+                list1.RemoveAll(String.IsNullOrWhiteSpace);
 
                 var list2 = ChatInfoTemp.WordListP2;
-                for (int i = 0; i < list2.Count; i++)
-                    list2[i] = TextFunctions.OnlyText(list2[i]).ToLower();
+                list2[0] = "";
+                for (int i = 2; i < list2.Count; i++)
+                    try
+                    {
+                        if (Equals(list2[i], ChatInfo.InitialP2) && TextFunctions.IsTime(list2[i + 1])
+                            || TextFunctions.IsNecName(list2, i, ChatInfo.FullNameP2))
+                            list2[i] = "";
+                    }
+                    catch (ArgumentOutOfRangeException e)
+                    {
+                        break;
+                    }
                 list2.RemoveAll(String.IsNullOrWhiteSpace);
-                list2.RemoveAll(x => Equals(x, ChatInfo.InitialP2.ToLower())
-                    | Equals(x, TextFunctions.OnlyText(ChatInfo.FullNameP2.ToLower())) | Constants.tExept.Contains(x));
+
+                for (int i = 0; i < list2.Count; i++)
+                {
+                    list2[i] = TextFunctions.OnlyText(list2[i]).ToLower();
+                    if (Constants.tExept.Contains(list2[i]))
+                        list2[i] = "";
+                }
+                list2.RemoveAll(String.IsNullOrWhiteSpace);
 
                 // делим словосочитание на слова и создаем список в который будем записывать совпадения
                 List<string> coincidences1 = new();
@@ -45,18 +77,32 @@ namespace ChatAnalyzer
                     // начинаем проверку
                     for (int j = 1; j < words.Length; j++)
                     {
-                        if (!Equals(list1[num], words[j]))
-                            flag = false;
-                        num++;
+                        try
+                        {
+                            if (!Equals(list1[num], words[j]))
+                                flag = false;
+                            num++;
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            break;
+                        }
                     }
                     // если все ок
                     if (flag)
                     {
                         // записываем в список слова следующие за нужным словосочитанием
                         string newConc = "";
-                        for (int j = num; j < num + amount; j++)
-                            newConc += list1[j] + " ";
-                        coincidences1.Add(newConc);
+                        try
+                        {
+                            for (int j = num; j < num + amount; j++)
+                                newConc += list1[j] + " ";
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            break;
+                        }
+                        coincidences1.Add(newConc.Trim());
                     }
 
                     // ищем новое совпадение
@@ -71,17 +117,32 @@ namespace ChatAnalyzer
                     num++;
                     for (int j = 1; j < words.Length; j++)
                     {
-                        if (!Equals(list2[num], words[j]))
-                            flag = false;
-                        num++;
+                        try
+                        {
+                            if (!Equals(list2[num], words[j]))
+                                flag = false;
+                            num++;
+
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            break;
+                        }
                     }
 
                     if (flag)
                     {
                         string newConc = "";
-                        for (int j = num; j < num + amount; j++)
-                            newConc += list2[j] + " ";
-                        coincidences2.Add(newConc);
+                        try
+                        {
+                            for (int j = num; j < num + amount; j++)
+                                newConc += list2[j] + " ";
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            break;
+                        }
+                        coincidences2.Add(newConc.Trim());
                     }
 
                     num = list2.IndexOf(words[0], num);
@@ -90,8 +151,8 @@ namespace ChatAnalyzer
                 var top1 = TextFunctions.CreateDictionary(coincidences1);
                 var top2 = TextFunctions.CreateDictionary(coincidences2);
 
-                AnalyzeResult.TextPerson1 = $"\nСловосочитание\\слово:\n{phrase}\n\n";
-                AnalyzeResult.TextPerson2 = $"\nСловосочитание\\слово:\n{phrase}\n\n";
+                AnalyzeResult.TextPerson1 = $"Словосочитание\\слово:\n{phrase}\n\n";
+                AnalyzeResult.TextPerson2 = $"Словосочитание\\слово:\n{phrase}\n\n";
 
                 StringBuilder result = new();
                 var sortedTop1 = top1.Where(t => t.Value > minRepeat).OrderByDescending(t => t.Value);
@@ -110,14 +171,29 @@ namespace ChatAnalyzer
             else
             {
                 var list = ChatInfoTemp.WordList;
-                List<string> coincidences = new();
+                for (int i = 2; i < list.Count; i++)
+                    try
+                    {
+                        if (Equals(list[i], ChatInfo.InitialP1) && TextFunctions.IsTime(list[i + 1])
+                            || Equals(list[i], ChatInfo.InitialP2) && TextFunctions.IsTime(list[i + 1])
+                            || TextFunctions.IsNecName(list, i, ChatInfo.FullNameP1) || TextFunctions.IsNecName(list, i, ChatInfo.FullNameP2))
+                            list[i] = "";
+                    }
+                    catch (ArgumentOutOfRangeException e)
+                    {
+                        break;
+                    }
+                list.RemoveAll(String.IsNullOrWhiteSpace);
 
                 for (int i = 0; i < list.Count; i++)
+                {
                     list[i] = TextFunctions.OnlyText(list[i]).ToLower();
+                    if (Constants.tExeptNoInit.Contains(list[i]))
+                        list[i] = "";
+                }
                 list.RemoveAll(String.IsNullOrWhiteSpace);
-                list.RemoveAll(x => Equals(x, ChatInfo.InitialP1.ToLower())
-                    | Equals(x, TextFunctions.OnlyText(ChatInfo.FullNameP1.ToLower())) | Constants.tExept.Contains(x));
 
+                List<string> coincidences = new();
                 int num = list.IndexOf(words[0]);
                 while (num > 0)
                 {
@@ -125,17 +201,32 @@ namespace ChatAnalyzer
                     num++;
                     for (int j = 1; j < words.Length; j++)
                     {
-                        if (!Equals(list[num], words[j]))
-                            flag = false;
-                        num++;
+                        try
+                        {
+                            if (!Equals(list[num], words[j]))
+                                flag = false;
+                            num++;
+
+                        }
+                        catch (Exception e)
+                        {
+                            break;
+                        }
                     }
 
                     if (flag)
                     {
                         string newConc = "";
-                        for (int j = num; j < num + amount; j++)
-                            newConc += list[j] + " ";
-                        coincidences.Add(newConc);
+                        try
+                        {
+                            for (int j = num; j < num + amount; j++)
+                                newConc += list[j] + " ";
+                        }
+                        catch (ArgumentOutOfRangeException e)
+                        {
+                            break;
+                        }
+                        coincidences.Add(newConc.Trim());
                     }
 
                     num = list.IndexOf(words[0], num);

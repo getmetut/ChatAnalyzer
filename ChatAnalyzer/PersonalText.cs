@@ -23,6 +23,7 @@ namespace ChatAnalyzer
                     for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person2)); j++)
                     {
                         text1.Append(" " + wordsList[j]);
+                        i = wordsList.FindIndex(i, w => Equals(w, person2)) - 2;
                     }
                 }
 
@@ -31,6 +32,7 @@ namespace ChatAnalyzer
                     for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person1)); j++)
                     {
                         text2.Append(" " + wordsList[j]);
+                        i = wordsList.FindIndex(i, w => Equals(w, person1)) - 2;
                     }
                 }
             }
@@ -39,13 +41,11 @@ namespace ChatAnalyzer
             ChatInfoTemp.TextP1 = ChatInfo.TextP1 = text1.ToString();
             ChatInfoTemp.TextP2 = ChatInfo.TextP2 = text2.ToString();
             ChatInfo.WordListP1 = ChatInfo.TextP1.Split(' ').ToList();
-            ChatInfo.WordListP1.RemoveAll(String.IsNullOrWhiteSpace);
-            ChatInfoTemp.WordListP1 = ChatInfo.WordListP1;
+            ChatInfoTemp.WordListP1 = ChatInfo.WordListP1.ToList();
             ChatInfo.WordListP2 = ChatInfo.TextP2.Split(' ').ToList();
-            ChatInfo.WordListP2.RemoveAll(String.IsNullOrWhiteSpace);
-            ChatInfoTemp.WordListP2 = ChatInfo.WordListP2;
-            ChatInfoTemp.WordDictP1 = ChatInfo.WordDictP1 = TextFunctions.CreateDictionary(ChatInfo.TextP1, Constants.tExept);
-            ChatInfoTemp.WordDictP2 = ChatInfo.WordDictP2 = TextFunctions.CreateDictionary(ChatInfo.TextP2, Constants.tExept);
+            ChatInfoTemp.WordListP2 = ChatInfo.WordListP2.ToList();
+            ChatInfo.WordDictP1 = TextFunctions.CreateDictionary(ChatInfo.TextP1, Constants.tExept);
+            ChatInfo.WordDictP2 = TextFunctions.CreateDictionary(ChatInfo.TextP2, Constants.tExept);
 
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
             TextFunctions.AccountFullNames(ChatInfo.WordListP1, ChatInfo.WordDictP1);

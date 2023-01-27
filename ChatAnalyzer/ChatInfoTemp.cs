@@ -21,17 +21,16 @@ namespace ChatAnalyzer
         internal static Dictionary<string, int>? WordDictP2 { get; set; }
 
         /// <summary>
-        /// функция возврата промежуточного текста к чистому
+        /// функция возврата промежуточного текста к начальному
         /// </summary>
         internal static void RefreshTemp()
         {
             Text = ChatInfo.Text;
             TextP1 = ChatInfo.TextP1;
             TextP2 = ChatInfo.TextP2;
-            WordList = ChatInfo.WordList;
-            WordDict = ChatInfo.WordDict;
-            WordDictP1 = ChatInfo.WordDictP1;
-            WordDictP2 = ChatInfo.WordDictP2;
+            WordList = ChatInfo.WordList.ToList();
+            WordListP1 = ChatInfo.WordListP1.ToList();
+            WordListP2 = ChatInfo.WordListP2.ToList();
         }
     }
 }

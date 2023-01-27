@@ -24,7 +24,12 @@ namespace ChatAnalyzer
         public static string[] tExept = {"data", "not", "change", "", "exported", "kb", "to", ChatInfo.InitialP1.ToLower(), ChatInfo.InitialP2.ToLower(),
                 "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply", "location",
                 "photo", "file", "https", "sticker", "www", "outgoing", "change", "included", "december", "january", "february",
-                "march", "april", "may", "june", "july", "august", "september", "october", "november",
+                "march", "april", "may", "june", "july", "august", "september", "october", "november", "previous", "cancelled",
+                "com", "seconds", "messages", "tiktok", "amp", "in", "960×1280", "853×1280", "591×1280", "mb", "720×1280", "576×1280", "2022"};
+        public static string[] tExeptNoInit = {"data", "not", "change", "", "exported", "kb", "to",
+                "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply", "location",
+                "photo", "file", "https", "sticker", "www", "outgoing", "change", "included", "december", "january", "february",
+                "march", "april", "may", "june", "july", "august", "september", "october", "november", "previous", "cancelled",
                 "com", "seconds", "messages", "tiktok", "amp", "in", "960×1280", "853×1280", "591×1280", "mb", "720×1280", "576×1280", "2022"};
     }
 }

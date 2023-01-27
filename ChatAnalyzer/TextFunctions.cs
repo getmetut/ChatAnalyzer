@@ -42,6 +42,9 @@ namespace ChatAnalyzer
                 if (exept.Contains(item.Key))
                     top.Remove(item.Key);
             }
+
+            top["-"] = 0;
+
             return top;
         }
 
@@ -73,7 +76,7 @@ namespace ChatAnalyzer
         {
             string snew = "";
             for (int j = 0; j < s.Length; j++)
-                if (Char.IsLetter(s[j]))
+                if (Char.IsLetter(s[j]) || Equals(s[j], '-'))
                     snew += s[j];
             return snew;
         }
@@ -103,13 +106,13 @@ namespace ChatAnalyzer
         /// <returns></returns>
         internal static bool IsTime(string word)
         {
-            return word.Length > 4 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) && Char.IsPunctuation(word[2]) &&
+            return word.Length == 5 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) && Char.IsPunctuation(word[2]) &&
                 Char.IsDigit(word[3]) && Char.IsDigit(word[4]);
         }
 
         internal static bool IsDate(string word)
         {
-            return word.Length > 8 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) && Char.IsPunctuation(word[2]) &&
+            return word.Length == 10 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) && Char.IsPunctuation(word[2]) &&
                 Char.IsDigit(word[3]) && Char.IsDigit(word[4]);
         }
         /// <summary>
@@ -134,22 +137,30 @@ namespace ChatAnalyzer
         internal static int NecNamesCount(List<string> list, string name)
         {
             int count = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                list.Add("");
-            }
+
 
             for (int i = 2; i < list.Count - 5; i++)
-                if (Equals(list[i], name)
-                    & (TextFunctions.IsTime(list[i - 1]) || TextFunctions.IsDate(list[i + 1])
+                try
+                {
+                    if (IsNecName(list, i, name))
+                    {
+                        count++;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                }
+            return count;
+        }
+
+        internal static bool IsNecName(List<string> list, int i, string name)
+        {
+            return (Equals(list[i], name)
+                    & (TextFunctions.IsTime(list[i - 1]) || TextFunctions.IsDate(list[i + 1]) || Equals(list[i - 1], "Data")
                     || Equals(list[i + 1], "Declined") || Equals(list[i + 1], "Missed") || Equals(list[i + 1], "Cancelled")
                     || Equals(list[i + 1], "Outgoing") || Equals(list[i + 1], "Incoming") || Equals(list[i + 1], "pinned")
-                    || Equals(list[i - 1], "list") || Equals(list[i + 1], "changed") || Equals(list[i - 2], "Exported")))
-                {
-                    count++;
-                }
-            list.RemoveAt(list.Count - 5);
-            return count;
+                    || Equals(list[i - 1], "list") || Equals(list[i + 1], "changed") || Equals(list[i - 2], "Exported")));
         }
 
         /// <summary>
@@ -166,6 +177,7 @@ namespace ChatAnalyzer
             int count2 = TextFunctions.NecNamesCount(unite, name2);
             TextFunctions.AssignFullNames(dict, name1, count1);
             TextFunctions.AssignFullNames(dict, name2, count2);
+            newList.RemoveAll(String.IsNullOrWhiteSpace);
         }
 
         /// <summary>
@@ -174,36 +186,42 @@ namespace ChatAnalyzer
         /// <param name="list"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        internal static List<string> UniteFullNames(List<string> list, string name)
+        internal static List<string> UniteFullNames(List<string> list, string name) 
         {
             List<string> unite = list;
             var nameMas = name.Split(' ');
-            for (int i = 0; i < 5; i++)
-            {
-                unite.Add("");
-            }
 
-            for (int i = 0; i < unite.Count - 5; i++)
+
+            for (int i = 0; i < unite.Count; i++)
             {
                 if (Equals(nameMas[0], unite[i]))
                 {
-                    bool flag = true;
-                    for (int j = 0; j < nameMas.Length; j++)
-                        if (!Equals(unite[i + j], nameMas[j]))
-                            flag = false;
-                    if (flag)
+                    try
                     {
-                        for (int j = 1; j < nameMas.Length; j++)
+                        bool flag = true;
+                        for (int j = 0; j < nameMas.Length; j++)
+
+                            if (!Equals(unite[i + j], nameMas[j]))
+                                flag = false;
+
+
+                        if (flag)
                         {
-                            unite[i] += $" {nameMas[j]}";
-                            unite[i + j] = "";
+                            for (int j = 1; j < nameMas.Length; j++)
+                            {
+                                unite[i] += $" {nameMas[j]}";
+                                unite[i + j] = "";
+                            }
                         }
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        break;
                     }
                 }
             }
-            var uniteCleanned = unite.Where(x => !Equals(x, "")).ToList(); 
-            list.RemoveAt(list.Count - 5);
-            return uniteCleanned;
+
+            return unite;
         }
     }
 }

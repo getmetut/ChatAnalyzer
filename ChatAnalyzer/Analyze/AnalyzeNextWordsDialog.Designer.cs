@@ -162,13 +162,15 @@
             this.textBoxMinRepeat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMinRepeat.Size = new System.Drawing.Size(59, 23);
             this.textBoxMinRepeat.TabIndex = 20;
-            this.textBoxMinRepeat.Text = "5";
+            this.textBoxMinRepeat.Text = "1";
             this.textBoxMinRepeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AnalyzeNextWordsDialog
             // 
+            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(239, 249);
             this.Controls.Add(this.textBoxMinRepeat);
             this.Controls.Add(this.labelMinRepeat);
@@ -179,7 +181,10 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.textBoxWord);
+            this.MaximumSize = new System.Drawing.Size(255, 288);
+            this.MinimumSize = new System.Drawing.Size(255, 288);
             this.Name = "AnalyzeNextWordsDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AnalyzeNextWordsDialog";
             this.groupBoxKind.ResumeLayout(false);
             this.groupBoxKind.PerformLayout();

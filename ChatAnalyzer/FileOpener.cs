@@ -205,8 +205,9 @@ namespace ChatAnalyzer
             else
                 foreach (var word in newList)
                     ChatInfo.WordList.Add(word);
+            ChatInfo.WordList.RemoveAll(String.IsNullOrWhiteSpace);
 
-            // пересобираем текст и записываем в сnатику его и словарь
+            // пересобираем текст и записываем в статику его и словарь
             foreach (string word in newList)
                 text.Append(" " + word);
 

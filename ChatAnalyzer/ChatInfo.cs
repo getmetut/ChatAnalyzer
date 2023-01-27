@@ -37,21 +37,23 @@ namespace ChatAnalyzer
         /// </summary>
         internal static void ClearChatInfo()
         {
-            FullNameP1 = null;
-            FullNameP2 = null;
-            InitialP1 = null;
-            InitialP2 = null;
-            Text = null;
-            TextP1 = null;
-            TextP2 = null;
-            WordList = null;
-            WordListP1 = null;
-            WordListP2 = null;
-            WordDict = null;
-            WordListP1 = null;
-            WordListP2 = null;
+            FullNameP1 = "";
+            FullNameP2 = "";
+            InitialP1 = "";
+            InitialP2 = "";
+            Text = "";
+            TextP1 = "";
+            TextP2 = "";
+            WordList.Clear();
+            WordListP1.Clear();
+            WordListP2.Clear();
+            WordDict.Clear();
+            WordListP1.Clear();
+            WordListP2.Clear();
+            MessageCount = 0;
+            MessageCountP1 = 0;
+            MessageCountP2 = 0;
             NewAdded = false;
-
         }
     }
 }

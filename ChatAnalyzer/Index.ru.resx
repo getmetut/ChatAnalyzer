@@ -62,8 +62,32 @@
     <value>False</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
+  <data name="toolStripMenuItemFileSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 22</value>
+  </data>
   <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 22</value>
   </data>
   <data name="toolStripMenuItemAnalyze.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 20</value>
@@ -87,36 +111,57 @@
   <data name="menuStripIndexMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>841, 24</value>
   </data>
-  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemFileSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 22</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBoxAnalyzeButtons.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 139</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 28</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Text" xml:space="preserve">
+    <value>На брань и смех</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 103</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 28</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.Text" xml:space="preserve">
+    <value>На последующие слова</value>
+  </data>
+  <data name="buttonAnalyzeWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 56</value>
+  </data>
+  <data name="buttonAnalyzeWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 39</value>
+  </data>
+  <data name="buttonAnalyzeWord.Text" xml:space="preserve">
+    <value>По словам/словосочитаниям</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 21</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 28</value>
+  </data>
   <data name="groupBoxAnalyzeButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>673, 32</value>
+    <value>672, 32</value>
   </data>
   <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -125,55 +170,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 176</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 139</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 28</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Text" xml:space="preserve">
-    <value>На брань и смех</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 103</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 28</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.Text" xml:space="preserve">
-    <value>На последующие слова</value>
-  </data>
-  <data name="buttonAnalyzeWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 56</value>
-  </data>
-  <data name="buttonAnalyzeWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="buttonAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 39</value>
-  </data>
-  <data name="buttonAnalyzeWord.Text" xml:space="preserve">
-    <value>По словам/словосочитаниям</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 21</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 28</value>
+    <value>185, 176</value>
   </data>
   <data name="labelResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>235, 32</value>
@@ -326,7 +323,7 @@
     <value>False</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>859, 557</value>
+    <value>865, 557</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 0, 9, 8</value>
