@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Text;
 
 namespace ChatAnalyzer
 {
@@ -51,7 +45,7 @@ namespace ChatAnalyzer
         internal static Dictionary<string, int> CreateDictionary(List<string> list)
         {
             var top = new Dictionary<string, int>();
-          //  string[] words = text.ToLower().Split(' ');
+            //  string[] words = text.ToLower().Split(' ');
             for (int i = 0; i < list.Count; i++)
             {
                 var element = list[i].Trim();
@@ -186,7 +180,7 @@ namespace ChatAnalyzer
         /// <param name="list"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        internal static List<string> UniteFullNames(List<string> list, string name) 
+        internal static List<string> UniteFullNames(List<string> list, string name)
         {
             List<string> unite = list;
             var nameMas = name.Split(' ');

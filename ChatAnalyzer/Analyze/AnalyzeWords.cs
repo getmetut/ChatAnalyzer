@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.DirectoryServices.ActiveDirectory;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ChatAnalyzer.Program;
+﻿using static ChatAnalyzer.Program;
 
 namespace ChatAnalyzer
 {
@@ -21,7 +13,7 @@ namespace ChatAnalyzer
             {
                 phrases[i] = phrases[i].Trim().ToLower();
                 strList.Add(phrases[i].Split(' '));
-            }  
+            }
 
             if (isPersonal)
             {
@@ -37,7 +29,7 @@ namespace ChatAnalyzer
                 for (int i = 0; i < strList.Count; i++)
                 {
                     // числители
-                    float count1 = 0, count2 = 0; 
+                    float count1 = 0, count2 = 0;
                     // находим совпадение первого слова словосочитания
                     int num = list1.IndexOf(strList[i][0]);
                     while (num > 0)

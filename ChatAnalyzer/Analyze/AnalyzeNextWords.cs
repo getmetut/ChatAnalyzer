@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.DirectoryServices.ActiveDirectory;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using static ChatAnalyzer.Program;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ChatAnalyzer
 {
@@ -15,6 +7,7 @@ namespace ChatAnalyzer
     {
         public static void Analyze(string phrase, bool isPersonal, int amount, int minRepeat)
         {
+            minRepeat--;
             string[] words = phrase.Split(' ');
             if (isPersonal)
             {

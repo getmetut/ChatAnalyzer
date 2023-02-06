@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChatAnalyzer
+﻿namespace ChatAnalyzer
 {
     // класс хранящий информацию о тексте и текст
     internal static class ChatInfo

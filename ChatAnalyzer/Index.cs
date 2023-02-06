@@ -1,9 +1,3 @@
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
 namespace ChatAnalyzer
 {
     public partial class Index : Form

@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ChatAnalyzer
@@ -74,7 +72,7 @@ namespace ChatAnalyzer
         {
             // проводим первый спит
             var fSplit = text.Split(">");
-            StringBuilder sb = new ();
+            StringBuilder sb = new();
             foreach (var t in fSplit)
             {
                 // проверяем на отстутсвие текста, если его нет то пропускаем, есть - записываем
@@ -198,7 +196,7 @@ namespace ChatAnalyzer
                 ChatInfo.FullNameP1 = initsNames[2];
                 ChatInfo.FullNameP2 = initsNames[3];
             }
-           
+
             // записываем лист в статику 
             if (ChatInfo.WordList == null)
                 ChatInfo.WordList = newList;
