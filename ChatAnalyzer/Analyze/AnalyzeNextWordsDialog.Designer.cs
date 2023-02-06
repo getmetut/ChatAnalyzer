@@ -181,7 +181,9 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.textBoxWord);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(255, 288);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(255, 288);
             this.Name = "AnalyzeNextWordsDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

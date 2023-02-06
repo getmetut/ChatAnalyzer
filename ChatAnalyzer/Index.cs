@@ -32,15 +32,15 @@ namespace ChatAnalyzer
         {
             if (isPersonal)
             {
-                textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n\n" + AnalyzeResult.TextPerson1;
-                textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n\n" + AnalyzeResult.TextPerson2;
+                textBoxPerson1.Text = ChatInfo.FullNameP1 + "\n\n" + AnalysisResult.TextPerson1;
+                textBoxPerson2.Text = ChatInfo.FullNameP2 + "\n\n" + AnalysisResult.TextPerson2;
                 textBoxPerson1.Visible = true;
                 textBoxPerson2.Visible = true;
                 textBoxIndexGeneral.Visible = false;
             }
             else
             {
-                textBoxIndexGeneral.Text = AnalyzeResult.Text;
+                textBoxIndexGeneral.Text = AnalysisResult.Text;
                 textBoxPerson1.Visible = false;
                 textBoxPerson2.Visible = false;
                 textBoxIndexGeneral.Visible = true;

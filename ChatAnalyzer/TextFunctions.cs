@@ -139,7 +139,7 @@ namespace ChatAnalyzer
             int count = 0;
 
 
-            for (int i = 2; i < list.Count - 5; i++)
+            for (int i = 2; i < list.Count; i++)
                 try
                 {
                     if (IsNecName(list, i, name))

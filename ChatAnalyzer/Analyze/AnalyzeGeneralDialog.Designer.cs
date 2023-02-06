@@ -178,7 +178,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(239, 231);
-            this.ControlBox = false;
             this.Controls.Add(this.checkBoxPronouns);
             this.Controls.Add(this.checkBoxPrepositions);
             this.Controls.Add(this.checkBoxPartials);
@@ -189,10 +188,13 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(255, 270);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(255, 270);
             this.Name = "AnalyzeGeneralDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка анализа";
             this.groupBoxKind.ResumeLayout(false);

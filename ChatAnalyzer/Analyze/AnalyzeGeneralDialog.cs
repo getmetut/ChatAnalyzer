@@ -24,15 +24,15 @@ namespace ChatAnalyzer.Analyze
         {
             if (radioButtonKindPersonal.Checked == true)
             {
-                AnalyzeResult.TextPerson1 = AnalyzeGeneral.Analyze(ChatInfoTemp.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
+                AnalysisResult.TextPerson1 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                AnalyzeResult.TextPerson2 = AnalyzeGeneral.Analyze(ChatInfoTemp.WordDictP2, Int32.Parse(textBoxMinAmount.Text),
+                AnalysisResult.TextPerson2 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP2, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
                 delegat(true);
             }
             else
             {
-                AnalyzeResult.Text = AnalyzeGeneral.Analyze(ChatInfoTemp.WordDict, Int32.Parse(textBoxMinAmount.Text),
+                AnalysisResult.Text = AnalyzeGeneral.Analyze(ChatInfo.WordDict, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
                 delegat(false);
             }

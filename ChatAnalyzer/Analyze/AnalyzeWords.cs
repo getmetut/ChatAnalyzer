@@ -85,8 +85,8 @@ namespace ChatAnalyzer
                     res2 += $"{phrases[i]}  |  {count2}  |  {per2 * 100:F2}%\n";
 
                 }
-                AnalyzeResult.TextPerson1 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res1}";
-                AnalyzeResult.TextPerson2 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res2}";
+                AnalysisResult.TextPerson1 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res1}";
+                AnalysisResult.TextPerson2 = $"\nСловосочитание/слово | Повторений | Процент употребления\n\n{res2}";
             }
             else
             {
@@ -115,7 +115,7 @@ namespace ChatAnalyzer
                     res += $"{phrases[i]}  |  {count}\n";
                 }
 
-                AnalyzeResult.Text = $"Словосочитание/слово | Повторений\n\n{res}";
+                AnalysisResult.Text = $"Словосочитание/слово | Повторений\n\n{res}";
             }
         }
     }

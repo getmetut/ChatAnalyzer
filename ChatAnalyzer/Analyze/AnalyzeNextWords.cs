@@ -151,8 +151,8 @@ namespace ChatAnalyzer
                 var top1 = TextFunctions.CreateDictionary(coincidences1);
                 var top2 = TextFunctions.CreateDictionary(coincidences2);
 
-                AnalyzeResult.TextPerson1 = $"Словосочитание\\слово:\n{phrase}\n\n";
-                AnalyzeResult.TextPerson2 = $"Словосочитание\\слово:\n{phrase}\n\n";
+                AnalysisResult.TextPerson1 = $"Словосочитание\\слово:\n{phrase}\n\n";
+                AnalysisResult.TextPerson2 = $"Словосочитание\\слово:\n{phrase}\n\n";
 
                 StringBuilder result = new();
                 var sortedTop1 = top1.Where(t => t.Value > minRepeat).OrderByDescending(t => t.Value);
@@ -160,12 +160,12 @@ namespace ChatAnalyzer
 
                 foreach (var item in sortedTop1)
                     result.Append($"{$"{item.Value}".PadRight(7, '-')}{item.Key}\n");
-                AnalyzeResult.TextPerson1 += result.ToString();
+                AnalysisResult.TextPerson1 += result.ToString();
 
                 result.Clear();
                 foreach (var item in sortedTop2)
                     result.Append($"{$"{item.Value}".PadRight(7, '-')}{item.Key}\n");
-                AnalyzeResult.TextPerson2 += result.ToString();
+                AnalysisResult.TextPerson2 += result.ToString();
 
             }
             else
@@ -234,14 +234,14 @@ namespace ChatAnalyzer
 
                 var top = TextFunctions.CreateDictionary(coincidences);
 
-                AnalyzeResult.Text = $"Словосочитание\\слово:\n{phrase}\n\n";
+                AnalysisResult.Text = $"Словосочитание\\слово:\n{phrase}\n\n";
 
                 StringBuilder result = new();
                 var sortedTop = top.Where(t => t.Value > minRepeat).OrderByDescending(t => t.Value);
 
                 foreach (var item in sortedTop)
                     result.Append($"{$"{item.Value}".PadRight(7, '-')}{item.Key}\n");
-                AnalyzeResult.Text += result.ToString();
+                AnalysisResult.Text += result.ToString();
             }
         }
     }

@@ -133,10 +133,13 @@
             this.Controls.Add(this.labelWord);
             this.Controls.Add(this.textBoxWord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(255, 284);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(255, 284);
             this.Name = "AnalyzeWordsDialog";
             this.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка анализа";
             this.groupBoxKind.ResumeLayout(false);
