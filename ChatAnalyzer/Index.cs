@@ -1,6 +1,4 @@
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
+using Excel = Microsoft.Office.Interop.Excel;
 using static ChatAnalyzer.Program;
 
 namespace ChatAnalyzer
@@ -16,6 +14,7 @@ namespace ChatAnalyzer
             buttonAnalyzeWord.Click += buttonAnalyzeWord_Click;
             buttonAnalyzeNextWord.Click += buttonAnalyzeNextWords_Click;
             openFileDialog1.Filter = "HTML files(*.html)|*.html|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            saveFileDialog1.Filter = "Excel files(*.xls)|*.xls|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
         }
@@ -110,10 +109,6 @@ namespace ChatAnalyzer
             }
 
         }
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
-        }
 
         private void OnApplicationExit(object sender, EventArgs e)
         {
@@ -127,9 +122,40 @@ namespace ChatAnalyzer
             ChatInfo.ClearChatInfo();
         }
 
-        private void dataGridViewResultP1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonResultSave_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Excel.Application excelapp = new Excel.Application();
+                Excel.Workbook workbook = excelapp.Workbooks.Add();
+                Excel.Worksheet worksheet = workbook.ActiveSheet;
+                var columnCount = dataGridViewResultP1.ColumnCount + 1;
 
+                for (int i = 2; i < dataGridViewResultP1.RowCount + 1; i++)
+                {
+                    for (int j = 1; j < columnCount; j++)
+                    {
+                        worksheet.Rows[i].Columns[j] = dataGridViewResultP1.Rows[i - 1].Cells[j - 1].Value;
+                    }
+                }
+
+                if (dataGridViewResultP2 != null)
+                {
+                    worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
+                    worksheet.Rows[1].Columns[columnCount] = ChatInfo.FullNameP2;
+                    for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
+                    {
+                        for (int j = 1; j < columnCount; j++)
+                        {
+                            worksheet.Rows[i].Columns[j + columnCount - 1] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
+                        }
+                    }
+                }
+
+                excelapp.AlertBeforeOverwriting = false;
+                workbook.SaveAs($"{saveFileDialog1.FileName}");
+                excelapp.Quit();
+            }
         }
 
         //private void Index_ResizeEnd(object sender, EventArgs e)

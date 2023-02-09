@@ -60,24 +60,24 @@ namespace ChatAnalyzer
             this.tabControlResult = new System.Windows.Forms.TabControl();
             this.tabPageTable = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridViewResultP2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewResultP1 = new System.Windows.Forms.DataGridView();
-            this.tabPageChart = new System.Windows.Forms.TabPage();
             this.dataGridP1ColumnWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridP1ColumnRepetitions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridP1ColumnRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewResultP2 = new System.Windows.Forms.DataGridView();
             this.dataGridP2ColumnWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridP2ColumnRepetitions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridP2ColumnRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNameP1 = new System.Windows.Forms.Label();
             this.labelNameP2 = new System.Windows.Forms.Label();
+            this.tabPageChart = new System.Windows.Forms.TabPage();
             this.menuStripIndexMain.SuspendLayout();
             this.groupBoxAnalyzeButtons.SuspendLayout();
             this.tabControlResult.SuspendLayout();
             this.tabPageTable.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripIndexMain
@@ -212,6 +212,7 @@ namespace ChatAnalyzer
             resources.ApplyResources(this.buttonResultSave, "buttonResultSave");
             this.buttonResultSave.Name = "buttonResultSave";
             this.buttonResultSave.UseVisualStyleBackColor = true;
+            this.buttonResultSave.Click += new System.EventHandler(this.buttonResultSave_Click);
             // 
             // buttonChatsClean
             // 
@@ -230,11 +231,10 @@ namespace ChatAnalyzer
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             this.openFileDialog1.Multiselect = true;
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.FileName = "FileName";
+            this.saveFileDialog1.FileName = "ChatAnalysisResult";
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             // 
             // textBoxResultInfo
@@ -269,20 +269,6 @@ namespace ChatAnalyzer
             this.tableLayoutPanel1.Controls.Add(this.labelNameP2, 1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // dataGridViewResultP2
-            // 
-            resources.ApplyResources(this.dataGridViewResultP2, "dataGridViewResultP2");
-            this.dataGridViewResultP2.AllowUserToAddRows = false;
-            this.dataGridViewResultP2.AllowUserToDeleteRows = false;
-            this.dataGridViewResultP2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResultP2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridP2ColumnWord,
-            this.dataGridP2ColumnRepetitions,
-            this.dataGridP2ColumnRatio});
-            this.dataGridViewResultP2.Name = "dataGridViewResultP2";
-            this.dataGridViewResultP2.ReadOnly = true;
-            this.dataGridViewResultP2.RowTemplate.Height = 25;
-            // 
             // dataGridViewResultP1
             // 
             resources.ApplyResources(this.dataGridViewResultP1, "dataGridViewResultP1");
@@ -296,13 +282,6 @@ namespace ChatAnalyzer
             this.dataGridViewResultP1.Name = "dataGridViewResultP1";
             this.dataGridViewResultP1.ReadOnly = true;
             this.dataGridViewResultP1.RowTemplate.Height = 25;
-            this.dataGridViewResultP1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResultP1_CellContentClick);
-            // 
-            // tabPageChart
-            // 
-            resources.ApplyResources(this.tabPageChart, "tabPageChart");
-            this.tabPageChart.Name = "tabPageChart";
-            this.tabPageChart.UseVisualStyleBackColor = true;
             // 
             // dataGridP1ColumnWord
             // 
@@ -322,6 +301,20 @@ namespace ChatAnalyzer
             resources.ApplyResources(this.dataGridP1ColumnRatio, "dataGridP1ColumnRatio");
             this.dataGridP1ColumnRatio.Name = "dataGridP1ColumnRatio";
             this.dataGridP1ColumnRatio.ReadOnly = true;
+            // 
+            // dataGridViewResultP2
+            // 
+            resources.ApplyResources(this.dataGridViewResultP2, "dataGridViewResultP2");
+            this.dataGridViewResultP2.AllowUserToAddRows = false;
+            this.dataGridViewResultP2.AllowUserToDeleteRows = false;
+            this.dataGridViewResultP2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResultP2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridP2ColumnWord,
+            this.dataGridP2ColumnRepetitions,
+            this.dataGridP2ColumnRatio});
+            this.dataGridViewResultP2.Name = "dataGridViewResultP2";
+            this.dataGridViewResultP2.ReadOnly = true;
+            this.dataGridViewResultP2.RowTemplate.Height = 25;
             // 
             // dataGridP2ColumnWord
             // 
@@ -352,6 +345,12 @@ namespace ChatAnalyzer
             resources.ApplyResources(this.labelNameP2, "labelNameP2");
             this.labelNameP2.Name = "labelNameP2";
             // 
+            // tabPageChart
+            // 
+            resources.ApplyResources(this.tabPageChart, "tabPageChart");
+            this.tabPageChart.Name = "tabPageChart";
+            this.tabPageChart.UseVisualStyleBackColor = true;
+            // 
             // Index
             // 
             resources.ApplyResources(this, "$this");
@@ -375,8 +374,8 @@ namespace ChatAnalyzer
             this.tabPageTable.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,7 +24,7 @@
                     Int32.Parse(textBoxAmountWords.Text), Int32.Parse(textBoxMinRepeat.Text));
             }
             AnalysisResult.ResultInfo = "Тип анализа: На последующие слова\n" +
-                $"Начальные слова: {textBoxWord}";
+                $"Начальные слова: {textBoxWord.Text}";
 
             delegat(radioButtonKindPersonal.Checked, Program.KindAnalysis.NextWords);
             

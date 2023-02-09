@@ -243,9 +243,6 @@
   <data name="dataGridP1ColumnRatio.HeaderText" xml:space="preserve">
     <value>Соотнош.</value>
   </data>
-  <data name="dataGridP1ColumnRatio.Width" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
   <data name="dataGridViewResultP1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -270,9 +267,6 @@
   <data name="dataGridP2ColumnRatio.HeaderText" xml:space="preserve">
     <value>Соотнош.</value>
   </data>
-  <data name="dataGridP2ColumnRatio.Width" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
   <data name="dataGridViewResultP2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -285,26 +279,14 @@
   <data name="labelNameP1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelNameP1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
   <data name="labelNameP1.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
-  </data>
-  <data name="labelNameP1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="labelNameP2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelNameP2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 0</value>
-  </data>
   <data name="labelNameP2.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
-  </data>
-  <data name="labelNameP2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
