@@ -1,9 +1,9 @@
 ﻿namespace ChatAnalyzer.Analyze
 {
-    public partial class AnalyzeGeneralDialog : Form
+    internal partial class AnalyzeGeneralDialog : Form
     {
-        private readonly Program.IndexKindAnalyze delegat;
-        public AnalyzeGeneralDialog(Program.IndexKindAnalyze sender)
+        private readonly Program.ShowResultD delegat;
+        internal AnalyzeGeneralDialog(Program.ShowResultD sender)
         {
             InitializeComponent();
             delegat = sender;
@@ -14,18 +14,19 @@
         {
             if (radioButtonKindPersonal.Checked == true)
             {
-                AnalysisResult.TextPerson1 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
+                AnalysisResult.AnalysisResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                AnalysisResult.TextPerson2 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP2, Int32.Parse(textBoxMinAmount.Text),
-                    checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                delegat(true);
+                AnalysisResult.AnalysisResultP2 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP2, Int32.Parse(textBoxMinAmount.Text),
+                    checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);          
             }
             else
             {
-                AnalysisResult.Text = AnalyzeGeneral.Analyze(ChatInfo.WordDict, Int32.Parse(textBoxMinAmount.Text),
+                AnalysisResult.AnalysisResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDict, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                delegat(false);
             }
+            AnalysisResult.ResultInfo = "Тип анализа: Общий\n";
+
+            delegat(radioButtonKindPersonal.Checked, Program.KindAnalysis.General);
             this.Close();
         }
     }

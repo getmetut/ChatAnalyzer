@@ -5,7 +5,7 @@ namespace ChatAnalyzer
 {
     internal class AnalyzeGeneral
     {
-        public static string Analyze(Dictionary<string, int> top, int amount, bool isRemovePartials, bool isRemovePrepositions, bool isRemovePronouns)
+        public static IEnumerable<KeyValuePair<string, int>> Analyze(Dictionary<string, int> top, int amount, bool isRemovePartials, bool isRemovePrepositions, bool isRemovePronouns)
         {
             // запишем результат
             StringBuilder result = new();
@@ -37,12 +37,7 @@ namespace ChatAnalyzer
                      && !Constants.pronouns.Contains(t.Key));
                     break;
             }
-
-            int num = 1;
-            foreach (var item in helpTop)
-                result.Append($"{$"{item.Value}".PadRight(7, '-')}{item.Key}\n");
-
-            return result.ToString();
+            return helpTop;
         }
     }
     // Прописываем вызов формы
@@ -53,7 +48,7 @@ namespace ChatAnalyzer
             if (ChatInfo.Text != null)
             {
                 ChatInfoTemp.RefreshTemp();
-                Analyze.AnalyzeGeneralDialog aGD = new(new IndexKindAnalyze(ShowResult));
+                Analyze.AnalyzeGeneralDialog aGD = new(new ShowResultD(ShowResult));
                 aGD.ShowDialog();
             }
         }
