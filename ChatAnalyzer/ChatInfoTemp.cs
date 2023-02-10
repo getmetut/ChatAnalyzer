@@ -16,7 +16,7 @@
         /// <summary>
         /// функция возврата промежуточного текста к начальному
         /// </summary>
-        internal static void RefreshTemp()
+        internal static void Refresh()
         {
             Text = ChatInfo.Text;
             TextP1 = ChatInfo.TextP1;

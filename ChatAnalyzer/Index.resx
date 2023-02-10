@@ -57,1182 +57,1245 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonAnalyzePhrase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
+    <value>Соотношение</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBoxPerson1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonResultSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 37</value>
+  </data>
+  <data name="textBoxIndexAnalyze.Size" type="System.Drawing.Size, System.Drawing">
+    <value>490, 604</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemResultSave.Name" xml:space="preserve">
+    <value>toolStripMenuItemResultSave</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>769, 42</value>
+  </data>
+  <data name="&gt;&gt;tabControlResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeBadWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeBadWords.Text" xml:space="preserve">
+    <value>На ругательные слова</value>
+  </data>
+  <data name="toolStripMenuItemHelp.Text" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="textBoxPerson2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="textBoxIndexGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="labelNameP2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tabPageTable.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxResultInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelNameP2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn3</value>
+  </data>
+  <data name="&gt;&gt;tabPageTable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsRemove.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsAdd.Name" xml:space="preserve">
+    <value>buttonChatsAdd</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexGeneral.Name" xml:space="preserve">
+    <value>textBoxIndexGeneral</value>
+  </data>
+  <data name="&gt;&gt;dataGridP1ColumnRatio.Name" xml:space="preserve">
+    <value>dataGridP1ColumnRatio</value>
+  </data>
+  <data name="buttonAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 37</value>
+  </data>
+  <data name="&gt;&gt;labelChats.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeNextWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="&gt;&gt;listBoxChats.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelChats.Text" xml:space="preserve">
+    <value>Чаты</value>
+  </data>
+  <data name="&gt;&gt;menuStripIndexMain.Name" xml:space="preserve">
+    <value>menuStripIndexMain</value>
+  </data>
+  <data name="buttonCancel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dataGridViewResultP1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanelList.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="listBoxChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzePhrase.Name" xml:space="preserve">
+    <value>buttonAnalyzePhrase</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFileSaveAs.Name" xml:space="preserve">
+    <value>toolStripMenuItemFileSaveAs</value>
+  </data>
+  <data name="textBoxPerson1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 54</value>
+  </data>
+  <data name="&gt;&gt;labelNameP1.Name" xml:space="preserve">
+    <value>labelNameP1</value>
+  </data>
+  <data name="tabControlResult.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelNameP1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWords.Name" xml:space="preserve">
+    <value>buttonAnalyzeNextWords</value>
+  </data>
+  <data name="tabPageTable.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 37</value>
+  </data>
+  <data name="dataGridViewResultP1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>975, 722</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="buttonResultSave.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="labelResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 216</value>
+  </data>
+  <data name="&gt;&gt;labelResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonAnalyzeNextWord.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexAnalyze.Name" xml:space="preserve">
+    <value>textBoxIndexAnalyze</value>
+  </data>
+  <data name="&gt;&gt;labelNameP1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelNameP2.Name" xml:space="preserve">
+    <value>labelNameP2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzePhrase.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzePhrase</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelList.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listBoxChats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 604</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="buttonAnalyzePhrase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 169</value>
+  </data>
+  <data name="dataGridViewResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 3</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemHelp.Name" xml:space="preserve">
+    <value>toolStripMenuItemHelp</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeBadWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Word.HeaderText" xml:space="preserve">
+    <value>Слово/словосочитание</value>
+  </data>
+  <data name="&gt;&gt;labelChats.Name" xml:space="preserve">
+    <value>labelChats</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFileSaveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzePhrase.Text" xml:space="preserve">
+    <value>По словосочетанию</value>
+  </data>
+  <data name="labelResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dataGridP2ColumnRatio.Width" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;dataGridP1ColumnRepetitions.Name" xml:space="preserve">
+    <value>dataGridP1ColumnRepetitions</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWords.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelPersonal.Name" xml:space="preserve">
+    <value>flowLayoutPanelPersonal</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsClean.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="dataGridP1ColumnRepetitions.HeaderText" xml:space="preserve">
+    <value>Повторений</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanelGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 55</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzePhrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeGeneral.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
+  </data>
+  <data name="&gt;&gt;labelNameP1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelChats.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;tabControlResult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControlResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeWords.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzeWords</value>
+  </data>
+  <data name="buttonAnalyzeWords.Text" xml:space="preserve">
+    <value>По нескольким словам</value>
+  </data>
+  <data name="buttonChatsAdd.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="dataGridP1ColumnRatio.HeaderText" xml:space="preserve">
+    <value>Соотношение</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemResultSaveAs.Name" xml:space="preserve">
+    <value>toolStripMenuItemResultSaveAs</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWord.Name" xml:space="preserve">
+    <value>buttonAnalyzeWord</value>
+  </data>
+  <data name="buttonAnalyzeWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 122</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWords.Text" xml:space="preserve">
+    <value>По нескольким словам</value>
+  </data>
+  <data name="menuStripIndexMain.Text" xml:space="preserve">
+    <value>menuStripIndexMain</value>
+  </data>
+  <data name="&gt;&gt;buttonResultSave.Name" xml:space="preserve">
+    <value>buttonResultSave</value>
+  </data>
+  <data name="dataGridViewResultP1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="toolStripMenuItemFileSaveAs.Text" xml:space="preserve">
+    <value>Сохранить как</value>
+  </data>
+  <data name="buttonResultSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>647, 684</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeGeneral.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelNameP1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dataGridViewResultP2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 3</value>
+  </data>
+  <data name="&gt;&gt;menuStripIndexMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWords.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn3.HeaderText" xml:space="preserve">
+    <value>Повторений</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsClean.Name" xml:space="preserve">
+    <value>buttonChatsClean</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.Text" xml:space="preserve">
+    <value>Общий</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 50</value>
+  </data>
+  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Text" xml:space="preserve">
+    <value>Анализ</value>
+  </data>
+  <data name="buttonAnalyzeWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeNextWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnWord.Name" xml:space="preserve">
+    <value>dataGridP2ColumnWord</value>
+  </data>
+  <data name="dataGridViewResult.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAnalyzeButtons.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;Ratio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelChats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 26</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="&gt;&gt;Word.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemAnalyze.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 24</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelPersonal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsClean.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabPageTable.Name" xml:space="preserve">
+    <value>tabPageTable</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResult.Name" xml:space="preserve">
+    <value>dataGridViewResult</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Text" xml:space="preserve">
+    <value>На ругательные слова</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeBadWords.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="buttonAnalyzeWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexAnalyze.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="buttonChatsRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="buttonAnalyzeNextWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 80</value>
+  </data>
+  <data name="labelChats.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ChatAnalyzer</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelList.Name" xml:space="preserve">
+    <value>flowLayoutPanelList</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabPageChart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzeWord.Text" xml:space="preserve">
+    <value>По слову</value>
+  </data>
+  <data name="&gt;&gt;tabPageChart.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="excelFilexlsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="&gt;&gt;Ratio.Name" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="buttonChatsRemove.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 37</value>
+  </data>
+  <data name="buttonChatsAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 263</value>
+  </data>
+  <data name="textBoxResultInfo.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChatsClean.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWords.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFileOpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textFiletxtToolStripMenuItem.Name" xml:space="preserve">
+    <value>textFiletxtToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelGeneral.Name" xml:space="preserve">
+    <value>flowLayoutPanelGeneral</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menuStripIndexMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 0</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 55</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWords.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolStripMenuItemFileOpen.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;listBoxChats.Name" xml:space="preserve">
+    <value>listBoxChats</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzePhrase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonResultSave.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="labelResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="buttonChatsAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFileSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
+    <value>saveFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexAnalyze.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="buttonAnalyzeWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 75</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP1.Name" xml:space="preserve">
+    <value>dataGridViewResultP1</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemResultSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxPerson2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 52</value>
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnRatio.Name" xml:space="preserve">
+    <value>dataGridP2ColumnRatio</value>
+  </data>
+  <data name="buttonAnalyzeGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="textBoxResultInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 41</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelChats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="textBoxResultInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 52</value>
+  </data>
+  <data name="dataGridP1ColumnRatio.Width" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;labelResult.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dataGridViewResultP2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeWord.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzeWord</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 24</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsRemove.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="Ratio.HeaderText" xml:space="preserve">
+    <value>Соотношение</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="textFiletxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="textBoxIndexAnalyze.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeBadWords.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
+  </data>
+  <data name="labelResult.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFileSave.Name" xml:space="preserve">
+    <value>toolStripMenuItemFileSave</value>
+  </data>
+  <data name="&gt;&gt;tabPageTable.Parent" xml:space="preserve">
+    <value>tabControlResult</value>
+  </data>
+  <data name="buttonResultSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeBadWords.Name" xml:space="preserve">
+    <value>buttonAnalyzeBadWords</value>
+  </data>
+  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 26</value>
+  </data>
+  <data name="labelNameP1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResult.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonResultSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAnalyzePhrase.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="flowLayoutPanelPersonal.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsClean.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 37</value>
+  </data>
+  <data name="&gt;&gt;buttonResultSave.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonAnalyzeWords.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsRemove.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWord.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
+  </data>
+  <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="buttonChatsAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 37</value>
+  </data>
+  <data name="flowLayoutPanelList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 55</value>
+  </data>
+  <data name="&gt;&gt;Word.Name" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyze.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyze</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsAdd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Repetitions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelResult.Name" xml:space="preserve">
+    <value>labelResult</value>
+  </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 10, 10</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
+    <value>bindingSource1</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;excelFilexlsToolStripMenuItem.Name" xml:space="preserve">
+    <value>excelFilexlsToolStripMenuItem</value>
+  </data>
+  <data name="buttonChatsRemove.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 684</value>
+  </data>
+  <data name="dataGridP2ColumnWord.HeaderText" xml:space="preserve">
+    <value>Слово/словосочитание</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="buttonAnalyzePhrase.Text" xml:space="preserve">
+    <value>По словосочитанию</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemResultSaveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textFiletxtToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItemAnalyze.Text" xml:space="preserve">
+    <value>Анализ</value>
+  </data>
+  <data name="&gt;&gt;tabPageChart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn1</value>
+  </data>
+  <data name="labelChats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 42</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzePhrase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabPageChart.Parent" xml:space="preserve">
+    <value>tabControlResult</value>
+  </data>
+  <data name="&gt;&gt;labelNameP2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridP1ColumnRepetitions.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
     <value>openFileDialog1</value>
   </data>
-  <data name="&gt;&gt;Repetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeWord.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyzeWord</value>
-  </data>
-  <data name="&gt;&gt;tabPageChart.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textBoxResultInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 41</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileOpen.Name" xml:space="preserve">
-    <value>toolStripMenuItemFileOpen</value>
-  </data>
-  <data name="buttonAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 37</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileSave.Name" xml:space="preserve">
-    <value>toolStripMenuItemFileSave</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanelList.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;dataGridP1ColumnRepetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 263</value>
-  </data>
-  <data name="buttonAnalyzePhrase.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;menuStripIndexMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Index</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelPersonal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonResultSave.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeBadWords.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonCancel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeBadWords.Text" xml:space="preserve">
-    <value>На ругательные слова</value>
-  </data>
-  <data name="textBoxIndexAnalyze.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;Word.Name" xml:space="preserve">
-    <value>Word</value>
-  </data>
-  <data name="menuStripIndexMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>962, 28</value>
-  </data>
-  <data name="&gt;&gt;labelChats.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Ratio.Name" xml:space="preserve">
-    <value>Ratio</value>
-  </data>
-  <data name="flowLayoutPanelGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="listBoxChats.ItemHeight" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResult.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="labelChats.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="buttonAnalyzeWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 122</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonAnalyzeBadWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeBadWords.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyzeBadWords</value>
-  </data>
-  <data name="textBoxIndexAnalyze.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonChatsRemove.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 37</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;labelNameP2.Name" xml:space="preserve">
-    <value>labelNameP2</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
-  </data>
-  <data name="&gt;&gt;labelNameP1.Name" xml:space="preserve">
-    <value>labelNameP1</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeNextWord.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
-  </data>
-  <data name="dataGridP1ColumnRepetitions.HeaderText" xml:space="preserve">
-    <value>Повторений</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsAdd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="listBoxChats.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="buttonChatsAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 684</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeBadWords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlResult.Name" xml:space="preserve">
-    <value>tabControlResult</value>
-  </data>
-  <data name="toolStripMenuItemAnalyze.Text" xml:space="preserve">
-    <value>Анализ</value>
-  </data>
-  <data name="dataGridP2ColumnWord.HeaderText" xml:space="preserve">
-    <value>Слово/словосочитание</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPageChart.Parent" xml:space="preserve">
-    <value>tabControlResult</value>
-  </data>
-  <data name="dataGridViewResultP1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;menuStripIndexMain.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResult.Name" xml:space="preserve">
-    <value>dataGridViewResult</value>
-  </data>
-  <data name="labelResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="labelNameP1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxChats.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonAnalyzePhrase.Text" xml:space="preserve">
-    <value>По словосочитанию</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;dataGridP1ColumnWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;tabPageChart.Name" xml:space="preserve">
-    <value>tabPageChart</value>
-  </data>
-  <data name="&gt;&gt;Word.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeBadWords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabControlResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 120</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 3</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>875, 596</value>
-  </data>
-  <data name="&gt;&gt;labelResult.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="toolStripMenuItemFileSave.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson1.Name" xml:space="preserve">
-    <value>textBoxPerson1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBoxResultInfo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP2.Name" xml:space="preserve">
-    <value>dataGridViewResultP2</value>
-  </data>
-  <data name="buttonChatsAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
-    <value>bindingSource1</value>
-  </data>
-  <data name="labelResult.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="labelNameP1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 37</value>
-  </data>
-  <data name="textBoxPerson1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="toolStripMenuItemAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzePhrase.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyzePhrase</value>
-  </data>
-  <data name="Word.HeaderText" xml:space="preserve">
-    <value>Слово/словосочитание</value>
-  </data>
-  <data name="dataGridViewResultP2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="labelNameP2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="labelResult.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;buttonResultSave.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="labelChats.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsAdd.Name" xml:space="preserve">
-    <value>buttonChatsAdd</value>
-  </data>
-  <data name="tabPageTable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 24</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileSaveAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>975, 722</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzePhrase.Name" xml:space="preserve">
-    <value>buttonAnalyzePhrase</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelGeneral.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="labelResult.Text" xml:space="preserve">
-    <value>Результат</value>
-  </data>
-  <data name="&gt;&gt;tabPageTable.Parent" xml:space="preserve">
-    <value>tabControlResult</value>
-  </data>
-  <data name="&gt;&gt;textBoxResultInfo.Name" xml:space="preserve">
-    <value>textBoxResultInfo</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 28</value>
-  </data>
-  <data name="&gt;&gt;dataGridP1ColumnRatio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabPageChart.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridP2ColumnRepetitions.Name" xml:space="preserve">
-    <value>dataGridP2ColumnRepetitions</value>
-  </data>
-  <data name="&gt;&gt;dataGridP2ColumnRepetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dataGridViewResultP2.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 29</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
-    <value>flowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsClean.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 37</value>
-  </data>
-  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>703, 277</value>
-  </data>
-  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="buttonAnalyzeWords.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsRemove.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlResult.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeNextWord.Name" xml:space="preserve">
-    <value>buttonAnalyzeNextWord</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWords.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAnalyzeButtons.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelPersonal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridP1ColumnRatio.Name" xml:space="preserve">
-    <value>dataGridP1ColumnRatio</value>
-  </data>
-  <data name="tabControlResult.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexGeneral.Name" xml:space="preserve">
-    <value>textBoxIndexGeneral</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson2.Name" xml:space="preserve">
-    <value>textBoxPerson2</value>
-  </data>
-  <data name="&gt;&gt;listBoxChats.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="buttonChatsAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 37</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexAnalyze.Name" xml:space="preserve">
-    <value>textBoxIndexAnalyze</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeNextWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>982, 743</value>
-  </data>
-  <data name="&gt;&gt;buttonResultSave.Name" xml:space="preserve">
-    <value>buttonResultSave</value>
-  </data>
-  <data name="&gt;&gt;tabPageTable.Name" xml:space="preserve">
-    <value>tabPageTable</value>
-  </data>
-  <data name="labelChats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 42</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonResultSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>647, 684</value>
-  </data>
-  <data name="&gt;&gt;menuStripIndexMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFile.Name" xml:space="preserve">
-    <value>toolStripMenuItemFile</value>
-  </data>
-  <data name="Repetitions.HeaderText" xml:space="preserve">
-    <value>Повторений</value>
-  </data>
-  <data name="&gt;&gt;textBoxResultInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonChatsAdd.Text" xml:space="preserve">
-    <value>Добавить</value>
-  </data>
-  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 24</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP1.Name" xml:space="preserve">
-    <value>dataGridViewResultP1</value>
-  </data>
-  <data name="&gt;&gt;listBoxChats.Name" xml:space="preserve">
-    <value>listBoxChats</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWord.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBoxIndexGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn1</value>
-  </data>
-  <data name="textBoxPerson2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="dataGridP2ColumnRatio.Width" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="textBoxIndexGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelList.Name" xml:space="preserve">
-    <value>flowLayoutPanelList</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileSaveAs.Name" xml:space="preserve">
-    <value>toolStripMenuItemFileSaveAs</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResult.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonChatsRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tabPageTable.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWords.Text" xml:space="preserve">
-    <value>По нескольким словам</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 216</value>
-  </data>
-  <data name="textBoxResultInfo.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;dataGridViewResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsRemove.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="toolStripMenuItemFileOpen.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="Ratio.HeaderText" xml:space="preserve">
-    <value>Соотношение</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dataGridP1ColumnWord.HeaderText" xml:space="preserve">
-    <value>Слово/словосочитание</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeWords.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyzeWords</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 52</value>
-  </data>
-  <data name="dataGridP1ColumnRatio.Width" type="System.Int32, mscorlib">
-    <value>65</value>
-  </data>
-  <data name="dataGridViewResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="dataGridP1ColumnRepetitions.Width" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyze.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="flowLayoutPanelGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 55</value>
-  </data>
-  <data name="&gt;&gt;dataGridP2ColumnRatio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textBoxPerson1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWords.Name" xml:space="preserve">
-    <value>buttonAnalyzeWords</value>
-  </data>
-  <data name="buttonAnalyzeWords.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 37</value>
-  </data>
-  <data name="buttonAnalyzeWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 75</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="flowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="menuStripIndexMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 5, 5, 0</value>
+  <data name="&gt;&gt;buttonAnalyzeGeneral.Name" xml:space="preserve">
+    <value>buttonAnalyzeGeneral</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn2</value>
   </data>
-  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>Слово/словосочитание</value>
+  <data name="&gt;&gt;listBoxChats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBoxIndexGeneral.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="dataGridViewTextBoxColumn2.HeaderText" xml:space="preserve">
-    <value>Соотношение</value>
-  </data>
-  <data name="&gt;&gt;labelNameP2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="toolStripMenuItemFileSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 26</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonAnalyzeWord.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonAnalyzeGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="labelChats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeWords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyze.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyze</value>
-  </data>
-  <data name="labelChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="textBoxIndexAnalyze.Size" type="System.Drawing.Size, System.Drawing">
-    <value>490, 604</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWords.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="buttonAnalyzeWord.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzePhrase.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;dataGridP2ColumnWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelChats.Name" xml:space="preserve">
-    <value>labelChats</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeGeneral.Name" xml:space="preserve">
-    <value>toolStripMenuItemAnalyzeGeneral</value>
-  </data>
-  <data name="dataGridViewResultP2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 3</value>
-  </data>
-  <data name="labelNameP2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 0</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="menuStripIndexMain.Text" xml:space="preserve">
-    <value>menuStripIndexMain</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelPersonal.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="dataGridViewTextBoxColumn3.HeaderText" xml:space="preserve">
-    <value>Повторений</value>
-  </data>
-  <data name="buttonAnalyzeNextWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 103</value>
-  </data>
-  <data name="buttonAnalyzeWord.Text" xml:space="preserve">
-    <value>По слову</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzePhrase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;labelResult.Name" xml:space="preserve">
-    <value>labelResult</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzePhrase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonAnalyzePhrase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="buttonChatsRemove.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="buttonAnalyzeBadWords.Text" xml:space="preserve">
-    <value>На ругательные слова</value>
-  </data>
-  <data name="labelChats.Text" xml:space="preserve">
-    <value>Чаты</value>
-  </data>
-  <data name="&gt;&gt;dataGridP2ColumnWord.Name" xml:space="preserve">
-    <value>dataGridP2ColumnWord</value>
-  </data>
-  <data name="toolStripMenuItemAnalyzeWord.Text" xml:space="preserve">
-    <value>По слову</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelGeneral.Name" xml:space="preserve">
-    <value>flowLayoutPanelGeneral</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
-  </data>
-  <data name="textBoxResultInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="dataGridViewResultP1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeBadWords.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzeBadWords</value>
   </data>
   <data name="toolStripMenuItemFileSaveAs.Size" type="System.Drawing.Size, System.Drawing">
     <value>192, 26</value>
   </data>
-  <data name="toolStripMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 24</value>
-  </data>
-  <data name="&gt;&gt;buttonResultSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="listBoxChats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 70</value>
-  </data>
-  <data name="textBoxIndexAnalyze.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 42</value>
-  </data>
-  <data name="&gt;&gt;menuStripIndexMain.Name" xml:space="preserve">
-    <value>menuStripIndexMain</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexAnalyze.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelNameP1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listBoxChats.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="menuStripIndexMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>769, 42</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsClean.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;listBoxChats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBoxAnalyzeButtons.Text" xml:space="preserve">
-    <value>Анализ</value>
-  </data>
-  <data name="dataGridP2ColumnRepetitions.HeaderText" xml:space="preserve">
-    <value>Повторений</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Repetitions.Name" xml:space="preserve">
-    <value>Repetitions</value>
-  </data>
-  <data name="textBoxPerson2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>450, 52</value>
-  </data>
-  <data name="&gt;&gt;buttonResultSave.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemFileOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonChatsRemove.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="flowLayoutPanelList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
-  </data>
-  <data name="listBoxChats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="toolStripMenuItemAnalyze.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 24</value>
-  </data>
-  <data name="textBoxIndexAnalyze.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPageTable.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Выход</value>
-  </data>
-  <data name="textBoxIndexGeneral.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonAnalyzeGeneral.Text" xml:space="preserve">
+  <data name="toolStripMenuItemAnalyzeGeneral.Text" xml:space="preserve">
     <value>Общий</value>
   </data>
-  <data name="&gt;&gt;buttonChatsClean.Name" xml:space="preserve">
-    <value>buttonChatsClean</value>
+  <data name="&gt;&gt;excelFilexlsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 26</value>
+  <data name="&gt;&gt;buttonAnalyzeNextWord.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
   </data>
-  <data name="textBoxIndexAnalyze.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 70</value>
+  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 0, 10, 10</value>
+  <data name="flowLayoutPanelGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelNameP2.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="buttonChatsClean.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 513</value>
+  <data name="&gt;&gt;textBoxPerson2.Name" xml:space="preserve">
+    <value>textBoxPerson2</value>
   </data>
-  <data name="&gt;&gt;labelNameP1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="listBoxChats.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="&gt;&gt;buttonAnalyzeBadWords.Name" xml:space="preserve">
-    <value>buttonAnalyzeBadWords</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>982, 743</value>
   </data>
-  <data name="textBoxPerson1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 54</value>
+  <data name="&gt;&gt;toolStripMenuItemFileOpen.Name" xml:space="preserve">
+    <value>toolStripMenuItemFileOpen</value>
   </data>
-  <data name="&gt;&gt;Ratio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 52</value>
-  </data>
-  <data name="&gt;&gt;buttonChatsClean.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dataGridP1ColumnWord.Name" xml:space="preserve">
-    <value>dataGridP1ColumnWord</value>
-  </data>
-  <data name="flowLayoutPanelPersonal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>235, 55</value>
-  </data>
-  <data name="dataGridP2ColumnRatio.HeaderText" xml:space="preserve">
-    <value>Соотношение</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonCancel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemAnalyzeGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="flowLayoutPanelList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 55</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tabPageTable</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWord.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
-  </data>
-  <data name="buttonAnalyzePhrase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 37</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAnalyzeButtons.Name" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
-  </data>
-  <data name="dataGridViewResult.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonAnalyzeWord.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeGeneral.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelPersonal.Name" xml:space="preserve">
-    <value>flowLayoutPanelPersonal</value>
-  </data>
-  <data name="buttonResultSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="buttonResultSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 37</value>
   </data>
   <data name="&gt;&gt;buttonAnalyzeNextWord.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;buttonChatsRemove.Name" xml:space="preserve">
-    <value>buttonChatsRemove</value>
+  <data name="&gt;&gt;menuStripIndexMain.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
-  <data name="buttonChatsAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelChats.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBoxIndexAnalyze.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;labelResult.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;labelNameP2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAnalyzeButtons.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="menuStripIndexMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>962, 28</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dataGridViewResultP1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dataGridViewResultP2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelNameP1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelNameP2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,20,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="dataGridP1ColumnRatio.HeaderText" xml:space="preserve">
-    <value>Соотношение</value>
+  <data name="labelChats.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelList.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;buttonChatsRemove.Name" xml:space="preserve">
+    <value>buttonChatsRemove</value>
   </data>
-  <data name="&gt;&gt;buttonAnalyzeWord.Name" xml:space="preserve">
-    <value>buttonAnalyzeWord</value>
+  <data name="buttonChatsClean.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 513</value>
   </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 50</value>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripMenuItemAnalyzeGeneral.Text" xml:space="preserve">
-    <value>Общий</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;labelNameP1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dataGridViewResultP1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
   </data>
-  <data name="labelResult.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="textBoxIndexGeneral.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;dataGridP1ColumnWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelChats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;buttonAnalyzePhrase.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 3</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dataGridViewResultP1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonAnalyzeBadWords.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
+  <data name="&gt;&gt;textBoxResultInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dataGridP2ColumnRatio.Name" xml:space="preserve">
-    <value>dataGridP2ColumnRatio</value>
+  <data name="textBoxIndexGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;buttonAnalyzeGeneral.Parent" xml:space="preserve">
-    <value>groupBoxAnalyzeButtons</value>
+  <data name="&gt;&gt;buttonAnalyzeGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listBoxChats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 604</value>
-  </data>
-  <data name="buttonAnalyzePhrase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 169</value>
-  </data>
-  <data name="buttonResultSave.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemHelp.Name" xml:space="preserve">
-    <value>toolStripMenuItemHelp</value>
-  </data>
-  <data name="toolStripMenuItemHelp.Text" xml:space="preserve">
-    <value>Справка</value>
-  </data>
-  <data name="toolStripMenuItemFileSaveAs.Text" xml:space="preserve">
-    <value>Сохранить как</value>
-  </data>
-  <data name="&gt;&gt;tabPageChart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlResult.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBoxPerson1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewResultP1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeGeneral.Name" xml:space="preserve">
-    <value>buttonAnalyzeGeneral</value>
-  </data>
-  <data name="buttonAnalyzeWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="textBoxIndexAnalyze.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
-  <data name="textBoxPerson2.Text" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="buttonAnalyzeNextWords.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonResultSave.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxResultInfo.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="buttonAnalyzeWords.Text" xml:space="preserve">
-    <value>По нескольким словам</value>
+  <data name="buttonAnalyzeGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 28</value>
   </data>
-  <data name="&gt;&gt;tabPageTable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
   </data>
-  <data name="&gt;&gt;textBoxIndexAnalyze.Parent" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
+  <data name="&gt;&gt;buttonAnalyzeWord.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn3.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn3</value>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 52</value>
   </data>
   <data name="dataGridP2ColumnRepetitions.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
-  <data name="buttonChatsRemove.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 684</value>
-  </data>
   <data name="&gt;&gt;buttonChatsAdd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tabPageChart.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="&gt;&gt;dataGridP1ColumnRatio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonChatsAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="toolStripMenuItemFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 24</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel3.Name" xml:space="preserve">
+    <value>flowLayoutPanel3</value>
+  </data>
+  <data name="toolStripMenuItemFile.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="tabPageChart.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxPerson1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnRepetitions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Repetitions.HeaderText" xml:space="preserve">
+    <value>Повторений</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeGeneral.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzeGeneral</value>
+  </data>
+  <data name="&gt;&gt;dataGridP2ColumnRepetitions.Name" xml:space="preserve">
+    <value>dataGridP2ColumnRepetitions</value>
+  </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 29</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexGeneral.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabPageChart.Name" xml:space="preserve">
+    <value>tabPageChart</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWord.Name" xml:space="preserve">
+    <value>buttonAnalyzeNextWord</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAnalyzeButtons.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelNameP2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 0</value>
+  </data>
+  <data name="tabPageTable.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
-  <data name="buttonChatsClean.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="buttonAnalyzeNextWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 103</value>
   </data>
-  <data name="&gt;&gt;buttonChatsRemove.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonAnalyzeWords.ZOrder" xml:space="preserve">
+  <data name="textBoxIndexAnalyze.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;groupBoxAnalyzeButtons.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;Repetitions.Name" xml:space="preserve">
+    <value>Repetitions</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelPersonal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;menuStripIndexMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dataGridViewResultP2.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tabPageTable</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyzeNextWords.Name" xml:space="preserve">
+    <value>toolStripMenuItemAnalyzeNextWords</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChatsRemove.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="&gt;&gt;tabControlResult.Name" xml:space="preserve">
+    <value>tabControlResult</value>
+  </data>
+  <data name="toolStripMenuItemResultSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemAnalyze.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dataGridP1ColumnWord.HeaderText" xml:space="preserve">
+    <value>Слово/словосочитание</value>
+  </data>
+  <data name="textBoxIndexAnalyze.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 70</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonChatsRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="toolStripMenuItemResultSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItemFileOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 26</value>
+  </data>
+  <data name="textBoxIndexAnalyze.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dataGridP2ColumnRatio.HeaderText" xml:space="preserve">
+    <value>Соотношение</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelGeneral.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonChatsAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 684</value>
+  </data>
+  <data name="labelResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 42</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP2.Name" xml:space="preserve">
+    <value>dataGridViewResultP2</value>
+  </data>
+  <data name="dataGridP1ColumnRepetitions.Width" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="labelResult.Text" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewResultP2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="menuStripIndexMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="toolStripMenuItemFileSave.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="flowLayoutPanelList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="tabControlResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 120</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemFile.Name" xml:space="preserve">
+    <value>toolStripMenuItemFile</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAnalyzeWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 37</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeNextWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxResultInfo.Name" xml:space="preserve">
+    <value>textBoxResultInfo</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listBoxChats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 70</value>
+  </data>
+  <data name="buttonCancel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dataGridP2ColumnRepetitions.HeaderText" xml:space="preserve">
+    <value>Повторений</value>
+  </data>
+  <data name="buttonAnalyzeBadWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 37</value>
+  </data>
+  <data name="&gt;&gt;buttonAnalyzeWords.Name" xml:space="preserve">
+    <value>buttonAnalyzeWords</value>
+  </data>
+  <data name="buttonAnalyzeWord.Text" xml:space="preserve">
+    <value>По слову</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelPersonal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxPerson1.Name" xml:space="preserve">
+    <value>textBoxPerson1</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
+    <value>Слово/словосочитание</value>
+  </data>
+  <data name="&gt;&gt;dataGridP1ColumnWord.Name" xml:space="preserve">
+    <value>dataGridP1ColumnWord</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAnalyzeButtons.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="flowLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>703, 277</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>875, 596</value>
+  </data>
+  <data name="&gt;&gt;textBoxIndexAnalyze.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dataGridViewResultP1.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="&gt;&gt;buttonAnalyzePhrase.Parent" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
   </data>
-  <data name="toolStripMenuItemAnalyzePhrase.Text" xml:space="preserve">
-    <value>По словосочетанию</value>
+  <data name="textBoxPerson2.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;saveFileDialog1.Name" xml:space="preserve">
-    <value>saveFileDialog1</value>
+  <data name="listBoxChats.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ChatAnalyzer</value>
+  <data name="menuStripIndexMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 5, 5, 0</value>
   </data>
-  <data name="menuStripIndexMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 0</value>
+  <data name="&gt;&gt;groupBoxAnalyzeButtons.Name" xml:space="preserve">
+    <value>groupBoxAnalyzeButtons</value>
   </data>
-  <data name="&gt;&gt;dataGridP1ColumnRepetitions.Name" xml:space="preserve">
-    <value>dataGridP1ColumnRepetitions</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>518, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>ru</value>
-  </metadata>
-  <metadata name="Word.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>382, 17</value>
   </metadata>
-  <metadata name="Ratio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Word.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridP2ColumnRatio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridP1ColumnWord.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>215, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>ru</value>
+  </metadata>
+  <metadata name="dataGridP2ColumnWord.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="menuStripIndexMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="dataGridP2ColumnRatio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridP2ColumnWord.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Ratio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>215, 17</value>
   </metadata>
   <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1240,7 +1303,7 @@
   <metadata name="dataGridP1ColumnRatio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridP1ColumnWord.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="menuStripIndexMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

@@ -1,5 +1,6 @@
 using Excel = Microsoft.Office.Interop.Excel;
 using static ChatAnalyzer.Program;
+using System.Runtime.InteropServices;
 
 namespace ChatAnalyzer
 {
@@ -11,10 +12,10 @@ namespace ChatAnalyzer
             InitializeCharts();
             buttonChatsAdd.Click += buttonChatsAdd_Click;
             buttonAnalyzeGeneral.Click += buttonAnalyzeGeneral_Click;
-            buttonAnalyzeWord.Click += buttonAnalyzeWord_Click;
-            buttonAnalyzeNextWord.Click += buttonAnalyzeNextWords_Click;
+            buttonAnalyzeWords.Click += buttonAnalyzeWord_Click;
+            buttonAnalyzeNextWords.Click += buttonAnalyzeNextWords_Click;
             openFileDialog1.Filter = "HTML files(*.html)|*.html|Text files(*.txt)|*.txt|All files(*.*)|*.*";
-            saveFileDialog1.Filter = "Excel files(*.xls)|*.xls|Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            saveFileDialog1.Filter = "Excel files(*.xls)|*.xls";
 
             Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
         }
@@ -78,13 +79,16 @@ namespace ChatAnalyzer
                     dataGridP1ColumnRatio.Visible = true;
                     dataGridP2ColumnRatio.Visible = true;
 
-                    foreach (DataGridViewRow rat in dataGridViewResultP1.Rows)
+                    if (AnalysisResult.RatioP1 is not null || AnalysisResult.RatioP1 is not null)
                     {
-                        rat.Cells[2].Value = AnalysisResult.RatioP1[rat.Index] + "%";
-                    }
-                    foreach (DataGridViewRow rat in dataGridViewResultP2.Rows)
-                    {
-                        rat.Cells[2].Value = AnalysisResult.RatioP2[rat.Index] + "%";
+                        foreach (DataGridViewRow rat in dataGridViewResultP1.Rows)
+                        {
+                            rat.Cells[2].Value = AnalysisResult.RatioP1[rat.Index] + "%";
+                        }
+                        foreach (DataGridViewRow rat in dataGridViewResultP2.Rows)
+                        {
+                            rat.Cells[2].Value = AnalysisResult.RatioP2[rat.Index] + "%";
+                        }
                     }
                     break;
 
@@ -119,7 +123,7 @@ namespace ChatAnalyzer
         {
             // Чистим список
             listBoxChats.Items.Clear();
-            ChatInfo.ClearChatInfo();
+            ChatInfo.Clear();
         }
 
         private void buttonResultSave_Click(object sender, EventArgs e)
@@ -130,6 +134,7 @@ namespace ChatAnalyzer
                 Excel.Workbook workbook = excelapp.Workbooks.Add();
                 Excel.Worksheet worksheet = workbook.ActiveSheet;
                 var columnCount = dataGridViewResultP1.ColumnCount + 1;
+                worksheet.Columns[1].ColumnWidth = 30;
 
                 for (int i = 2; i < dataGridViewResultP1.RowCount + 1; i++)
                 {
@@ -142,19 +147,79 @@ namespace ChatAnalyzer
                 if (dataGridViewResultP2 != null)
                 {
                     worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
-                    worksheet.Rows[1].Columns[columnCount] = ChatInfo.FullNameP2;
+                    worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;
+                    worksheet.Columns[columnCount - 1].ColumnWidth = 30;
+
                     for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
                     {
                         for (int j = 1; j < columnCount; j++)
                         {
-                            worksheet.Rows[i].Columns[j + columnCount - 1] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
+                            worksheet.Rows[i].Columns[j + columnCount - 2] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
                         }
                     }
                 }
 
                 excelapp.AlertBeforeOverwriting = false;
-                workbook.SaveAs($"{saveFileDialog1.FileName}");
+                SaveXLS(workbook);
+                workbook.Close();
+                workbook = null;
+                worksheet = null;
                 excelapp.Quit();
+                excelapp = null;
+            }
+        }
+
+        private void SaveXLS(Excel.Workbook workbook)
+        {
+            try
+            {
+                workbook.SaveAs($"{saveFileDialog1.FileName}");
+            }
+            catch (COMException ex)
+            {
+                DialogResult result = MessageBox.Show(ex.Message, "Ошибка",
+                    MessageBoxButtons.RetryCancel,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+
+                if (result == DialogResult.Retry)
+                {
+                    SaveXLS(workbook);
+                }
+            }
+        }
+
+        private void toolStripMenuItemAnalyzeGeneral_Click(object sender, EventArgs e)
+        {
+            buttonAnalyzeGeneral_Click(sender, e);
+        }
+
+        private void toolStripMenuItemAnalyzeWords_Click(object sender, EventArgs e)
+        {
+            buttonAnalyzeWord_Click(sender, e);
+        }
+
+        private void toolStripMenuItemAnalyzeNextWords_Click(object sender, EventArgs e)
+        {
+            buttonAnalyzeNextWords_Click(sender, e);
+        }
+
+        private void toolStripMenuItemResultSave_Click(object sender, EventArgs e)
+        {
+            buttonResultSave_Click(sender, e);
+        }
+
+        private void excelFilexlsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            buttonResultSave_Click(sender, e);
+        }
+
+        private void textFiletxtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
             }
         }
 

@@ -29,7 +29,7 @@
         /// <summary>
         /// Метод чистит всю информацию о тексте
         /// </summary>
-        internal static void ClearChatInfo()
+        internal static void Clear()
         {
             FullNameP1 = null;
             FullNameP2 = null;

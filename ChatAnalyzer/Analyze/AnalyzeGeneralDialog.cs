@@ -12,6 +12,7 @@
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            AnalysisResult.Clean();
             if (radioButtonKindPersonal.Checked == true)
             {
                 AnalysisResult.AnalysisResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP1, Int32.Parse(textBoxMinAmount.Text),

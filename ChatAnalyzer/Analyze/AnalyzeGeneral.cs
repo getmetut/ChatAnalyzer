@@ -47,7 +47,7 @@ namespace ChatAnalyzer
         {
             if (ChatInfo.Text != null)
             {
-                ChatInfoTemp.RefreshTemp();
+                ChatInfoTemp.Refresh();
                 Analyze.AnalyzeGeneralDialog aGD = new(new ShowResultD(ShowResult));
                 aGD.ShowDialog();
             }

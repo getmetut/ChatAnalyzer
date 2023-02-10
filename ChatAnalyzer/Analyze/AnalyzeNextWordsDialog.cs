@@ -11,6 +11,7 @@
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            AnalysisResult.Clean();
             if (radioButtonKindPersonal.Checked)
             {
                 AnalysisResult.AnalysisResultP1 = AnalyzeNextWords.Analyze(textBoxWord.Text.ToLower(), ChatInfoTemp.WordListP1,

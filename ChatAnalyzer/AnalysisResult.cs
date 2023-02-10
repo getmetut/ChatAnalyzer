@@ -9,6 +9,13 @@
         internal static List<double> RatioP2 { get; set; }
         internal static string? ResultInfo { get;set; }
 
-
+        internal static void Clean()
+        {
+            AnalysisResultP1 = null;
+            AnalysisResultP2 = null;
+            RatioP1 = null;
+            RatioP2 = null;
+            ResultInfo = null;
+        }
     }
 }

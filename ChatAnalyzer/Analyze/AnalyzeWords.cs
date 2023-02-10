@@ -35,9 +35,17 @@ namespace ChatAnalyzer
                     // начинаем проверку на совпадения
                     for (int j = 1; j < strList[i].Length; j++)
                     {
-                        if (!Equals(list[num], strList[i][j]))
+                        try
+                        {
+                            if (!Equals(list[num], strList[i][j]))
+                                flag = false;
+                            num++;
+                        }
+                        catch (Exception e) 
+                        {   
                             flag = false;
-                        num++;
+                            break;
+                        }
                     }
                     // если все ок, увеличиваем количество совпадений
                     if (flag)
@@ -71,7 +79,7 @@ namespace ChatAnalyzer
         {
             if (ChatInfo.Text != null)
             {
-                ChatInfoTemp.RefreshTemp();
+                ChatInfoTemp.Refresh();
                 Analyze.AnalyzeWordsDialog aWD = new(new ShowResultD(ShowResult), new CreateChartD(CreateChart));
                 aWD.ShowDialog();
             }

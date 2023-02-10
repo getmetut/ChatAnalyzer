@@ -34,19 +34,20 @@ namespace ChatAnalyzer
             this.menuStripIndexMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemFileOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFileSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemResultSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemResultSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelFilexlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textFiletxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAnalyze = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAnalyzeGeneral = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemAnalyzeWord = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAnalyzeWords = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemAnalyzePhrase = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAnalyzeNextWords = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAnalyzeBadWords = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxAnalyzeButtons = new System.Windows.Forms.GroupBox();
             this.buttonAnalyzeBadWords = new System.Windows.Forms.Button();
-            this.buttonAnalyzeNextWord = new System.Windows.Forms.Button();
-            this.buttonAnalyzeWord = new System.Windows.Forms.Button();
+            this.buttonAnalyzeNextWords = new System.Windows.Forms.Button();
+            this.buttonAnalyzeWords = new System.Windows.Forms.Button();
             this.buttonAnalyzeGeneral = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
             this.listBoxChats = new System.Windows.Forms.ListBox();
@@ -95,8 +96,8 @@ namespace ChatAnalyzer
             resources.ApplyResources(this.toolStripMenuItemFile, "toolStripMenuItemFile");
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFileOpen,
-            this.toolStripMenuItemFileSave,
-            this.toolStripMenuItemFileSaveAs});
+            this.toolStripMenuItemResultSave,
+            this.toolStripMenuItemResultSaveAs});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             // 
             // toolStripMenuItemFileOpen
@@ -104,24 +105,39 @@ namespace ChatAnalyzer
             resources.ApplyResources(this.toolStripMenuItemFileOpen, "toolStripMenuItemFileOpen");
             this.toolStripMenuItemFileOpen.Name = "toolStripMenuItemFileOpen";
             // 
-            // toolStripMenuItemFileSave
+            // toolStripMenuItemResultSave
             // 
-            resources.ApplyResources(this.toolStripMenuItemFileSave, "toolStripMenuItemFileSave");
-            this.toolStripMenuItemFileSave.Name = "toolStripMenuItemFileSave";
+            resources.ApplyResources(this.toolStripMenuItemResultSave, "toolStripMenuItemResultSave");
+            this.toolStripMenuItemResultSave.Name = "toolStripMenuItemResultSave";
+            this.toolStripMenuItemResultSave.Click += new System.EventHandler(this.toolStripMenuItemResultSave_Click);
             // 
-            // toolStripMenuItemFileSaveAs
+            // toolStripMenuItemResultSaveAs
             // 
-            resources.ApplyResources(this.toolStripMenuItemFileSaveAs, "toolStripMenuItemFileSaveAs");
-            this.toolStripMenuItemFileSaveAs.Name = "toolStripMenuItemFileSaveAs";
+            resources.ApplyResources(this.toolStripMenuItemResultSaveAs, "toolStripMenuItemResultSaveAs");
+            this.toolStripMenuItemResultSaveAs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excelFilexlsToolStripMenuItem,
+            this.textFiletxtToolStripMenuItem});
+            this.toolStripMenuItemResultSaveAs.Name = "toolStripMenuItemResultSaveAs";
+            // 
+            // excelFilexlsToolStripMenuItem
+            // 
+            resources.ApplyResources(this.excelFilexlsToolStripMenuItem, "excelFilexlsToolStripMenuItem");
+            this.excelFilexlsToolStripMenuItem.Name = "excelFilexlsToolStripMenuItem";
+            this.excelFilexlsToolStripMenuItem.Click += new System.EventHandler(this.excelFilexlsToolStripMenuItem_Click);
+            // 
+            // textFiletxtToolStripMenuItem
+            // 
+            resources.ApplyResources(this.textFiletxtToolStripMenuItem, "textFiletxtToolStripMenuItem");
+            this.textFiletxtToolStripMenuItem.Name = "textFiletxtToolStripMenuItem";
+            this.textFiletxtToolStripMenuItem.Click += new System.EventHandler(this.textFiletxtToolStripMenuItem_Click);
             // 
             // toolStripMenuItemAnalyze
             // 
             resources.ApplyResources(this.toolStripMenuItemAnalyze, "toolStripMenuItemAnalyze");
             this.toolStripMenuItemAnalyze.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemAnalyzeGeneral,
-            this.toolStripMenuItemAnalyzeWord,
             this.toolStripMenuItemAnalyzeWords,
-            this.toolStripMenuItemAnalyzePhrase,
+            this.toolStripMenuItemAnalyzeNextWords,
             this.toolStripMenuItemAnalyzeBadWords});
             this.toolStripMenuItemAnalyze.Name = "toolStripMenuItemAnalyze";
             // 
@@ -129,21 +145,19 @@ namespace ChatAnalyzer
             // 
             resources.ApplyResources(this.toolStripMenuItemAnalyzeGeneral, "toolStripMenuItemAnalyzeGeneral");
             this.toolStripMenuItemAnalyzeGeneral.Name = "toolStripMenuItemAnalyzeGeneral";
-            // 
-            // toolStripMenuItemAnalyzeWord
-            // 
-            resources.ApplyResources(this.toolStripMenuItemAnalyzeWord, "toolStripMenuItemAnalyzeWord");
-            this.toolStripMenuItemAnalyzeWord.Name = "toolStripMenuItemAnalyzeWord";
+            this.toolStripMenuItemAnalyzeGeneral.Click += new System.EventHandler(this.toolStripMenuItemAnalyzeGeneral_Click);
             // 
             // toolStripMenuItemAnalyzeWords
             // 
             resources.ApplyResources(this.toolStripMenuItemAnalyzeWords, "toolStripMenuItemAnalyzeWords");
             this.toolStripMenuItemAnalyzeWords.Name = "toolStripMenuItemAnalyzeWords";
+            this.toolStripMenuItemAnalyzeWords.Click += new System.EventHandler(this.toolStripMenuItemAnalyzeWords_Click);
             // 
-            // toolStripMenuItemAnalyzePhrase
+            // toolStripMenuItemAnalyzeNextWords
             // 
-            resources.ApplyResources(this.toolStripMenuItemAnalyzePhrase, "toolStripMenuItemAnalyzePhrase");
-            this.toolStripMenuItemAnalyzePhrase.Name = "toolStripMenuItemAnalyzePhrase";
+            resources.ApplyResources(this.toolStripMenuItemAnalyzeNextWords, "toolStripMenuItemAnalyzeNextWords");
+            this.toolStripMenuItemAnalyzeNextWords.Name = "toolStripMenuItemAnalyzeNextWords";
+            this.toolStripMenuItemAnalyzeNextWords.Click += new System.EventHandler(this.toolStripMenuItemAnalyzeNextWords_Click);
             // 
             // toolStripMenuItemAnalyzeBadWords
             // 
@@ -159,8 +173,8 @@ namespace ChatAnalyzer
             // 
             resources.ApplyResources(this.groupBoxAnalyzeButtons, "groupBoxAnalyzeButtons");
             this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeBadWords);
-            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeNextWord);
-            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeWord);
+            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeNextWords);
+            this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeWords);
             this.groupBoxAnalyzeButtons.Controls.Add(this.buttonAnalyzeGeneral);
             this.groupBoxAnalyzeButtons.Name = "groupBoxAnalyzeButtons";
             this.groupBoxAnalyzeButtons.TabStop = false;
@@ -171,17 +185,17 @@ namespace ChatAnalyzer
             this.buttonAnalyzeBadWords.Name = "buttonAnalyzeBadWords";
             this.buttonAnalyzeBadWords.UseVisualStyleBackColor = true;
             // 
-            // buttonAnalyzeNextWord
+            // buttonAnalyzeNextWords
             // 
-            resources.ApplyResources(this.buttonAnalyzeNextWord, "buttonAnalyzeNextWord");
-            this.buttonAnalyzeNextWord.Name = "buttonAnalyzeNextWord";
-            this.buttonAnalyzeNextWord.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonAnalyzeNextWords, "buttonAnalyzeNextWords");
+            this.buttonAnalyzeNextWords.Name = "buttonAnalyzeNextWords";
+            this.buttonAnalyzeNextWords.UseVisualStyleBackColor = true;
             // 
-            // buttonAnalyzeWord
+            // buttonAnalyzeWords
             // 
-            resources.ApplyResources(this.buttonAnalyzeWord, "buttonAnalyzeWord");
-            this.buttonAnalyzeWord.Name = "buttonAnalyzeWord";
-            this.buttonAnalyzeWord.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonAnalyzeWords, "buttonAnalyzeWords");
+            this.buttonAnalyzeWords.Name = "buttonAnalyzeWords";
+            this.buttonAnalyzeWords.UseVisualStyleBackColor = true;
             // 
             // buttonAnalyzeGeneral
             // 
@@ -234,8 +248,11 @@ namespace ChatAnalyzer
             // 
             // saveFileDialog1
             // 
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.CheckPathExists = false;
             this.saveFileDialog1.FileName = "ChatAnalysisResult";
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
+            this.saveFileDialog1.OverwritePrompt = false;
             // 
             // textBoxResultInfo
             // 
@@ -416,19 +433,17 @@ namespace ChatAnalyzer
         private MenuStrip menuStripIndexMain;
         private ToolStripMenuItem toolStripMenuItemFile;
         private ToolStripMenuItem toolStripMenuItemFileOpen;
-        private ToolStripMenuItem toolStripMenuItemFileSave;
-        private ToolStripMenuItem toolStripMenuItemFileSaveAs;
+        private ToolStripMenuItem toolStripMenuItemResultSaveAs;
         private ToolStripMenuItem toolStripMenuItemAnalyze;
         private ToolStripMenuItem toolStripMenuItemAnalyzeGeneral;
-        private ToolStripMenuItem toolStripMenuItemAnalyzeWord;
         private ToolStripMenuItem toolStripMenuItemAnalyzeWords;
-        private ToolStripMenuItem toolStripMenuItemAnalyzePhrase;
+        private ToolStripMenuItem toolStripMenuItemAnalyzeNextWords;
         private ToolStripMenuItem toolStripMenuItemAnalyzeBadWords;
         private ToolStripMenuItem toolStripMenuItemHelp;
         private GroupBox groupBoxAnalyzeButtons;
         private Button buttonAnalyzeBadWords;
-        private Button buttonAnalyzeNextWord;
-        private Button buttonAnalyzeWord;
+        private Button buttonAnalyzeNextWords;
+        private Button buttonAnalyzeWords;
         private Button buttonAnalyzeGeneral;
         private Label labelResult;
         private ListBox listBoxChats;
@@ -454,5 +469,8 @@ namespace ChatAnalyzer
         private DataGridViewTextBoxColumn dataGridP2ColumnRatio;
         private Label labelNameP1;
         private Label labelNameP2;
+        private ToolStripMenuItem toolStripMenuItemResultSave;
+        private ToolStripMenuItem excelFilexlsToolStripMenuItem;
+        private ToolStripMenuItem textFiletxtToolStripMenuItem;
     }
 }

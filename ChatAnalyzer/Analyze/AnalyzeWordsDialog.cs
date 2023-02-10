@@ -13,6 +13,7 @@
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
+            AnalysisResult.Clean();
             if (radioButtonKindPersonal.Checked)
             {
                 AnalysisResult.AnalysisResultP1 = AnalyzeWords.Analyze(textBoxWord.Text.ToLower(), ChatInfoTemp.WordListP1);
