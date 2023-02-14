@@ -162,7 +162,7 @@
             this.textBoxMinRepeat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxMinRepeat.Size = new System.Drawing.Size(59, 23);
             this.textBoxMinRepeat.TabIndex = 20;
-            this.textBoxMinRepeat.Text = "1";
+            this.textBoxMinRepeat.Text = "2";
             this.textBoxMinRepeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AnalyzeNextWordsDialog

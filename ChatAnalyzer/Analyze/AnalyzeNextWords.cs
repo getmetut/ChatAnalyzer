@@ -7,29 +7,11 @@ namespace ChatAnalyzer
     {
         public static IEnumerable<KeyValuePair<string, int>> Analyze(string phrase, List<string> list, int amount, int minRepeat)
         {
+            // убавляем минимальное количетво повторений шобы совпадало, то что ввел пользак и работа алгоритма
             minRepeat--;
             string[] words = phrase.Split(' ');
-            list[0] = "";
-            for (int i = 2; i < list.Count; i++)
-                try
-                {
-                    if ((Equals(list[i], ChatInfo.InitialP1) || Equals(list[i], ChatInfo.InitialP2)) && TextFunctions.IsTime(list[i + 1])
-                        || TextFunctions.IsNecName(list, i, ChatInfo.FullNameP1) || TextFunctions.IsNecName(list, i, ChatInfo.FullNameP2))
-                        list[i] = "";
-                }
-                catch (ArgumentOutOfRangeException e)
-                {
-                    break;
-                }
-            list.RemoveAll(String.IsNullOrWhiteSpace);
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                list[i] = TextFunctions.OnlyText(list[i]).ToLower();
-                if (Constants.tExeptNoInit.Contains(list[i]))
-                    list[i] = "";
-            }
-            list.RemoveAll(String.IsNullOrWhiteSpace);
+            // чистим список от мусора
+            TextFunctions.CleanAndNormalizeList(list, new char[] { '-' }, Constants.tExept);
 
             // делим словосочитание на слова и создаем список в который будем записывать совпадения
             List<string> coincidences = new();
@@ -86,7 +68,7 @@ namespace ChatAnalyzer
     {
         internal void buttonAnalyzeNextWords_Click(object sender, EventArgs e)
         {
-            if (ChatInfo.Text != null)
+            if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
                 Analyze.AnalyzeNextWordsDialog aWD = new(new ShowResultD(ShowResult));

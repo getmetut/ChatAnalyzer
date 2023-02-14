@@ -7,48 +7,50 @@ namespace ChatAnalyzer
         internal PersonalText()
         {
             // задаем необходимые переменные
-            StringBuilder text1 = new(), text2 = new();
-            var wordsList = ChatInfo.WordList;
-            string person1 = ChatInfo.InitialP1, person2 = ChatInfo.InitialP2;
+            List<string> list1 = new(), list2 = new();
+            var list = ChatInfo.WordList;
+            string init1 = ChatInfo.InitialP1T, init2 = ChatInfo.InitialP2T;
+            int ind1 = list.FindIndex(0, w => Equals(w, init1));
+            int ind2 = list.FindIndex(0, w => Equals(w, init2));
 
-            for (int i = 0; i < wordsList.Count; i++)
-            {
-                if (Equals(wordsList[i], person1) && TextFunctions.IsTime(wordsList[i + 1]))
+            while (ind1 > 0 && ind2 > 0)
+            { 
+                if (ind2 > ind1)
                 {
-                    for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person2)); j++)
-                    {
-                        text1.Append(" " + wordsList[j]);
-                        i = wordsList.FindIndex(i, w => Equals(w, person2)) - 2;
-                    }
+                    list1.AddRange(list.GetRange(ind1, ind2 - ind1));
+                    ind1 = list.FindIndex(ind2, w => Equals(w, init1));
                 }
-
-                if (Equals(wordsList[i], person2) && TextFunctions.IsTime(wordsList[i + 1]))
+                else
                 {
-                    for (int j = i; j < wordsList.FindIndex(i, w => Equals(w, person1)); j++)
-                    {
-                        text2.Append(" " + wordsList[j]);
-                        i = wordsList.FindIndex(i, w => Equals(w, person1)) - 2;
-                    }
+                    list2.AddRange(list.GetRange(ind2, ind1 - ind2));
+                    ind2 = list.FindIndex(ind1, w => Equals(w, init2));
                 }
             }
 
+            if (ind1 < 0)
+            {
+                list2.AddRange(list.GetRange(ind2, list.Count - ind2));
+            }
+            else
+            {
+                list1.AddRange(list.GetRange(ind1, list.Count - ind1));
+            }
+
             // Записываем всю информацию
-            ChatInfoTemp.TextP1 = ChatInfo.TextP1 = text1.ToString();
-            ChatInfoTemp.TextP2 = ChatInfo.TextP2 = text2.ToString();
-            ChatInfo.WordListP1 = ChatInfo.TextP1.Split(' ').ToList();
+            ChatInfo.WordListP1 = list1;
             ChatInfoTemp.WordListP1 = ChatInfo.WordListP1.ToList();
-            ChatInfo.WordListP2 = ChatInfo.TextP2.Split(' ').ToList();
+            ChatInfo.WordListP2 = list2;
             ChatInfoTemp.WordListP2 = ChatInfo.WordListP2.ToList();
-            ChatInfo.WordDictP1 = TextFunctions.CreateDictionary(ChatInfo.TextP1, Constants.tExept);
-            ChatInfo.WordDictP2 = TextFunctions.CreateDictionary(ChatInfo.TextP2, Constants.tExept);
+            ChatInfo.WordDictP1 = TextFunctions.CreateDictionary(ChatInfo.WordListP1, Constants.tExept);
+            ChatInfo.WordDictP2 = TextFunctions.CreateDictionary(ChatInfo.WordListP2, Constants.tExept);
 
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
             TextFunctions.AccountFullNames(ChatInfo.WordListP1, ChatInfo.WordDictP1);
             TextFunctions.AccountFullNames(ChatInfo.WordListP2, ChatInfo.WordDictP2);
 
             // считаем количество сообщений
-            ChatInfo.MessageCountP1 = FileOpener.MessagesCounting(ChatInfo.WordListP1);
-            ChatInfo.MessageCountP2 = FileOpener.MessagesCounting(ChatInfo.WordListP2);
+            ChatInfo.MessageCountP1 = FileOpener.GetMessagesCount(ChatInfo.WordListP1);
+            ChatInfo.MessageCountP2 = FileOpener.GetMessagesCount(ChatInfo.WordListP2);
 
             ChatInfo.NewAdded = false;
         }

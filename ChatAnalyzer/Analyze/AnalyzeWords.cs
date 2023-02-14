@@ -17,9 +17,8 @@ namespace ChatAnalyzer
                 phrases[i] = phrases[i].Trim().ToLower();
                 strList.Add(phrases[i].Split(' '));
             }
-            for (int i = 0; i < list.Count; i++)
-                list[i] = TextFunctions.OnlyText(list[i]).ToLower();
-
+            // чистим список от мусора
+            TextFunctions.CleanAndNormalizeList(list, new char[] { '-' }, Constants.tExept);
             // начинаем цикл сравнений
             for (int i = 0; i < strList.Count; i++)
             {
@@ -41,8 +40,8 @@ namespace ChatAnalyzer
                                 flag = false;
                             num++;
                         }
-                        catch (Exception e) 
-                        {   
+                        catch (Exception e)
+                        {
                             flag = false;
                             break;
                         }
@@ -77,7 +76,7 @@ namespace ChatAnalyzer
     {
         internal void buttonAnalyzeWord_Click(object sender, EventArgs e)
         {
-            if (ChatInfo.Text != null)
+            if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
                 Analyze.AnalyzeWordsDialog aWD = new(new ShowResultD(ShowResult), new CreateChartD(CreateChart));

@@ -1,11 +1,14 @@
 using Excel = Microsoft.Office.Interop.Excel;
 using static ChatAnalyzer.Program;
 using System.Runtime.InteropServices;
+using System.Text;
+using Microsoft.Office.Interop.Excel;
 
 namespace ChatAnalyzer
 {
     public partial class Index : Form
     {
+        bool isPersonal;
         public Index()
         {
             InitializeComponent();
@@ -17,7 +20,7 @@ namespace ChatAnalyzer
             openFileDialog1.Filter = "HTML files(*.html)|*.html|Text files(*.txt)|*.txt|All files(*.*)|*.*";
             saveFileDialog1.Filter = "Excel files(*.xls)|*.xls";
 
-            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
+            System.Windows.Forms.Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
         }
 
         /// <summary>
@@ -27,6 +30,7 @@ namespace ChatAnalyzer
         /// <param name="kind"></param>
         internal void ShowResult(bool isPersonal, KindAnalysis kind)
         {
+            this.isPersonal = isPersonal;
             var result1 = AnalysisResult.AnalysisResultP1.ToList();
             int count1 = result1.Count;
             List<KeyValuePair<string, int>> result2 = new();
@@ -136,6 +140,12 @@ namespace ChatAnalyzer
                 var columnCount = dataGridViewResultP1.ColumnCount + 1;
                 worksheet.Columns[1].ColumnWidth = 30;
 
+                if (this.isPersonal)
+                {
+                    worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
+                    worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;
+                }
+                
                 for (int i = 2; i < dataGridViewResultP1.RowCount + 1; i++)
                 {
                     for (int j = 1; j < columnCount; j++)
@@ -146,8 +156,6 @@ namespace ChatAnalyzer
 
                 if (dataGridViewResultP2 != null)
                 {
-                    worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
-                    worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;
                     worksheet.Columns[columnCount - 1].ColumnWidth = 30;
 
                     for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
@@ -169,7 +177,7 @@ namespace ChatAnalyzer
             }
         }
 
-        private void SaveXLS(Excel.Workbook workbook)
+        private void SaveXLS(Workbook workbook)
         {
             try
             {
@@ -219,7 +227,29 @@ namespace ChatAnalyzer
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                StringBuilder result = new();
+                var columnCount = dataGridViewResultP1.ColumnCount + 1;
 
+                for (int i = 0; i < dataGridViewResultP1.RowCount + 1; i++)
+                {
+                    for (int j = 0; j < columnCount; j++)
+                    {
+                        result.Append(dataGridViewResultP1.Rows[i - 1].Cells[j - 1].Value.ToString().PadLeft(-40));
+                    }
+                }
+
+                //if (dataGridViewResultP2 != null)
+                //{
+                //    worksheet.Columns[columnCount - 1].ColumnWidth = 30;
+
+                //    for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
+                //    {
+                //        for (int j = 1; j < columnCount; j++)
+                //        {
+                //            worksheet.Rows[i].Columns[j + columnCount - 2] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
+                //        }
+                //    }
+                //}
             }
         }
 

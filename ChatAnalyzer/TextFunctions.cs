@@ -5,28 +5,28 @@ namespace ChatAnalyzer
     internal static class TextFunctions
     {
         /// <summary>
-        /// Создает словарь всех слов в тексте.
+        /// Возвращает словарь сдланынй на основе списка, исключая из него строки из указанного массива.
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="amount"></param>
+        /// <param name="list">Входной список</param>
+        /// <param name="exept">Массив строк для исключения</param>
         /// <returns></returns>
-        internal static Dictionary<string, int> CreateDictionary(string text, string[] exept)
+        internal static Dictionary<string, int> CreateDictionary(List<string> list, string[] exept)
         {
+            char[] exeptChar = { '-', ' ' };
             var top = new Dictionary<string, int>();
-            string[] words = text.ToLower().Split(' ');
-            for (int i = 0; i < words.Length; i++)
+            foreach (string word in list)
             {
-                var word = words[i].Trim();
-                if (TextFunctions.IsTime(word))
+                string nword = word.Trim().ToLower();
+                if (TextFunctions.IsTime(nword))
                     continue;
-                word = OnlyText(word);
-                if (top.ContainsKey(word = word.Trim()))
+                nword = OnlyText(nword, exeptChar).Trim();
+                if (top.ContainsKey(nword))
                 {
-                    top[word]++;
+                    top[nword]++;
                 }
                 else
                 {
-                    top[word] = 1;
+                    top[nword] = 1;
                 }
             }
 
@@ -37,15 +37,17 @@ namespace ChatAnalyzer
                     top.Remove(item.Key);
             }
 
-            top["-"] = 0;
-
             return top;
         }
 
+        /// <summary>
+        /// Возвращает словарь сдланынй на основе списка.
+        /// </summary>
+        /// <param name="list">Входной писок</param>
+        /// <returns></returns>
         internal static Dictionary<string, int> CreateDictionary(List<string> list)
         {
             var top = new Dictionary<string, int>();
-            //  string[] words = text.ToLower().Split(' ');
             for (int i = 0; i < list.Count; i++)
             {
                 var element = list[i].Trim();
@@ -60,40 +62,44 @@ namespace ChatAnalyzer
             }
             return top;
         }
-
         /// <summary>
-        /// Функция читстит получаему строку от знаков припинания
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="exeptChars"></param>
+        /// <param name="exeptWords"></param>
+        /// <returns></returns>
+        internal static void CleanAndNormalizeList(List<string> list, char[] exeptChars, string[] exeptWords)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = TextFunctions.OnlyText(list[i].Trim(), exeptChars).ToLower();
+                if (exeptWords.Contains(list[i]))
+                {
+                    list[i] = "";
+                    continue;
+                }
+            }
+
+            list.RemoveAll(String.IsNullOrWhiteSpace);
+        }
+        /// <summary>
+        /// Функция читстит получаему строку от всего помимо букв, и указанных в массиве знаков
         /// </summary>
         /// <param name="s"></param>
+        /// <param name="chars"></param>
         /// <returns></returns>
-        internal static string OnlyText(string s)
+        internal static string OnlyText(string s, char[] chars)
         {
             string snew = "";
             for (int j = 0; j < s.Length; j++)
-                if (Char.IsLetter(s[j]) || Equals(s[j], '-'))
+                if (Char.IsLetter(s[j]) || chars.Contains(s[j]))
                     snew += s[j];
             return snew;
         }
 
         /// <summary>
-        /// Функция получает строку и номер элемента и начная с этого элемента записывает слово и возвращает его.
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="i"></param>
-        /// <returns></returns>
-        internal static string GetWord(string text, int i)
-        {
-            StringBuilder word = new();
-            while (char.IsLetter(text[i]))
-            {
-                word.Append(text[i]);
-                i++;
-            }
-            return word.ToString();
-        }
-
-        /// <summary>
-        /// проверяет является ли элемент временем формата XX:XX.
+        /// Gроверяет является ли элемент временем формата XX:XX.
         /// </summary>
         /// <param name="wordsList"></param>
         /// <param name="i"></param>
@@ -104,11 +110,96 @@ namespace ChatAnalyzer
                 Char.IsDigit(word[3]) && Char.IsDigit(word[4]);
         }
 
+        /// <summary>
+        /// проверяет является ли строка датой формата ХХ.ХХ.ХХХХХ
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
         internal static bool IsDate(string word)
         {
             return word.Length == 10 && Char.IsDigit(word[0]) && Char.IsDigit(word[1]) && Char.IsPunctuation(word[2]) &&
                 Char.IsDigit(word[3]) && Char.IsDigit(word[4]);
         }
+
+        /// <summary>
+        /// Слияния полных имен в единый элемент списка 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        internal static List<string> UniteFullNames(List<string> list, string name)
+        {
+            var nameMas = name.Split(' ');
+
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                if (Equals(nameMas[0], list[i]))
+                {
+                    try
+                    {
+                        bool flag = true;
+                        for (int j = 0; j < nameMas.Length; j++)
+
+                            if (!Equals(list[i + j], nameMas[j]))
+                                flag = false;
+
+
+                        if (flag)
+                        {
+                            for (int j = 1; j < nameMas.Length; j++)
+                            {
+                                list[i] += $" {nameMas[j]}";
+                                list[i + j] = "";
+                            }
+                        }
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Подсчет нужных имен и их тегирование (а так же тегирование инициалов)
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        internal static int GetNecNamesCountAndTagging(List<string> list, string name)
+        {
+            int count = 0;
+
+            for (int i = 2; i < list.Count; i++)
+                try
+                {
+                    if (IsNecName(list, i, name))
+                    {
+                        count++;
+                        list[i] += "-name";
+                    }
+                    else
+                    if (Equals(list[i], name))
+                    {
+                        string[] arrName = name.Split(' ');
+                        for (int j = 1; i < arrName.Length; i++)
+                            list[i + j] = arrName[j];
+                        list[i] = arrName[0];
+                    }
+                        
+                    if ((Equals(list[i], ChatInfo.InitialP1) || Equals(list[i], ChatInfo.InitialP2)) && TextFunctions.IsTime(list[i + 1]))
+                        list[i] += "-init";
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                }
+            return count;
+        }
+
         /// <summary>
         /// Присвоение именам в словаре нужного количества.
         /// </summary>
@@ -120,32 +211,6 @@ namespace ChatAnalyzer
             for (int i = 0; i < nameMas.Length; i++)
                 if (dict.ContainsKey(nameMas[i].ToLower()))
                     dict[nameMas[i].ToLower()] -= сount;
-        }
-
-        /// <summary>
-        /// Подсчет нужных имен.
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        internal static int NecNamesCount(List<string> list, string name)
-        {
-            int count = 0;
-
-
-            for (int i = 2; i < list.Count; i++)
-                try
-                {
-                    if (IsNecName(list, i, name))
-                    {
-                        count++;
-                    }
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    break;
-                }
-            return count;
         }
 
         internal static bool IsNecName(List<string> list, int i, string name)
@@ -165,57 +230,15 @@ namespace ChatAnalyzer
         {
             var name1 = ChatInfo.FullNameP1;
             var name2 = ChatInfo.FullNameP2;
-            var unite = UniteFullNames(newList, name1);
-            unite = UniteFullNames(unite, name2);
-            int count1 = TextFunctions.NecNamesCount(unite, name1);
-            int count2 = TextFunctions.NecNamesCount(unite, name2);
+            var list = UniteFullNames(newList, name1);
+            list = UniteFullNames(list, name2);
+            int count1 = TextFunctions.GetNecNamesCountAndTagging(list, name1);
+            int count2 = TextFunctions.GetNecNamesCountAndTagging(list, name2);
             TextFunctions.AssignFullNames(dict, name1, count1);
             TextFunctions.AssignFullNames(dict, name2, count2);
             newList.RemoveAll(String.IsNullOrWhiteSpace);
         }
 
-        /// <summary>
-        /// Слияния полных имен в единый элемент списка.
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        internal static List<string> UniteFullNames(List<string> list, string name)
-        {
-            List<string> unite = list;
-            var nameMas = name.Split(' ');
 
-
-            for (int i = 0; i < unite.Count; i++)
-            {
-                if (Equals(nameMas[0], unite[i]))
-                {
-                    try
-                    {
-                        bool flag = true;
-                        for (int j = 0; j < nameMas.Length; j++)
-
-                            if (!Equals(unite[i + j], nameMas[j]))
-                                flag = false;
-
-
-                        if (flag)
-                        {
-                            for (int j = 1; j < nameMas.Length; j++)
-                            {
-                                unite[i] += $" {nameMas[j]}";
-                                unite[i + j] = "";
-                            }
-                        }
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        break;
-                    }
-                }
-            }
-
-            return unite;
-        }
     }
 }

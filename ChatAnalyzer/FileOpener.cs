@@ -58,7 +58,7 @@ namespace ChatAnalyzer
         /// </summary>
         /// <param names="fileName"></param>
         /// <returns></returns>
-        internal static string JustFileName(string fileName)
+        internal static string GetJustFileName(string fileName)
         {
             int lastSeparator = fileName.LastIndexOf('\\');
             return fileName[(lastSeparator + 1)..];
@@ -96,7 +96,7 @@ namespace ChatAnalyzer
         /// </summary>
         /// <param wordsList="wordsList"></param>
         /// <returns></returns>
-        internal static string[] ChatInitsNames(List<string> wordsList)
+        internal static string[] GetChatInitsNames(List<string> wordsList)
         {
             // создаем массив первые два элемента инициалы вторые имена
             string[] initsNames = new string[4];
@@ -150,7 +150,7 @@ namespace ChatAnalyzer
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
-        internal static int MessagesCounting(List<string> list)
+        internal static int GetMessagesCount(List<string> list)
         {
             int count = 0;
             foreach (string s in list)
@@ -175,7 +175,7 @@ namespace ChatAnalyzer
             foreach (string filename in filenames)
             {
                 string fileText = File.ReadAllText(filename);
-                listBoxChats.Items.Add(FileOpener.JustFileName(filename));
+                listBoxChats.Items.Add(FileOpener.GetJustFileName(filename));
                 // чистим текст от дивов и пробелов
                 fileText = FileOpener.CleanText(fileText);
                 text.Append(fileText);
@@ -190,36 +190,36 @@ namespace ChatAnalyzer
             if (ChatInfo.InitialP1 == null || ChatInfo.InitialP2 == null
                 || ChatInfo.FullNameP1 == null || ChatInfo.FullNameP2 == null)
             {
-                initsNames = FileOpener.ChatInitsNames(newList);
+                initsNames = FileOpener.GetChatInitsNames(newList);
                 ChatInfo.InitialP1 = initsNames[0];
                 ChatInfo.InitialP2 = initsNames[1];
                 ChatInfo.FullNameP1 = initsNames[2];
                 ChatInfo.FullNameP2 = initsNames[3];
             }
 
+            ChatInfo.FullNameP1T = ChatInfo.FullNameP1 + "-name";
+            ChatInfo.FullNameP2T = ChatInfo.FullNameP2 + "-name";
+            ChatInfo.InitialP1T = ChatInfo.InitialP1 + "-init";
+            ChatInfo.InitialP2T = ChatInfo.InitialP2 + "-init";
+
             // записываем лист в статику 
             if (ChatInfo.WordList == null)
                 ChatInfo.WordList = newList;
             else
-                foreach (var word in newList)
-                    ChatInfo.WordList.Add(word);
+                ChatInfo.WordList.AddRange(newList);
             ChatInfo.WordList.RemoveAll(String.IsNullOrWhiteSpace);
 
-            // пересобираем текст и записываем в статику его и словарь
-            foreach (string word in newList)
-                text.Append(" " + word);
 
-            ChatInfo.Text += text.ToString();
-            ChatInfo.WordDict = TextFunctions.CreateDictionary(ChatInfo.Text, Constants.tExept);
+            ChatInfo.WordDict = TextFunctions.CreateDictionary(ChatInfo.WordList, Constants.tExept);
 
-            // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре
+            // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре, а так же тегируем имена, инициалы и время сообщения 
             TextFunctions.AccountFullNames(ChatInfo.WordList, ChatInfo.WordDict);
 
             // Разбиваем текст по персоналям
             new PersonalText();
 
             // Счиатем количество сообщений
-            ChatInfo.MessageCount = FileOpener.MessagesCounting(ChatInfo.WordList);
+            ChatInfo.MessageCount = FileOpener.GetMessagesCount(ChatInfo.WordList);
         }
     }
 }

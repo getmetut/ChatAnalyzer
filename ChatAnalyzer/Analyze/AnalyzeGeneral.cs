@@ -45,7 +45,7 @@ namespace ChatAnalyzer
     {
         internal void buttonAnalyzeGeneral_Click(object sender, EventArgs e)
         {
-            if (ChatInfo.Text != null)
+            if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
                 Analyze.AnalyzeGeneralDialog aGD = new(new ShowResultD(ShowResult));

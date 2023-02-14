@@ -8,6 +8,11 @@
         internal static string? FullNameP1 { get; set; }
         internal static string? FullNameP2 { get; set; }
 
+        internal static string? InitialP1T { get; set; }
+        internal static string? InitialP2T { get; set; }
+        internal static string? FullNameP1T { get; set; }
+        internal static string? FullNameP2T { get; set; }
+
         internal static List<string>? WordList { get; set; }
         internal static List<string>? WordListP1 { get; set; }
         internal static List<string>? WordListP2 { get; set; }
@@ -15,10 +20,6 @@
         internal static Dictionary<string, int>? WordDict { get; set; }
         internal static Dictionary<string, int>? WordDictP1 { get; set; }
         internal static Dictionary<string, int>? WordDictP2 { get; set; }
-
-        internal static string? Text { get; set; }
-        internal static string? TextP1 { get; set; }
-        internal static string? TextP2 { get; set; }
 
         internal static bool NewAdded { get; set; }
 
@@ -35,9 +36,6 @@
             FullNameP2 = null;
             InitialP1 = null;
             InitialP2 = null;
-            Text = null;
-            TextP1 = null;
-            TextP2 = null;
             WordList = null;
             WordListP1 = null;
             WordListP2 = null;
@@ -47,9 +45,6 @@
             MessageCount = null;
             MessageCountP1 = null;
             MessageCountP2 = null;
-            ChatInfoTemp.Text = null;
-            ChatInfoTemp.TextP1 = null;
-            ChatInfoTemp.TextP2 = null;
             ChatInfoTemp.WordList = null;
             ChatInfoTemp.WordListP1 = null;
             ChatInfoTemp.WordListP2 = null;
