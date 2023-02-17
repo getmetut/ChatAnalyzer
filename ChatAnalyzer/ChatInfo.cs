@@ -17,6 +17,10 @@
         internal static List<string>? WordListP1 { get; set; }
         internal static List<string>? WordListP2 { get; set; }
 
+        internal static List<int>? FullNameIndexes { get; set; }
+        internal static List<int>? FullNameP1Indexes { get; set; }
+        internal static List<int>? FullNamP2eIndexes { get; set; }
+
         internal static Dictionary<string, int>? WordDict { get; set; }
         internal static Dictionary<string, int>? WordDictP1 { get; set; }
         internal static Dictionary<string, int>? WordDictP2 { get; set; }

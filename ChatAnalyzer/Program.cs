@@ -21,5 +21,10 @@ namespace ChatAnalyzer
             General, Words, NextWords
         }
 
+        internal enum ChatKind
+        {
+            Telegram, Instagram, Whatsapp
+        }
+
     }
 }

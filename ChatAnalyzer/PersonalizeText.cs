@@ -2,9 +2,9 @@
 
 namespace ChatAnalyzer
 {
-    internal class PersonalText
+    internal class PersonalizeText
     {
-        internal PersonalText()
+        internal PersonalizeText()
         {
             // задаем необходимые переменные
             List<string> list1 = new(), list2 = new();

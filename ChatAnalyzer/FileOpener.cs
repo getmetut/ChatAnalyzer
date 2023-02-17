@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Data;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ChatAnalyzer
@@ -158,6 +160,11 @@ namespace ChatAnalyzer
                     count++;
             return count;
         }
+
+        //internal static List<int> FullNamesIndexator(List<string> list, string name)
+        //{
+        //    if ()
+        //}
     }
 
     public partial class Index : Form
@@ -209,14 +216,21 @@ namespace ChatAnalyzer
                 ChatInfo.WordList.AddRange(newList);
             ChatInfo.WordList.RemoveAll(String.IsNullOrWhiteSpace);
 
-
             ChatInfo.WordDict = TextFunctions.CreateDictionary(ChatInfo.WordList, Constants.tExept);
 
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре, а так же тегируем имена, инициалы и время сообщения 
             TextFunctions.AccountFullNames(ChatInfo.WordList, ChatInfo.WordDict);
 
             // Разбиваем текст по персоналям
-            new PersonalText();
+            new PersonalizeText();
+
+            //ChatActivity ca = new(ChatInfo.WordList, Program.ChatKind.Telegram);
+            //StringBuilder test = new ();
+            //foreach(var item in ca.dateActivities)
+            //{
+            //    test.Append($"{item.Day.ToString()} - {item.Activity.ToString()}\n");
+            //}
+            //File.WriteAllText("1.txt", test.ToString());
 
             // Счиатем количество сообщений
             ChatInfo.MessageCount = FileOpener.GetMessagesCount(ChatInfo.WordList);
