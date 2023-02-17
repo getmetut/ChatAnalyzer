@@ -160,11 +160,6 @@ namespace ChatAnalyzer
                     count++;
             return count;
         }
-
-        //internal static List<int> FullNamesIndexator(List<string> list, string name)
-        //{
-        //    if ()
-        //}
     }
 
     public partial class Index : Form
