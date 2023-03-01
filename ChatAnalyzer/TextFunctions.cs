@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics.Metrics;
+using System.Text;
 
 namespace ChatAnalyzer
 {
@@ -164,34 +165,59 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// Подсчет нужных имен и их тегирование (а так же тегирование инициалов)
+        /// Подсчет нужных имен и их тегирование (а так же тегирование инициалов), а еще индексирование))
         /// </summary>
         /// <param name="list"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        internal static int GetNecNamesCountAndTagging(List<string> list, string name)
+        internal static int[] GetNecNamesCountAndTaggingAndIndexing(List<string> list, out List<int> idxs, string[] names)
         {
-            int count = 0;
+            int[] count = new int[names.Length]; string[] arrName; idxs = new();
 
             for (int i = 2; i < list.Count; i++)
                 try
                 {
-                    if (IsNecName(list, i, name))
+                    // Тегаем имя и записываем его индекс
+                    if (IsNecName(list, i, names))
                     {
-                        count++;
+                        count[names.ToList().IndexOf(list[i])]++;
                         list[i] += "-name";
+                        idxs.Add(i);
                     }
                     else
-                    if (Equals(list[i], name))
+                    // Разъеденяем не нужные имена
+                    if (names.Contains(list[i]))
                     {
-                        string[] arrName = name.Split(' ');
+                        arrName = list[i].Split(' ');
                         for (int j = 1; i < arrName.Length; i++)
                             list[i + j] = arrName[j];
                         list[i] = arrName[0];
                     }
                         
+                    // Тегаем инициалы
                     if ((Equals(list[i], ChatInfo.InitialP1) || Equals(list[i], ChatInfo.InitialP2)) && TextFunctions.IsTime(list[i + 1]))
                         list[i] += "-init";
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                }
+            return count;
+        }
+
+        internal static int GetNecNamesCountAndIndexing(List<string> list, ref List<int> idxs, out string name)
+        {
+            int count = 0;
+            name = list.First(el => el.EndsWith("-name"));
+
+            for (int i = 0; i < list.Count; i++)
+                try
+                {
+                    if (Equals(name, list[i]))
+                    {
+                        idxs.Add(i);
+                        count++;
+                    }
                 }
                 catch (ArgumentOutOfRangeException)
                 {
@@ -213,10 +239,26 @@ namespace ChatAnalyzer
                     dict[nameMas[i].ToLower()] -= сount;
         }
 
+        /// <summary>
+        /// Вычисляем системмное ли это имя
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="i"></param>
+        /// <param name="names"></param>
+        /// <returns></returns>
+        internal static bool IsNecName(List<string> list, int i, string[] names)
+        {
+            return (names.Contains(list[i])
+                    && (TextFunctions.IsTime(list[i - 1]) || TextFunctions.IsDate(list[i + 1]) || Equals(list[i - 1], "Data")
+                    || Equals(list[i + 1], "Declined") || Equals(list[i + 1], "Missed") || Equals(list[i + 1], "Cancelled")
+                    || Equals(list[i + 1], "Outgoing") || Equals(list[i + 1], "Incoming") || Equals(list[i + 1], "pinned")
+                    || Equals(list[i - 1], "list") || Equals(list[i + 1], "changed") || Equals(list[i - 2], "Exported")));
+        }
+
         internal static bool IsNecName(List<string> list, int i, string name)
         {
             return (Equals(list[i], name)
-                    & (TextFunctions.IsTime(list[i - 1]) || TextFunctions.IsDate(list[i + 1]) || Equals(list[i - 1], "Data")
+                    && (TextFunctions.IsTime(list[i - 1]) || TextFunctions.IsDate(list[i + 1]) || Equals(list[i - 1], "Data")
                     || Equals(list[i + 1], "Declined") || Equals(list[i + 1], "Missed") || Equals(list[i + 1], "Cancelled")
                     || Equals(list[i + 1], "Outgoing") || Equals(list[i + 1], "Incoming") || Equals(list[i + 1], "pinned")
                     || Equals(list[i - 1], "list") || Equals(list[i + 1], "changed") || Equals(list[i - 2], "Exported")));
@@ -226,19 +268,32 @@ namespace ChatAnalyzer
         /// Подсчет и присвоение полных имен.
         /// </summary>
         /// <param name="newList"></param>
-        internal static void AccountFullNames(List<string> newList, Dictionary<string, int> dict)
+        internal static void AccountFullNames(List<string> list, Dictionary<string, int> dict, List<int> idxs, string[] names)
         {
-            var name1 = ChatInfo.FullNameP1;
-            var name2 = ChatInfo.FullNameP2;
-            var list = UniteFullNames(newList, name1);
-            list = UniteFullNames(list, name2);
-            int count1 = TextFunctions.GetNecNamesCountAndTagging(list, name1);
-            int count2 = TextFunctions.GetNecNamesCountAndTagging(list, name2);
-            TextFunctions.AssignFullNames(dict, name1, count1);
-            TextFunctions.AssignFullNames(dict, name2, count2);
+            List<string> newList = list; ;
+            foreach (string name in names)
+            {
+                newList = UniteFullNames(newList, name);
+            }
+            
+            int[] counts = GetNecNamesCountAndTaggingAndIndexing(newList, out idxs, names);
+
+            foreach (string name in names)
+            {
+                foreach (int count in counts)
+                {
+                    AssignFullNames(dict, name, count);
+                }
+            }
             newList.RemoveAll(String.IsNullOrWhiteSpace);
         }
 
-
+        internal static void AccountFullNames(List<string> list, Dictionary<string, int> dict, ref List<int> idxs)
+        {
+            string name;
+            int count = GetNecNamesCountAndIndexing(list, ref idxs, out name);
+            AssignFullNames(dict, name, count);
+            list.RemoveAll(String.IsNullOrWhiteSpace);
+        }
     }
 }

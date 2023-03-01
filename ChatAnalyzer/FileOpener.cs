@@ -2,6 +2,7 @@
 using System.Data;
 using System.Text;
 using System.Text.RegularExpressions;
+using static ChatAnalyzer.ChatInfo;
 
 namespace ChatAnalyzer
 {
@@ -189,37 +190,37 @@ namespace ChatAnalyzer
 
             // получаем инициалы и полные имена
             string[] initsNames = new string[4];
-            if (ChatInfo.InitialP1 == null || ChatInfo.InitialP2 == null
-                || ChatInfo.FullNameP1 == null || ChatInfo.FullNameP2 == null)
+            if (InitialP1 == null || InitialP2 == null
+                || FullNameP1 == null || FullNameP2 == null)
             {
                 initsNames = FileOpener.GetChatInitsNames(newList);
-                ChatInfo.InitialP1 = initsNames[0];
-                ChatInfo.InitialP2 = initsNames[1];
-                ChatInfo.FullNameP1 = initsNames[2];
-                ChatInfo.FullNameP2 = initsNames[3];
+                InitialP1 = initsNames[0];
+                InitialP2 = initsNames[1];
+                FullNameP1 = initsNames[2];
+                FullNameP2 = initsNames[3];
             }
 
-            ChatInfo.FullNameP1T = ChatInfo.FullNameP1 + "-name";
-            ChatInfo.FullNameP2T = ChatInfo.FullNameP2 + "-name";
-            ChatInfo.InitialP1T = ChatInfo.InitialP1 + "-init";
-            ChatInfo.InitialP2T = ChatInfo.InitialP2 + "-init";
+            FullNameP1Tag = FullNameP1 + "-name";
+            FullNameP2Tag = FullNameP2 + "-name";
+            InitialP1Tag = InitialP1 + "-init";
+            InitialP2Tag = InitialP2 + "-init";
 
             // записываем лист в статику 
-            if (ChatInfo.WordList == null)
-                ChatInfo.WordList = newList;
+            if (WordList == null)
+                WordList = newList;
             else
-                ChatInfo.WordList.AddRange(newList);
-            ChatInfo.WordList.RemoveAll(String.IsNullOrWhiteSpace);
+                WordList.AddRange(newList);
+            WordList.RemoveAll(String.IsNullOrWhiteSpace);
 
-            ChatInfo.WordDict = TextFunctions.CreateDictionary(ChatInfo.WordList, Constants.tExept);
+            WordDict = TextFunctions.CreateDictionary(WordList, Constants.tExept);
 
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре, а так же тегируем имена, инициалы и время сообщения 
-            TextFunctions.AccountFullNames(ChatInfo.WordList, ChatInfo.WordDict);
+            TextFunctions.AccountFullNames(WordList, WordDict, FullNameIndexes, new string[] {FullNameP1, FullNameP2});
 
             // Разбиваем текст по персоналям
             new PersonalizeText();
 
-            //ChatActivity ca = new(ChatInfo.WordList, Program.ChatKind.Telegram);
+            //ChatActivity ca = new(WordList, Program.ChatKind.Telegram);
             //StringBuilder test = new ();
             //foreach(var item in ca.dateActivities)
             //{
@@ -228,7 +229,7 @@ namespace ChatAnalyzer
             //File.WriteAllText("1.txt", test.ToString());
 
             // Счиатем количество сообщений
-            ChatInfo.MessageCount = FileOpener.GetMessagesCount(ChatInfo.WordList);
+            MessageCount = FileOpener.GetMessagesCount(WordList);
         }
     }
 }

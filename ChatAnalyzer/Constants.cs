@@ -15,10 +15,10 @@
         "иной","всяк","всяческий","кто","что","какой","который","чей","сколько","те","никто","ничто","некого","нечего","никакой","ничей","некто",
         "нечто","некоторый","некий","нескольео","либо", "мне", "нас"
         , "меня", "тебя", "тебе"};
-        internal static string[] tExept = {"data", "not", "change", "", "exported", "kb", "to", ChatInfo.InitialP1T.ToLower(), ChatInfo.InitialP2T.ToLower(),
-                ChatInfo.FullNameP1T.ToLower(), ChatInfo.FullNameP2T.ToLower(), ChatInfo.InitialP1T, ChatInfo.InitialP2T,
-                ChatInfo.FullNameP1T, ChatInfo.FullNameP2T, TextFunctions.OnlyText(ChatInfo.FullNameP1T, new char[] {'-'}).ToLower(),
-                TextFunctions.OnlyText(ChatInfo.FullNameP2T, new char[] {'-'}).ToLower(), ChatInfo.InitialP1.ToLower(), ChatInfo.InitialP2.ToLower(),
+        internal static string[] tExept = {"data", "not", "change", "", "exported", "kb", "to", ChatInfo.InitialP1Tag.ToLower(), ChatInfo.InitialP2Tag.ToLower(),
+                ChatInfo.FullNameP1Tag.ToLower(), ChatInfo.FullNameP2Tag.ToLower(), ChatInfo.InitialP1Tag, ChatInfo.InitialP2Tag,
+                ChatInfo.FullNameP1Tag, ChatInfo.FullNameP2Tag, TextFunctions.OnlyText(ChatInfo.FullNameP1Tag, new char[] {'-'}).ToLower(),
+                TextFunctions.OnlyText(ChatInfo.FullNameP2Tag, new char[] {'-'}).ToLower(), ChatInfo.InitialP1.ToLower(), ChatInfo.InitialP2.ToLower(),
                 "included", "exporting", "settings", "download", "message", "voice", "video", "this", "reply", "location",
                 "photo", "file", "https", "sticker", "www", "outgoing", "change", "included", "december", "january", "february",
                 "march", "april", "may", "june", "july", "august", "september", "october", "november", "previous", "cancelled",
