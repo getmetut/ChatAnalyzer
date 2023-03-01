@@ -165,7 +165,7 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// Подсчет нужных имен и их тегирование (а так же тегирование инициалов), а еще индексирование))
+        /// Подсчет нужных имен и их тегирование (а так же тегирование инициалов), а еще индексирование)), засунул все в одну функцию чтобы все проиходило за один цикл
         /// </summary>
         /// <param name="list"></param>
         /// <param name="name"></param>
@@ -265,7 +265,7 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// Подсчет и присвоение полных имен.
+        /// Подсчет, тэгирование, индексирование и присвоение нового значения в словаре.
         /// </summary>
         /// <param name="newList"></param>
         internal static void AccountFullNames(List<string> list, Dictionary<string, int> dict, List<int> idxs, string[] names)
