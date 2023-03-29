@@ -220,13 +220,13 @@ namespace ChatAnalyzer
             // Разбиваем текст по персоналям
             new PersonalizeText();
 
-            //ChatActivity ca = new(WordList, Program.ChatKind.Telegram);
-            //StringBuilder test = new ();
-            //foreach(var item in ca.dateActivities)
-            //{
-            //    test.Append($"{item.Day.ToString()} - {item.Activity.ToString()}\n");
-            //}
-            //File.WriteAllText("1.txt", test.ToString());
+            ChatActivity ca = new(WordList, Program.ChatKind.Telegram);
+            StringBuilder test = new();
+            foreach (var item in ca.dateActivities)
+            {
+                test.Append($"{item.Day.ToString()} - {item.Activity.ToString()} - {item.ListIdx.ToString()}\n");
+            }
+            File.WriteAllText("1.txt", test.ToString());
 
             // Счиатем количество сообщений
             MessageCount = FileOpener.GetMessagesCount(WordList);

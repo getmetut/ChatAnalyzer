@@ -58,6 +58,12 @@ namespace ChatAnalyzer
             return result;
         }
 
+        /// <summary>
+        /// Функция возвращает список процентных соотношений употрбления словосочитания
+        /// </summary>
+        /// <param name="dict1"></param>
+        /// <param name="dict2"></param>
+        /// <returns></returns>
         internal static List<double> CalulateRatio(Dictionary<string, int> dict1, Dictionary<string, int> dict2)
         {
             List<double> result = new();
@@ -79,7 +85,9 @@ namespace ChatAnalyzer
             if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
-                Analyze.AnalyzeWordsDialog aWD = new(new ShowResultD(ShowResult), new CreateChartD(CreateChart));
+                ShowDeleagat delegat = new(ShowResult);
+                delegat += ShowChart;
+                Analyze.AnalyzeWordsDialog aWD = new(delegat);
                 aWD.ShowDialog();
             }
         }

@@ -14,8 +14,7 @@ namespace ChatAnalyzer
             Application.Run(new Index());
         }
         //делегат который будет применяться для вывода результатов на главную форму
-        internal delegate void ShowResultD(bool isPersonal, KindAnalysis kind);
-        internal delegate void CreateChartD(double x);
+        internal delegate void ShowDeleagat(bool isPersonal, KindAnalysis kind);
         internal enum KindAnalysis
         {
             General, Words, NextWords

@@ -71,7 +71,7 @@ namespace ChatAnalyzer
             if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
-                Analyze.AnalyzeNextWordsDialog aWD = new(new ShowResultD(ShowResult));
+                Analyze.AnalyzeNextWordsDialog aWD = new(new ShowDeleagat(ShowResult));
                 aWD.ShowDialog();
             }
         }

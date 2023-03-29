@@ -64,7 +64,7 @@ namespace ChatAnalyzer
             return top;
         }
         /// <summary>
-        /// 
+        /// Функция оставляет только буквы за исключением указанных символов, а также перевдит все элементы в нижний регистр
         /// </summary>
         /// <param name="list"></param>
         /// <param name="exeptChars"></param>

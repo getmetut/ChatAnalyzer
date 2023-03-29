@@ -31,13 +31,13 @@ namespace ChatAnalyzer
         internal void ShowResult(bool isPersonal, KindAnalysis kind)
         {
             this.isPersonal = isPersonal;
-            var result1 = AnalysisResult.AnalysisResultP1.ToList();
+            var result1 = AnalysisResult.ResultP1.ToList();
             int count1 = result1.Count;
             List<KeyValuePair<string, int>> result2 = new();
             int count2 = 0;
-            if (AnalysisResult.AnalysisResultP2 is not null)
+            if (AnalysisResult.ResultP2 is not null)
             {
-                result2 = AnalysisResult.AnalysisResultP2.ToList();
+                result2 = AnalysisResult.ResultP2.ToList();
                 count2 = result2.Count;
             }
             textBoxResultInfo.Text = AnalysisResult.ResultInfo;
@@ -105,19 +105,10 @@ namespace ChatAnalyzer
             }
         }
 
-        internal void CreateChart(double x)
+        internal void ShowChart(bool isPersonal, KindAnalysis kind)
         {
-            double y;
-            this.chart.Series[0].Points.Clear();
-            while (x <= 10)
-            {
-                y = Math.Cos(x);
-                this.chart.Series[0].Points.AddXY(x, y);
-                x += 0.1;
-            }
-
+            new ChartCreator(AnalysisResult.ChartInfoP1, isPersonal, kind, chart);
         }
-
         private void OnApplicationExit(object sender, EventArgs e)
         {
 

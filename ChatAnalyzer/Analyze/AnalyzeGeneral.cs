@@ -48,7 +48,9 @@ namespace ChatAnalyzer
             if (ChatInfo.WordList != null)
             {
                 ChatInfoTemp.Refresh();
-                Analyze.AnalyzeGeneralDialog aGD = new(new ShowResultD(ShowResult));
+                ShowDeleagat delegat = new(ShowResult);
+                delegat += ShowChart;
+                Analyze.AnalyzeGeneralDialog aGD = new(delegat);
                 aGD.ShowDialog();
             }
         }
