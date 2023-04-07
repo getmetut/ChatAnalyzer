@@ -40,6 +40,7 @@ namespace ChatAnalyzer
             return helpTop;
         }
     }
+
     // Прописываем вызов формы
     public partial class Index : Form
     {

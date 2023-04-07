@@ -217,16 +217,20 @@ namespace ChatAnalyzer
             // считаем полные имена в тексте а потом присваиваем посчитаное количество в словаре, а так же тегируем имена, инициалы и время сообщения 
             TextFunctions.AccountFullNames(WordList, WordDict, FullNameIndexes, new string[] {FullNameP1, FullNameP2});
 
+            // создаем список индексов дат для последующей персонализации текста
+            DateIndexes = new ChatActivity();
+            DateIndexes.dateActivities = DateIndexes.CreateDateActivitiesTelegram(WordList, false);
+            
             // Разбиваем текст по персоналям
             new PersonalizeText();
 
-            ChatActivity ca = new(WordList, Program.ChatKind.Telegram);
-            StringBuilder test = new();
-            foreach (var item in ca.dateActivities)
-            {
-                test.Append($"{item.Day.ToString()} - {item.Activity.ToString()} - {item.ListIdx.ToString()}\n");
-            }
-            File.WriteAllText("1.txt", test.ToString());
+            //ChatActivity ca = new(WordList, Program.ChatKind.Telegram);
+            //StringBuilder test = new();
+            //foreach (var item in ca.dateActivities)
+            //{
+            //    test.Append($"{item.Day.ToString()} - {item.Activity.ToString()} - {item.ListIdx.ToString()}\n");
+            //}
+            //File.WriteAllText("1.txt", test.ToString());
 
             // Счиатем количество сообщений
             MessageCount = FileOpener.GetMessagesCount(WordList);

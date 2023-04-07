@@ -9,6 +9,9 @@
         internal static Dictionary<string, int>? WordDict { get; set; }
         internal static Dictionary<string, int>? WordDictP1 { get; set; }
         internal static Dictionary<string, int>? WordDictP2 { get; set; }
+        internal static ChatActivity DateIndexes { get; set; }
+        internal static ChatActivity DateP1Indexes { get; set; }
+        internal static ChatActivity DateP2Indexes { get; set; }
 
         /// <summary>
         /// функция возврата промежуточного текста к начальному

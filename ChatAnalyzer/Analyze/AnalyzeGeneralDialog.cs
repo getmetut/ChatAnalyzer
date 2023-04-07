@@ -27,7 +27,7 @@ namespace ChatAnalyzer.Analyze
             {
                 AnalysisResult.ResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDict, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                AnalysisResult.ChartInfoP1 = new ChatActivity(ChatInfo.WordList, Program.ChatKind.Telegram);
+                AnalysisResult.ChartInfoP1 = new ChatActivity(ChatInfo.WordList, Program.ChatKind.Telegram, true);
             }
             AnalysisResult.ResultInfo = "Тип анализа: Общий\n";
 

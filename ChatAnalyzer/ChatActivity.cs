@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ChatAnalyzer
@@ -8,71 +9,88 @@ namespace ChatAnalyzer
         internal List<DateActivity> dateActivities = new List<DateActivity>();
         internal ChatActivity()
         {
-
         }
-        internal ChatActivity(List<string> list, Program.ChatKind kind)
+
+        internal ChatActivity(List<string> list, Program.ChatKind kind, bool isNeedVoices)
         {
             switch (kind)
             {
                 case (Program.ChatKind.Telegram):
-                    this.dateActivities = TelegramAnalyzeActivity(list);
+                    dateActivities = CalculateActivityGeneral(CreateDateActivitiesTelegram(list, isNeedVoices), list);
                     break;
             }
         }
 
-        internal List<DateActivity> TelegramAnalyzeActivity(List<string> list)
+        internal List<DateActivity> CreateDateActivitiesTelegram(List<string> list, bool isNeedVoices)
         {
             int day = 0, month = 0, year = 0;
             List<DateActivity> dateActivities = new();
-            for(int i = 1; i < list.Count; i++)
+            if (isNeedVoices)
             {
-                if (IsMessageDate(list, i, ref day, ref year))
+                for (int i = 1; i < list.Count; i++)
                 {
-                    month = Array.IndexOf(Constants.months, list[i]) + 1;
-                    dateActivities.Add(new DateActivity(new DateTime(year, month, day), 0, i));
-                }
+                    if (IsMessageDate(list, i, ref day, ref year))
+                    {
+                        month = Array.IndexOf(Constants.months, list[i]) + 1;
+                        dateActivities.Add(new DateActivity(new DateTime(year, month, day), 0, i));
+                    }
 
-                if (IsVoiceOrVideoMessage(list, i))
-                {
-                    char[] wAArrayCh = new char[4]; int[] wAArrayInt = new int[4];
-                    wAArrayCh = list[i + 10].Where(x => Char.IsNumber(x)).ToArray();
-                    for (int j = 0; j < 4; j++)
-                        wAArrayInt[j] = Int32.Parse(wAArrayCh[j].ToString());
-                    double wordsAmount = ((wAArrayInt[0] * 10 + wAArrayInt[1]) * 60 + wAArrayInt[2] * 10 + wAArrayInt[3]) * 0.6;
-                    dateActivities.Last().Activity += (int)wordsAmount;
+                    if (IsVoiceOrVideoMessage(list, i))
+                    {
+                        char[] timeCh = new char[4]; int[] timeInt = new int[4];
+                        timeCh = list[i + 10].Where(x => Char.IsNumber(x)).ToArray();
+                        for (int j = 0; j < 4; j++)
+                            timeInt[j] = Int32.Parse(timeCh[j].ToString());
+                        double wordsAmount = ((timeInt[0] * 10 + timeInt[1]) * 60 + timeInt[2] * 10 + timeInt[3]) * 0.6;
+                        dateActivities.Last().Activity += (int)wordsAmount;
+                    }
                 }
             }
+            else
+            {
+                for (int i = 1; i < list.Count; i++)
+                {
+                    if (IsMessageDate(list, i, ref day, ref year))
+                    {
+                        month = Array.IndexOf(Constants.months, list[i]) + 1;
+                        dateActivities.Add(new DateActivity(new DateTime(year, month, day), 0, i));
+                    }
+                }
+            }
+            
+            return dateActivities;
+        }
 
+        internal List<DateActivity> CalculateActivityGeneral(List<DateActivity> dateActivities, List<string> list)
+        {
             for (int i = 1; i < dateActivities.Count; i++)
             {
                 dateActivities[i - 1].Activity += dateActivities[i].ListIdx - dateActivities[i - 1].ListIdx;
             }
 
             dateActivities.Last().Activity += list.Count - dateActivities[dateActivities.Count - 1].ListIdx;
-
-
             return dateActivities;
         }
-
         /// <summary>
         /// Ищет индекс в списке, после котрого следует данное число
         /// </summary>
         /// <param name="idxs"></param>
         /// <param name="idx"></param>
         /// <returns></returns>
-        internal static int FindMessageIndex(List<int> idxs, int idx)
+        internal int FindMessageIndex(List<int> idxs, int idx)
         { 
-            int i = 0, probablyI = 0;
-            while (!(idxs[i] < idx && idx < idxs[i + 1]))
+            int i = 0, probablyI = 0; List<int> idxsCopy = idxs.ToList();
+            while (idxsCopy.Count > 1)
             {
-                probablyI = idxs.Count / 2;
-                if (idx < idxs[probablyI])
-                    idxs = idxs.GetRange(0, probablyI);
+                probablyI = idxsCopy.Count / 2;
+                if (idx < idxsCopy[probablyI])
+                    idxsCopy = idxsCopy.GetRange(0, probablyI);
                 else
-                    idxs = idxs.GetRange(probablyI, idxs.Count - probablyI);
-                i = idxs[0];
+                    idxsCopy = idxsCopy.GetRange(probablyI, idxsCopy.Count - probablyI);
+                probablyI = idxsCopy[0];
             }
 
+            i = probablyI;
             return i;
         }
         /// <summary>
@@ -87,19 +105,25 @@ namespace ChatAnalyzer
         }
 
         /// <summary>
-        /// Определяет является ли элемент информацией о дате сообщений
+        /// Определяет является ли элемент информацией о дате сообщений 
         /// </summary>
         /// <param name="list"></param>
         /// <param name="i"></param>
         /// <param name="day"></param>
         /// <param name="year"></param>
         /// <returns></returns>
-        internal static bool IsMessageDate(List<string> list, int i, ref int day, ref int year)
+        internal bool IsMessageDate(List<string> list, int i, ref int day, ref int year)
         {
             return (Constants.months.Contains(list[i]) && Int32.TryParse(list[i - 1], out day) && (list[i - 1].Length == 1 || list[i - 1].Length == 2) &&
                                     Int32.TryParse(list[i + 1], out year) && list[i + 1].Length == 4);
         }
 
+        internal bool IsMessageDate(List<string> list, int i)
+        {
+            int day, year;
+            return (Constants.months.Contains(list[i]) && Int32.TryParse(list[i - 1], out day) && (list[i - 1].Length == 1 || list[i - 1].Length == 2) &&
+                                    Int32.TryParse(list[i + 1], out year) && list[i + 1].Length == 4);
+        }
         internal class DateActivity
         {
             internal DateActivity(DateTime date, int activity, int idx)
