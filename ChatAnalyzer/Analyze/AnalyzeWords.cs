@@ -86,7 +86,6 @@ namespace ChatAnalyzer
             {
                 ChatInfoTemp.Refresh();
                 ShowDeleagat delegat = new(ShowResult);
-                delegat += ShowChart;
                 Analyze.AnalyzeWordsDialog aWD = new(delegat);
                 aWD.ShowDialog();
             }

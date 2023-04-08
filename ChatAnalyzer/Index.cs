@@ -1,8 +1,7 @@
-using Excel = Microsoft.Office.Interop.Excel;
+
 using static ChatAnalyzer.Program;
 using System.Runtime.InteropServices;
 using System.Text;
-using Microsoft.Office.Interop.Excel;
 
 namespace ChatAnalyzer
 {
@@ -123,71 +122,71 @@ namespace ChatAnalyzer
 
         private void buttonResultSave_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                Excel.Application excelapp = new Excel.Application();
-                Excel.Workbook workbook = excelapp.Workbooks.Add();
-                Excel.Worksheet worksheet = workbook.ActiveSheet;
-                var columnCount = dataGridViewResultP1.ColumnCount + 1;
-                worksheet.Columns[1].ColumnWidth = 30;
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    Excel.Application excelapp = new Excel.Application();
+            //    Excel.Workbook workbook = excelapp.Workbooks.Add();
+            //    Excel.Worksheet worksheet = workbook.ActiveSheet;
+            //    var columnCount = dataGridViewResultP1.ColumnCount + 1;
+            //    worksheet.Columns[1].ColumnWidth = 30;
 
-                if (this.isPersonal)
-                {
-                    worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
-                    worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;
-                }
-                
-                for (int i = 2; i < dataGridViewResultP1.RowCount + 1; i++)
-                {
-                    for (int j = 1; j < columnCount; j++)
-                    {
-                        worksheet.Rows[i].Columns[j] = dataGridViewResultP1.Rows[i - 1].Cells[j - 1].Value;
-                    }
-                }
+            //    if (this.isPersonal)
+            //    {
+            //        worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
+            //        worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;
+            //    }
 
-                if (dataGridViewResultP2 != null)
-                {
-                    worksheet.Columns[columnCount - 1].ColumnWidth = 30;
+            //    for (int i = 2; i < dataGridViewResultP1.RowCount + 1; i++)
+            //    {
+            //        for (int j = 1; j < columnCount; j++)
+            //        {
+            //            worksheet.Rows[i].Columns[j] = dataGridViewResultP1.Rows[i - 1].Cells[j - 1].Value;
+            //        }
+            //    }
 
-                    for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
-                    {
-                        for (int j = 1; j < columnCount; j++)
-                        {
-                            worksheet.Rows[i].Columns[j + columnCount - 2] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
-                        }
-                    }
-                }
+            //    if (dataGridViewResultP2 != null)
+            //    {
+            //        worksheet.Columns[columnCount - 1].ColumnWidth = 30;
 
-                excelapp.AlertBeforeOverwriting = false;
-                SaveXLS(workbook);
-                workbook.Close();
-                workbook = null;
-                worksheet = null;
-                excelapp.Quit();
-                excelapp = null;
-            }
+            //        for (int i = 2; i < dataGridViewResultP2.RowCount + 1; i++)
+            //        {
+            //            for (int j = 1; j < columnCount; j++)
+            //            {
+            //                worksheet.Rows[i].Columns[j + columnCount - 2] = dataGridViewResultP2.Rows[i - 1].Cells[j - 1].Value;
+            //            }
+            //        }
+            //    }
+
+            //    excelapp.AlertBeforeOverwriting = false;
+            //    SaveXLS(workbook);
+            //    workbook.Close();
+            //    workbook = null;
+            //    worksheet = null;
+            //    excelapp.Quit();
+            //    excelapp = null;
+            //}
         }
 
-        private void SaveXLS(Workbook workbook)
-        {
-            try
-            {
-                workbook.SaveAs($"{saveFileDialog1.FileName}");
-            }
-            catch (COMException ex)
-            {
-                DialogResult result = MessageBox.Show(ex.Message, "Îøèáêà",
-                    MessageBoxButtons.RetryCancel,
-                    MessageBoxIcon.Error,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
+        //private void SaveXLS(Workbook workbook)
+        //{
+        //    try
+        //    {
+        //        workbook.SaveAs($"{saveFileDialog1.FileName}");
+        //    }
+        //    catch (COMException ex)
+        //    {
+        //        DialogResult result = MessageBox.Show(ex.Message, "Îøèáêà",
+        //            MessageBoxButtons.RetryCancel,
+        //            MessageBoxIcon.Error,
+        //            MessageBoxDefaultButton.Button1,
+        //            MessageBoxOptions.DefaultDesktopOnly);
 
-                if (result == DialogResult.Retry)
-                {
-                    SaveXLS(workbook);
-                }
-            }
-        }
+        //        if (result == DialogResult.Retry)
+        //        {
+        //            SaveXLS(workbook);
+        //        }
+        //    }
+        //}
 
         private void toolStripMenuItemAnalyzeGeneral_Click(object sender, EventArgs e)
         {
