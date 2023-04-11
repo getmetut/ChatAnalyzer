@@ -9,6 +9,7 @@ namespace ChatAnalyzer
     public partial class Index : Form
     {
         bool lastIsPersonal;
+        KindAnalysis lastKind;
         public Index()
         {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace ChatAnalyzer
         /// <param name="kind"></param>
         internal void ShowResult(bool isPersonal, KindAnalysis kind)
         {
-            this.lastIsPersonal = isPersonal;
+            lastIsPersonal = isPersonal;
+            lastKind = kind;
             var result1 = AnalysisResult.ResultP1.ToList();
             int count1 = result1.Count;
             List<KeyValuePair<string, int>> result2 = new();
@@ -109,7 +111,8 @@ namespace ChatAnalyzer
 
         internal void ShowChart(bool isPersonal, KindAnalysis kind)
         {
-            
+            lastIsPersonal = isPersonal;
+            lastKind = kind;
             new ChartCreator(AnalysisResult.ChartInfoP1, 0, kind, chart);
             chart.Series[0].Name = "Общая активность";
             if (isPersonal)
@@ -144,7 +147,13 @@ namespace ChatAnalyzer
 
         private void listBoxChartsSelectedIndexChanged (object sender, EventArgs e)
         {
-
+            if (lastIsPersonal)
+            {
+                new ChartCreator(AnalysisResult.ChartInfoP1, 0, lastKind, chart);
+                new ChartCreator(AnalysisResult.ChartInfoP2, 1, lastKind, chart);
+            }
+            else
+                new ChartCreator(AnalysisResult.ChartInfoP1, 0, lastKind, chart);
         }
         private void OnApplicationExit(object sender, EventArgs e)
         {
