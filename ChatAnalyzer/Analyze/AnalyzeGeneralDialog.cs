@@ -20,14 +20,16 @@ namespace ChatAnalyzer.Analyze
                 AnalysisResult.ResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP1, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
                 AnalysisResult.ResultP2 = AnalyzeGeneral.Analyze(ChatInfo.WordDictP2, Int32.Parse(textBoxMinAmount.Text),
-                    checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);    
-                
+                    checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
+                AnalysisResult.ChartInfoP1 = ChatInfo.ChatActivP1;
+                AnalysisResult.ChartInfoP2 = ChatInfo.ChatActivP2;
+
             }
             else
             {
                 AnalysisResult.ResultP1 = AnalyzeGeneral.Analyze(ChatInfo.WordDict, Int32.Parse(textBoxMinAmount.Text),
                     checkBoxPartials.Checked, checkBoxPrepositions.Checked, checkBoxPronouns.Checked);
-                AnalysisResult.ChartInfoP1 = new ChatActivity(ChatInfo.WordList, Program.ChatKind.Telegram, true);
+                AnalysisResult.ChartInfoP1 = ChatInfo.ChatActiv;
             }
             AnalysisResult.ResultInfo = "Тип анализа: Общий\n";
 

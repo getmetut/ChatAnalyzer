@@ -72,6 +72,7 @@ namespace ChatAnalyzer
             this.labelNameP1 = new System.Windows.Forms.Label();
             this.labelNameP2 = new System.Windows.Forms.Label();
             this.tabPageChart = new System.Windows.Forms.TabPage();
+            this.listBoxCharts = new System.Windows.Forms.ListBox();
             this.menuStripIndexMain.SuspendLayout();
             this.groupBoxAnalyzeButtons.SuspendLayout();
             this.tabControlResult.SuspendLayout();
@@ -79,6 +80,7 @@ namespace ChatAnalyzer
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).BeginInit();
+            this.tabPageChart.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripIndexMain
@@ -365,8 +367,15 @@ namespace ChatAnalyzer
             // tabPageChart
             // 
             resources.ApplyResources(this.tabPageChart, "tabPageChart");
+            this.tabPageChart.Controls.Add(this.listBoxCharts);
             this.tabPageChart.Name = "tabPageChart";
             this.tabPageChart.UseVisualStyleBackColor = true;
+            // 
+            // listBoxCharts
+            // 
+            resources.ApplyResources(this.listBoxCharts, "listBoxCharts");
+            this.listBoxCharts.FormattingEnabled = true;
+            this.listBoxCharts.Name = "listBoxCharts";
             // 
             // Index
             // 
@@ -393,6 +402,7 @@ namespace ChatAnalyzer
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultP2)).EndInit();
+            this.tabPageChart.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,6 +415,7 @@ namespace ChatAnalyzer
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             //
             // chart
@@ -420,7 +431,13 @@ namespace ChatAnalyzer
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
             this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
             this.chart.Size = new System.Drawing.Size(736, 294);
             this.chart.TabIndex = 17;
             this.chart.Text = "chart";
@@ -472,5 +489,6 @@ namespace ChatAnalyzer
         private ToolStripMenuItem toolStripMenuItemResultSave;
         private ToolStripMenuItem excelFilexlsToolStripMenuItem;
         private ToolStripMenuItem textFiletxtToolStripMenuItem;
+        private ListBox listBoxCharts;
     }
 }

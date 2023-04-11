@@ -21,9 +21,9 @@
         internal static List<int> FullNameP1Indexes { get; set; }
         internal static List<int> FullNameP2Indexes { get; set; }
 
-        internal static ChatActivity DateIndexes { get; set; }
-        internal static ChatActivity DateP1Indexes { get; set; }
-        internal static ChatActivity DateP2Indexes { get; set; }
+        internal static ChatActivity ChatActiv { get; set; }
+        internal static ChatActivity ChatActivP1 { get; set; }
+        internal static ChatActivity ChatActivP2 { get; set; }
 
         internal static Dictionary<string, int>? WordDict { get; set; }
         internal static Dictionary<string, int>? WordDictP1 { get; set; }

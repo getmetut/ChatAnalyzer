@@ -105,11 +105,11 @@ namespace ChatAnalyzer
             string[] initsNames = new string[4];
             // начинаем идти по всем словам листа
             for (int i = 1; i < wordsList.Count; i++)
-                // находим жлемент массива который обозначает время отправки сообщения
+                // находим элемент массива который обозначает время отправки сообщения
                 if (TextFunctions.IsTime(wordsList[i]))
                 {
                     bool flag = true;
-                    // и проверяем является ли найденный эелемент инициалами 
+                    // и проверяем является ли найденный элемент инициалами 
                     for (int j = 0; j < wordsList[i - 1].Length; j++)
                         if (!Equals(wordsList[i - 1][j], wordsList[i + j + 1][0]))
                             flag = false;
@@ -218,8 +218,7 @@ namespace ChatAnalyzer
             TextFunctions.AccountFullNames(WordList, WordDict, FullNameIndexes, new string[] {FullNameP1, FullNameP2});
 
             // создаем список индексов дат для последующей персонализации текста
-            DateIndexes = new ChatActivity();
-            DateIndexes.dateActivities = DateIndexes.CreateDateActivitiesTelegram(WordList, false);
+            ChatActiv = new ChatActivity(WordList, Program.ChatKind.Telegram, true);
             
             // Разбиваем текст по персоналям
             new PersonalizeText();

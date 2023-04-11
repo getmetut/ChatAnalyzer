@@ -8,7 +8,7 @@ namespace ChatAnalyzer
 {
     public partial class Index : Form
     {
-        bool isPersonal;
+        bool lastIsPersonal;
         public Index()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace ChatAnalyzer
         /// <param name="kind"></param>
         internal void ShowResult(bool isPersonal, KindAnalysis kind)
         {
-            this.isPersonal = isPersonal;
+            this.lastIsPersonal = isPersonal;
             var result1 = AnalysisResult.ResultP1.ToList();
             int count1 = result1.Count;
             List<KeyValuePair<string, int>> result2 = new();
@@ -43,6 +43,7 @@ namespace ChatAnalyzer
             textBoxResultInfo.Text = AnalysisResult.ResultInfo;
             dataGridViewResultP1.Rows.Clear();
             dataGridViewResultP2.Rows.Clear();
+
             if (isPersonal)
             {
 
@@ -69,6 +70,7 @@ namespace ChatAnalyzer
                     dataGridViewResultP1.Rows[i].HeaderCell.Value = (i + 1).ToString();
                 }
             }
+
             switch (kind)
             {
                 case KindAnalysis.General:
@@ -107,7 +109,42 @@ namespace ChatAnalyzer
 
         internal void ShowChart(bool isPersonal, KindAnalysis kind)
         {
-            new ChartCreator(AnalysisResult.ChartInfoP1, isPersonal, kind, chart);
+            
+            new ChartCreator(AnalysisResult.ChartInfoP1, 0, kind, chart);
+            chart.Series[0].Name = "Общая активность";
+            if (isPersonal)
+            {
+                new ChartCreator(AnalysisResult.ChartInfoP2, 1, kind, chart);
+                chart.Series.Last().IsVisibleInLegend = true;
+                chart.Series[0].Name = ChatInfo.FullNameP1;
+                chart.Series[1].Name = ChatInfo.FullNameP2;
+            }
+            else
+            {
+                chart.Series[1].Points.Clear();
+                chart.Series[1].IsVisibleInLegend = false;
+            }
+            switch (kind)
+            {
+                case KindAnalysis.NextWords:
+                    break;
+                case KindAnalysis.General:
+                    listBoxCharts.Visible = false;
+                    break;
+                case KindAnalysis.Words:
+
+                    listBoxCharts.Visible = true;
+                    foreach (DataGridViewRow row in dataGridViewResultP1.Rows)
+                        listBoxCharts.Items.Add(row.Cells[0].Value);
+
+                    break;
+                    
+            }
+        }
+
+        private void listBoxChartsSelectedIndexChanged (object sender, EventArgs e)
+        {
+
         }
         private void OnApplicationExit(object sender, EventArgs e)
         {
@@ -131,7 +168,7 @@ namespace ChatAnalyzer
                 var columnCount = dataGridViewResultP1.ColumnCount + 1;
                 worksheet.Columns[1].ColumnWidth = 30;
 
-                if (this.isPersonal)
+                if (this.lastIsPersonal)
                 {
                     worksheet.Rows[1].Columns[1] = ChatInfo.FullNameP1;
                     worksheet.Rows[1].Columns[columnCount - 1] = ChatInfo.FullNameP2;

@@ -68,8 +68,14 @@
   <data name="toolStripMenuItemResultSave.Text" xml:space="preserve">
     <value>Сохранить результат</value>
   </data>
+  <data name="excelFilexlsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
+  </data>
   <data name="excelFilexlsToolStripMenuItem.Text" xml:space="preserve">
     <value>Excel file (.xls)</value>
+  </data>
+  <data name="textFiletxtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 22</value>
   </data>
   <data name="textFiletxtToolStripMenuItem.Text" xml:space="preserve">
     <value>Text file (.txt)</value>
@@ -321,6 +327,18 @@
   </data>
   <data name="tabPageTable.Text" xml:space="preserve">
     <value>Таблица</value>
+  </data>
+  <data name="listBoxCharts.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="listBoxCharts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>826, 121</value>
+  </data>
+  <data name="listBoxCharts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 274</value>
+  </data>
+  <data name="listBoxCharts.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="tabPageChart.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>

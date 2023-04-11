@@ -10,7 +10,7 @@ namespace ChatAnalyzer
             // задаем необходимые переменные
             List<string> list1 = new(), list2 = new();
             // создаем список индексов дат
-            List<int> idxs = DateIndexes.dateActivities.Select(d => d.ListIdx).ToList();
+            List<int> idxs = ChatActiv.dateActivities.Select(d => d.ListIdx).ToList();
             string init1 = InitialP1Tag, init2 = InitialP2Tag;
             // находим первые индексы инициалов
             int ind1 = WordList.FindIndex(0, w => Equals(w, init1));
@@ -65,6 +65,11 @@ namespace ChatAnalyzer
             MessageCountP1 = FileOpener.GetMessagesCount(WordListP1);
             MessageCountP2 = FileOpener.GetMessagesCount(WordListP2);
 
+            // вычилсляем активность
+
+            ChatActivP1 = new ChatActivity(WordListP1, Program.ChatKind.Telegram, true);
+            ChatActivP2 = new ChatActivity(WordListP2, Program.ChatKind.Telegram, true);
+
             NewAdded = false;
         }
         /// <summary>
@@ -76,7 +81,7 @@ namespace ChatAnalyzer
         internal void AddDate(List<string> list, List<string> listPerson, List<int> idxs, int ind)
         {
             // если перед началом сообщений есть дата, то сначала добавляем ее в список
-            if (DateIndexes.IsMessageDate(list, ind - 2))
+            if (ChatActiv.IsMessageDate(list, ind - 2))
             {
                 for (int i = 0; i < 3; i++)
                     listPerson.Add(WordList[ind - 3 + i]);
@@ -84,7 +89,7 @@ namespace ChatAnalyzer
             // если нет то ищем ближайщую верхнюю дату
             else
             {
-                int j = DateIndexes.FindMessageIndex(idxs, ind);
+                int j = ChatActiv.FindMessageIndex(idxs, ind);
                 for (int i = 0; i < 3; i++)
                     listPerson.Add(WordList[j - 1 + i]);
             }
