@@ -10,6 +10,7 @@
         internal static string? ResultInfo { get;set; }
         internal static ChatActivity ChartInfoP1 { get; set; }
         internal static ChatActivity ChartInfoP2 { get; set; }
+        internal static List<ChatActivity> chatActivities { get; set; }
 
         internal static void Clean()
         {

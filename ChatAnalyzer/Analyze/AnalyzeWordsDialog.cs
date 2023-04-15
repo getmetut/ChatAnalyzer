@@ -21,13 +21,10 @@ namespace ChatAnalyzer.Analyze
                     (Dictionary<string, int>)ResultP2);
                 RatioP2 = AnalyzeWords.CalulateRatio((Dictionary<string, int>)ResultP2,
                     (Dictionary<string, int>)ResultP1);
-                ChartInfoP1 = ChatInfo.ChatActivP1;
-                ChartInfoP2 = ChatInfo.ChatActivP2;
             }
             else
             {
                 ResultP1 = AnalyzeWords.Analyze(textBoxWord.Text.ToLower(), ChatInfoTemp.WordList);
-                ChartInfoP1 = ChatInfo.ChatActiv;
             }
             ResultInfo = "Тип анализа: По словам/словосочитаниям\n";
 
