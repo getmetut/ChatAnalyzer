@@ -32,6 +32,11 @@
             }
         }
 
+        /// <summary>
+        /// Функция высчитывает точку для графика считая месячную активность
+        /// </summary>
+        /// <param name="dayActivity"></param>
+        /// <returns></returns>
         internal ChatActivity CalculatePointsMonth(ChatActivity dayActivity)
         {
             ChatActivity monthActivity = new();

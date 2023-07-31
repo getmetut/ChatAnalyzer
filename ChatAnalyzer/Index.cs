@@ -1,8 +1,8 @@
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 using static ChatAnalyzer.Program;
 using System.Runtime.InteropServices;
 using System.Text;
-using Microsoft.Office.Interop.Excel;
+//using Microsoft.Office.Interop.Excel;
 
 namespace ChatAnalyzer
 {
@@ -169,7 +169,7 @@ namespace ChatAnalyzer
 
         private void buttonResultSave_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+          /*  if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 Excel.Application excelapp = new Excel.Application();
                 Excel.Workbook workbook = excelapp.Workbooks.Add();
@@ -211,10 +211,10 @@ namespace ChatAnalyzer
                 worksheet = null;
                 excelapp.Quit();
                 excelapp = null;
-            }
+            }*/
         }
 
-        private void SaveXLS(Workbook workbook)
+     /*   private void SaveXLS(Workbook workbook)
         {
             try
             {
@@ -233,7 +233,7 @@ namespace ChatAnalyzer
                     SaveXLS(workbook);
                 }
             }
-        }
+        }*/
 
         private void toolStripMenuItemAnalyzeGeneral_Click(object sender, EventArgs e)
         {

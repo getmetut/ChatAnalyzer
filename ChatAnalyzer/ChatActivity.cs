@@ -20,6 +20,12 @@ namespace ChatAnalyzer
                     break;
             }
         }
+        
+        /// <summary>
+        /// Функция возвращает список элементов типа DateActivity в которых содержится информация о 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
 
         internal List<DateActivity> CreateDateActivitiesTelegram(List<string> list, bool isNeedVoices)
         {
